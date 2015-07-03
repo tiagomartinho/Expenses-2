@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		3DA9AF8A8B8C25FE056EE9BA /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B04D7993F9E605EE35BD78F /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		EA0115441B4752F000EA613C /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B04D7993F9E605EE35BD78F /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		EA4B59BE1B472458000BE503 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4B59BD1B472458000BE503 /* AppDelegate.swift */; };
 		EA4B59C01B472458000BE503 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4B59BF1B472458000BE503 /* ViewController.swift */; };
 		EA4B59C31B472458000BE503 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA4B59C11B472458000BE503 /* Main.storyboard */; };
 		EA4B59C51B472458000BE503 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA4B59C41B472458000BE503 /* Images.xcassets */; };
 		EA4B59C81B472458000BE503 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA4B59C61B472458000BE503 /* LaunchScreen.xib */; };
-		EA4B59D41B472458000BE503 /* Expenses_2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4B59D31B472458000BE503 /* Expenses_2Tests.swift */; };
+		EA4B59D41B472458000BE503 /* DropboxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4B59D31B472458000BE503 /* DropboxTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +31,8 @@
 		1B04D7993F9E605EE35BD78F /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D343559D24EBFBA61C084C6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		BF6F2CD0CBBC936C01AD5D32 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		EA01153E1B4752E700EA613C /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Pods/Alamofire.framework"; sourceTree = "<group>"; };
+		EA01153F1B4752E700EA613C /* SwiftyDropbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyDropbox.framework; path = "Pods/../build/Debug-iphoneos/Pods/SwiftyDropbox.framework"; sourceTree = "<group>"; };
 		EA4B59B81B472457000BE503 /* Expenses:2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Expenses:2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA4B59BC1B472457000BE503 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA4B59BD1B472458000BE503 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -39,7 +42,10 @@
 		EA4B59C71B472458000BE503 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		EA4B59CD1B472458000BE503 /* Expenses:2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Expenses:2Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA4B59D21B472458000BE503 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EA4B59D31B472458000BE503 /* Expenses_2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expenses_2Tests.swift; sourceTree = "<group>"; };
+		EA4B59D31B472458000BE503 /* DropboxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropboxTests.swift; sourceTree = "<group>"; };
+		EAEFF59F1B4750B900C70CB1 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Pods/Alamofire.framework"; sourceTree = "<group>"; };
+		EAEFF5A01B4750B900C70CB1 /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = "Pods/../build/Debug-iphoneos/Pods.framework"; sourceTree = "<group>"; };
+		EAEFF5A11B4750B900C70CB1 /* SwiftyDropbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyDropbox.framework; path = "Pods/../build/Debug-iphoneos/Pods/SwiftyDropbox.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA0115441B4752F000EA613C /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +71,11 @@
 		3A33C906E577FD2AF0800F6A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EA01153E1B4752E700EA613C /* Alamofire.framework */,
+				EA01153F1B4752E700EA613C /* SwiftyDropbox.framework */,
+				EAEFF59F1B4750B900C70CB1 /* Alamofire.framework */,
+				EAEFF5A01B4750B900C70CB1 /* Pods.framework */,
+				EAEFF5A11B4750B900C70CB1 /* SwiftyDropbox.framework */,
 				1B04D7993F9E605EE35BD78F /* Pods.framework */,
 			);
 			name = Frameworks;
@@ -122,7 +134,7 @@
 		EA4B59D01B472458000BE503 /* Expenses:2Tests */ = {
 			isa = PBXGroup;
 			children = (
-				EA4B59D31B472458000BE503 /* Expenses_2Tests.swift */,
+				EA4B59D31B472458000BE503 /* DropboxTests.swift */,
 				EA4B59D11B472458000BE503 /* Supporting Files */,
 			);
 			path = "Expenses:2Tests";
@@ -296,7 +308,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA4B59D41B472458000BE503 /* Expenses_2Tests.swift in Sources */,
+				EA4B59D41B472458000BE503 /* DropboxTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +430,11 @@
 			baseConfigurationReference = 6D343559D24EBFBA61C084C6 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Pods",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = "Expenses:2/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -430,6 +447,11 @@
 			baseConfigurationReference = BF6F2CD0CBBC936C01AD5D32 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Pods",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = "Expenses:2/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -439,11 +461,14 @@
 		};
 		EA4B59DB1B472458000BE503 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D343559D24EBFBA61C084C6 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Pods",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -458,11 +483,14 @@
 		};
 		EA4B59DC1B472458000BE503 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF6F2CD0CBBC936C01AD5D32 /* Pods.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Pods",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = "Expenses:2Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

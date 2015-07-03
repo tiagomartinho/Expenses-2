@@ -4,7 +4,9 @@ import SwiftyDropbox
 class ViewController: UIViewController {
     
     @IBAction func linkDropbox(sender: UIBarButtonItem) {
-        Dropbox.authorizeFromController(self)
+        if Dropbox.authorizedClient == nil {
+            Dropbox.authorizeFromController(self)
+        }
     }
 }
 
