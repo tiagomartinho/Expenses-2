@@ -104,8 +104,6 @@
 				EA4B59BD1B472458000BE503 /* AppDelegate.swift */,
 				EA4B59BF1B472458000BE503 /* ViewController.swift */,
 				EA4B59C11B472458000BE503 /* Main.storyboard */,
-				EA4B59C41B472458000BE503 /* Images.xcassets */,
-				EA4B59C61B472458000BE503 /* LaunchScreen.xib */,
 				EA4B59BB1B472457000BE503 /* Supporting Files */,
 			);
 			path = "Expenses:2";
@@ -114,6 +112,8 @@
 		EA4B59BB1B472457000BE503 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EA4B59C41B472458000BE503 /* Images.xcassets */,
+				EA4B59C61B472458000BE503 /* LaunchScreen.xib */,
 				EA4B59BC1B472457000BE503 /* Info.plist */,
 			);
 			name = "Supporting Files";
