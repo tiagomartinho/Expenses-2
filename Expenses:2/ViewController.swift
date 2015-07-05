@@ -12,12 +12,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setUpTableView()
+        
         // Set realm notification block
         notificationToken = Realm().addNotificationBlock { [unowned self] note, realm in
             self.expensesTableView.reloadData()
         }
         
         expensesTableView.reloadData()
+    }
+    
+    func setUpTableView(){
+        self.expensesTableView.delegate = self;
+        self.expensesTableView.dataSource = self;
     }
     
     @IBAction func linkDropbox(sender: UIBarButtonItem) {
@@ -46,7 +53,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! ExpenseCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("ExpenseCell") as! ExpenseCell
         
         let expense = array[indexPath.row]
         cell.textLabel?.text = "\(expense.amount)"
