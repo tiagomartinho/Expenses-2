@@ -49,9 +49,13 @@ code_sign() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Alamofire.framework'
+  install_framework 'Realm.framework'
+  install_framework 'RealmSwift.framework'
   install_framework 'SwiftyDropbox.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Alamofire.framework'
+  install_framework 'Realm.framework'
+  install_framework 'RealmSwift.framework'
   install_framework 'SwiftyDropbox.framework'
 fi
