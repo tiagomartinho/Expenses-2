@@ -15,6 +15,8 @@
 		EA4B59C51B472458000BE503 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA4B59C41B472458000BE503 /* Images.xcassets */; };
 		EA4B59C81B472458000BE503 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA4B59C61B472458000BE503 /* LaunchScreen.xib */; };
 		EA4B59D41B472458000BE503 /* DropboxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4B59D31B472458000BE503 /* DropboxTests.swift */; };
+		EADE7A5C1B49B30A00D2DDA2 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADE7A5B1B49B30A00D2DDA2 /* Expense.swift */; };
+		EADE7A5E1B49B5BF00D2DDA2 /* ExpenseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADE7A5D1B49B5BF00D2DDA2 /* ExpenseCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,8 @@
 		EA4B59CD1B472458000BE503 /* Expenses:2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Expenses:2Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA4B59D21B472458000BE503 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA4B59D31B472458000BE503 /* DropboxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropboxTests.swift; sourceTree = "<group>"; };
+		EADE7A5B1B49B30A00D2DDA2 /* Expense.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
+		EADE7A5D1B49B5BF00D2DDA2 /* ExpenseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseCell.swift; sourceTree = "<group>"; };
 		EAEFF59F1B4750B900C70CB1 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Pods/Alamofire.framework"; sourceTree = "<group>"; };
 		EAEFF5A01B4750B900C70CB1 /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = "Pods/../build/Debug-iphoneos/Pods.framework"; sourceTree = "<group>"; };
 		EAEFF5A11B4750B900C70CB1 /* SwiftyDropbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyDropbox.framework; path = "Pods/../build/Debug-iphoneos/Pods/SwiftyDropbox.framework"; sourceTree = "<group>"; };
@@ -114,6 +118,8 @@
 			isa = PBXGroup;
 			children = (
 				EA4B59BD1B472458000BE503 /* AppDelegate.swift */,
+				EADE7A5B1B49B30A00D2DDA2 /* Expense.swift */,
+				EADE7A5D1B49B5BF00D2DDA2 /* ExpenseCell.swift */,
 				EA4B59BF1B472458000BE503 /* ViewController.swift */,
 				EA4B59C11B472458000BE503 /* Main.storyboard */,
 				EA4B59BB1B472457000BE503 /* Supporting Files */,
@@ -347,6 +353,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EADE7A5E1B49B5BF00D2DDA2 /* ExpenseCell.swift in Sources */,
+				EADE7A5C1B49B30A00D2DDA2 /* Expense.swift in Sources */,
 				EA4B59C01B472458000BE503 /* ViewController.swift in Sources */,
 				EA4B59BE1B472458000BE503 /* AppDelegate.swift in Sources */,
 			);

@@ -22,13 +22,17 @@
                                 <items>
                                     <barButtonItem title="Settings" id="9lW-6d-kXr"/>
                                     <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="W5m-8y-ebb"/>
-                                    <barButtonItem title="Dropbox" id="W4B-RO-Y5f">
+                                    <barButtonItem enabled="NO" title="Dropbox" id="W4B-RO-Y5f">
                                         <connections>
                                             <action selector="linkDropbox:" destination="BYZ-38-t0r" id="lXV-pe-ldS"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="IuJ-hq-nOd"/>
-                                    <barButtonItem systemItem="compose" id="EZP-lV-eKW"/>
+                                    <barButtonItem systemItem="compose" id="EZP-lV-eKW">
+                                        <connections>
+                                            <action selector="composeExpense:" destination="BYZ-38-t0r" id="EMs-2v-MGO"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X owes Y €23.42" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="szT-fg-1GZ">
@@ -55,6 +59,9 @@
                             <constraint firstItem="szT-fg-1GZ" firstAttribute="centerX" secondItem="iBy-5N-WTH" secondAttribute="centerX" id="rBl-wD-06a"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="expensesTableView" destination="DUf-0j-P2A" id="VNh-QK-LIf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
