@@ -2,9 +2,9 @@ import UIKit
 import SwiftyDropbox
 import RealmSwift
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ExpensesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var array = Realm().objects(Expense).sorted("date")
+    var array = Realm().objects(Expense).sorted("date",ascending:false)
     var notificationToken: NotificationToken?
 
     @IBOutlet weak var expensesTableView: UITableView!
@@ -12,9 +12,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setUpTableView()
+        setupTableView()
         
-        // Set realm notification block
         notificationToken = Realm().addNotificationBlock { [unowned self] note, realm in
             self.expensesTableView.reloadData()
         }
@@ -22,7 +21,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         expensesTableView.reloadData()
     }
     
-    func setUpTableView(){
+    func setupTableView(){
         self.expensesTableView.delegate = self;
         self.expensesTableView.dataSource = self;
     }
@@ -34,7 +33,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     @IBAction func composeExpense(sender: UIBarButtonItem) {
-        addRandomExpense()
+        pushComposeExpenseViewController()
+    }
+    
+    func pushComposeExpenseViewController(){
+        if let vc = self.storyboard?.instantiateViewControllerWithIdentifier("ComposeExpenseViewController") as? UIViewController {
+            self.presentViewController(vc, animated: true, completion: nil)
+        }
     }
     
     func addRandomExpense() {

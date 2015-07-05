@@ -10,10 +10,11 @@
 		3DA9AF8A8B8C25FE056EE9BA /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B04D7993F9E605EE35BD78F /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		BF38C9AE07B115ACB33ECDD6 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B04D7993F9E605EE35BD78F /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		EA4B59BE1B472458000BE503 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4B59BD1B472458000BE503 /* AppDelegate.swift */; };
-		EA4B59C01B472458000BE503 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4B59BF1B472458000BE503 /* ViewController.swift */; };
+		EA4B59C01B472458000BE503 /* ExpensesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4B59BF1B472458000BE503 /* ExpensesViewController.swift */; };
 		EA4B59C31B472458000BE503 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA4B59C11B472458000BE503 /* Main.storyboard */; };
 		EA4B59C51B472458000BE503 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA4B59C41B472458000BE503 /* Images.xcassets */; };
 		EA4B59C81B472458000BE503 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA4B59C61B472458000BE503 /* LaunchScreen.xib */; };
+		EA4B884B1B49C02D002F0FAC /* ComposeExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4B884A1B49C02D002F0FAC /* ComposeExpenseViewController.swift */; };
 		EADE7A5C1B49B30A00D2DDA2 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADE7A5B1B49B30A00D2DDA2 /* Expense.swift */; };
 		EADE7A5E1B49B5BF00D2DDA2 /* ExpenseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADE7A5D1B49B5BF00D2DDA2 /* ExpenseCell.swift */; };
 /* End PBXBuildFile section */
@@ -37,13 +38,14 @@
 		EA4B59B81B472457000BE503 /* Expenses:2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Expenses:2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA4B59BC1B472457000BE503 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA4B59BD1B472458000BE503 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EA4B59BF1B472458000BE503 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EA4B59BF1B472458000BE503 /* ExpensesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesViewController.swift; sourceTree = "<group>"; };
 		EA4B59C21B472458000BE503 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EA4B59C41B472458000BE503 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EA4B59C71B472458000BE503 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		EA4B59CD1B472458000BE503 /* Expenses:2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Expenses:2Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA4B59D21B472458000BE503 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA4B59D31B472458000BE503 /* DropboxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropboxTests.swift; sourceTree = "<group>"; };
+		EA4B884A1B49C02D002F0FAC /* ComposeExpenseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeExpenseViewController.swift; sourceTree = "<group>"; };
 		EADE7A5B1B49B30A00D2DDA2 /* Expense.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
 		EADE7A5D1B49B5BF00D2DDA2 /* ExpenseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseCell.swift; sourceTree = "<group>"; };
 		EAEFF59F1B4750B900C70CB1 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Pods/Alamofire.framework"; sourceTree = "<group>"; };
@@ -119,7 +121,8 @@
 				EA4B59BD1B472458000BE503 /* AppDelegate.swift */,
 				EADE7A5B1B49B30A00D2DDA2 /* Expense.swift */,
 				EADE7A5D1B49B5BF00D2DDA2 /* ExpenseCell.swift */,
-				EA4B59BF1B472458000BE503 /* ViewController.swift */,
+				EA4B59BF1B472458000BE503 /* ExpensesViewController.swift */,
+				EA4B884A1B49C02D002F0FAC /* ComposeExpenseViewController.swift */,
 				EA4B59C11B472458000BE503 /* Main.storyboard */,
 				EA4B59BB1B472457000BE503 /* Supporting Files */,
 			);
@@ -352,9 +355,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA4B884B1B49C02D002F0FAC /* ComposeExpenseViewController.swift in Sources */,
 				EADE7A5E1B49B5BF00D2DDA2 /* ExpenseCell.swift in Sources */,
 				EADE7A5C1B49B30A00D2DDA2 /* Expense.swift in Sources */,
-				EA4B59C01B472458000BE503 /* ViewController.swift in Sources */,
+				EA4B59C01B472458000BE503 /* ExpensesViewController.swift in Sources */,
 				EA4B59BE1B472458000BE503 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
