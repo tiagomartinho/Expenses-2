@@ -33,7 +33,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func addRandomExpense() {
         let realm = Realm()
         realm.beginWrite()
-        realm.create(Expense.self, value: [ViewController.randomInt(), ViewController.randomDate()])
+        let date = NSDate()
+        let amount = 0
+        realm.create(Expense.self, value: [amount, date])
         realm.commitWrite()
     }
     
@@ -60,16 +62,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             realm.delete(array[indexPath.row])
             realm.commitWrite()
         }
-    }
-    
-    // MARK: Helpers
-    
-    class func randomInt() -> Int {
-        return Int(arc4random())
-    }
-    
-    class func randomDate() -> NSDate {
-        return NSDate(timeIntervalSince1970: NSTimeInterval(arc4random()))
     }
 }
 

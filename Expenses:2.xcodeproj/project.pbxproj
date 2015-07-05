@@ -14,7 +14,6 @@
 		EA4B59C31B472458000BE503 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA4B59C11B472458000BE503 /* Main.storyboard */; };
 		EA4B59C51B472458000BE503 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA4B59C41B472458000BE503 /* Images.xcassets */; };
 		EA4B59C81B472458000BE503 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA4B59C61B472458000BE503 /* LaunchScreen.xib */; };
-		EA4B59D41B472458000BE503 /* DropboxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4B59D31B472458000BE503 /* DropboxTests.swift */; };
 		EADE7A5C1B49B30A00D2DDA2 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADE7A5B1B49B30A00D2DDA2 /* Expense.swift */; };
 		EADE7A5E1B49B5BF00D2DDA2 /* ExpenseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADE7A5D1B49B5BF00D2DDA2 /* ExpenseCell.swift */; };
 /* End PBXBuildFile section */
@@ -364,7 +363,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA4B59D41B472458000BE503 /* DropboxTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
