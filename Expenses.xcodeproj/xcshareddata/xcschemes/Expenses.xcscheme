@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "EA4B59B71B472457000BE503"
-               BuildableName = "Expenses:2.app"
+               BuildableName = "Expenses.app"
                BlueprintName = "Expenses:2"
-               ReferencedContainer = "container:Expenses:2.xcodeproj">
+               ReferencedContainer = "container:Expenses.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "EA4B59CC1B472458000BE503"
-               BuildableName = "Expenses:2Tests.xctest"
-               BlueprintName = "Expenses:2Tests"
-               ReferencedContainer = "container:Expenses:2.xcodeproj">
+               BuildableName = "ExpensesTests.xctest"
+               BlueprintName = "ExpensesTests"
+               ReferencedContainer = "container:Expenses.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "EA4B59CC1B472458000BE503"
-               BuildableName = "Expenses:2Tests.xctest"
-               BlueprintName = "Expenses:2Tests"
-               ReferencedContainer = "container:Expenses:2.xcodeproj">
+               BuildableName = "ExpensesTests.xctest"
+               BlueprintName = "ExpensesTests"
+               ReferencedContainer = "container:Expenses.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EA4B59B71B472457000BE503"
-            BuildableName = "Expenses:2.app"
+            BuildableName = "Expenses.app"
             BlueprintName = "Expenses:2"
-            ReferencedContainer = "container:Expenses:2.xcodeproj">
+            ReferencedContainer = "container:Expenses.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -77,9 +77,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EA4B59B71B472457000BE503"
-            BuildableName = "Expenses:2.app"
+            BuildableName = "Expenses.app"
             BlueprintName = "Expenses:2"
-            ReferencedContainer = "container:Expenses:2.xcodeproj">
+            ReferencedContainer = "container:Expenses.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -96,9 +96,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EA4B59B71B472457000BE503"
-            BuildableName = "Expenses:2.app"
+            BuildableName = "Expenses.app"
             BlueprintName = "Expenses:2"
-            ReferencedContainer = "container:Expenses:2.xcodeproj">
+            ReferencedContainer = "container:Expenses.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
