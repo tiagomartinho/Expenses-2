@@ -52,8 +52,11 @@ class ExpensesViewController: UIViewController, UITableViewDataSource, UITableVi
         let cell = tableView.dequeueReusableCellWithIdentifier("ExpenseCell") as! ExpenseCell
         
         let expense = array[indexPath.row]
-        cell.textLabel?.text = "\(expense.amount)"
-        cell.detailTextLabel?.text = expense.date.description
+        cell.textLabel?.text = "\(expense.amount) €"
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "dd/MM/YY"
+        let formattedDate = dateFormatter.stringFromDate(expense.date).uppercaseString
+        cell.detailTextLabel?.text = expense.person + " " + expense.category + " "  + formattedDate
         
         return cell
     }

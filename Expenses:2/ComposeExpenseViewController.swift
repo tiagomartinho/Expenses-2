@@ -23,12 +23,12 @@ class ComposeExpenseViewController: UIViewController {
     }
     
     func addExpense(amount:Double) {
+        let date = NSDate()
+        let categoryOrEmpty = category?.text ?? ""
         if let person = person.titleForSegmentAtIndex(person.selectedSegmentIndex) {
             let realm = Realm()
             realm.beginWrite()
-            let date = NSDate()
-            let amount = amount
-            realm.create(Expense.self, value: [amount, date])
+            realm.create(Expense.self, value: [amount,categoryOrEmpty,person,date])
             realm.commitWrite()
         }
     }
@@ -38,6 +38,8 @@ class ComposeExpenseViewController: UIViewController {
     }
     
     func dismissViewController(){
+        amount.resignFirstResponder()
+        category.resignFirstResponder()
         self.dismissViewControllerAnimated(true, completion: nil)
     }
 }
