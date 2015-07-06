@@ -7,9 +7,11 @@ class Expense: Object {
     dynamic var date = NSDate()
     
     static func isAmountValid(amount:String?) -> Bool {
-        if amount == nil {
+        if let amount = amount?.amount {
+            return true
+        }
+        else {
             return false
         }
-        return false
     }
 }
