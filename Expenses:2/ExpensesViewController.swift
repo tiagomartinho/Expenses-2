@@ -11,7 +11,7 @@ class ExpensesViewController: UIViewController, UITableViewDataSource, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         setupTableView()
         
         notificationToken = Realm().addNotificationBlock { [unowned self] note, realm in
@@ -40,15 +40,6 @@ class ExpensesViewController: UIViewController, UITableViewDataSource, UITableVi
         if let vc = self.storyboard?.instantiateViewControllerWithIdentifier("ComposeExpenseViewController") as? UIViewController {
             self.presentViewController(vc, animated: true, completion: nil)
         }
-    }
-    
-    func addRandomExpense() {
-        let realm = Realm()
-        realm.beginWrite()
-        let date = NSDate()
-        let amount = 0
-        realm.create(Expense.self, value: [amount, date])
-        realm.commitWrite()
     }
     
     // MARK: Tableview data source

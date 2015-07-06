@@ -5,4 +5,11 @@ class Expense: Object {
     dynamic var category = ""
     dynamic var person = ""
     dynamic var date = NSDate()
+    
+    static func isAmountValid(amount:String?) -> Bool {
+        if amount == nil {
+            return false
+        }
+        return false
+    }
 }

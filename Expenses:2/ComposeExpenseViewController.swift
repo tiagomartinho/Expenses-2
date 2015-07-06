@@ -1,4 +1,5 @@
 import UIKit
+import RealmSwift
 
 class ComposeExpenseViewController: UIViewController {
 
@@ -12,11 +13,24 @@ class ComposeExpenseViewController: UIViewController {
     }
     
     @IBAction func save(sender: UIBarButtonItem) {
-        if let person = person.titleForSegmentAtIndex(person.selectedSegmentIndex) {
-            
+        if Expense.isAmountValid(amount?.text) {
+            addExpense()
+            dismissViewController()
         }
-
-        dismissViewController()
+        else {
+            // TODO notify the user
+        }
+    }
+    
+    func addExpense() {
+        if let person = person.titleForSegmentAtIndex(person.selectedSegmentIndex) {
+            let realm = Realm()
+            realm.beginWrite()
+            let date = NSDate()
+            let amount = 0
+            realm.create(Expense.self, value: [amount, date])
+            realm.commitWrite()
+        }
     }
     
     @IBAction func cancel(sender: UIBarButtonItem) {
