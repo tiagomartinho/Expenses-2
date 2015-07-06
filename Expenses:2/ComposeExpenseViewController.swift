@@ -13,8 +13,8 @@ class ComposeExpenseViewController: UIViewController {
     }
     
     @IBAction func save(sender: UIBarButtonItem) {
-        if Expense.isAmountValid(amount?.text) {
-            addExpense()
+        if let amount = amount?.text.amount {
+            addExpense(amount)
             dismissViewController()
         }
         else {
@@ -22,12 +22,12 @@ class ComposeExpenseViewController: UIViewController {
         }
     }
     
-    func addExpense() {
+    func addExpense(amount:Double) {
         if let person = person.titleForSegmentAtIndex(person.selectedSegmentIndex) {
             let realm = Realm()
             realm.beginWrite()
             let date = NSDate()
-            let amount = 0
+            let amount = amount
             realm.create(Expense.self, value: [amount, date])
             realm.commitWrite()
         }
