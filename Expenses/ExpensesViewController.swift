@@ -29,7 +29,7 @@ class ExpensesViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func updateSummary(){
         if let person1Name = defaults.objectForKey(kUD_Person1) as? String, let person2Name = defaults.objectForKey(kUD_Person2) as? String {
-            summary.text = person1Name + " owns " + person2Name + " 12.34€"
+            summary.text = person1Name + " owes " + person2Name + " 12.34€"
         }
     }
     
