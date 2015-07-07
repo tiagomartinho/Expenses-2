@@ -25,12 +25,13 @@ class ExpensesViewController: UIViewController, UITableViewDataSource, UITableVi
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         updateSummary()
+        expensesTableView.reloadData()
     }
     
     func updateSummary(){
-        if let person1Name = defaults.objectForKey(kUD_Person1) as? String, let person2Name = defaults.objectForKey(kUD_Person2) as? String {
-            summary.text = person1Name + " owes " + person2Name + " 12.34€"
-        }
+        let person1Name = defaults.objectForKey(kUD_Person1) as? String ?? "1"
+        let person2Name = defaults.objectForKey(kUD_Person2) as? String ?? "2"
+        summary.text = person1Name + " owes " + person2Name + " 12.34€"
     }
     
     func setupTableView(){
@@ -58,7 +59,16 @@ class ExpensesViewController: UIViewController, UITableViewDataSource, UITableVi
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "dd/MM/YY"
         let formattedDate = dateFormatter.stringFromDate(expense.date).uppercaseString
-        cell.detailTextLabel?.text = expense.person + " " + expense.category + " "  + formattedDate
+        
+        let person:String
+        if expense.personIndex == 0 {
+            person = defaults.objectForKey(kUD_Person1) as? String ?? "1"
+        }
+        else {
+            person = defaults.objectForKey(kUD_Person2) as? String ?? "2"
+        }
+        
+        cell.detailTextLabel?.text = person + " " + expense.category + " "  + formattedDate
         
         return cell
     }

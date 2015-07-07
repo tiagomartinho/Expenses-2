@@ -13,6 +13,16 @@ class ComposeExpenseViewController: UIViewController {
         super.viewDidLoad()
         amount.becomeFirstResponder()
         amountDefaultBackgroundColor = amount.backgroundColor
+        updateSegmentedControl()
+    }
+    
+    func updateSegmentedControl(){
+        if let person1Name = defaults.objectForKey(kUD_Person1) as? String {
+            person.setTitle(person1Name, forSegmentAtIndex: 0)
+        }
+        if let person2Name = defaults.objectForKey(kUD_Person2) as? String {
+            person.setTitle(person2Name, forSegmentAtIndex: 1)
+        }
     }
     
     func popToExpensesViewController(){
@@ -32,12 +42,11 @@ class ComposeExpenseViewController: UIViewController {
     func addExpense(amount:Double) {
         let date = NSDate()
         let categoryOrEmpty = category?.text ?? ""
-        if let person = person.titleForSegmentAtIndex(person.selectedSegmentIndex) {
-            let realm = Realm()
-            realm.beginWrite()
-            realm.create(Expense.self, value: [amount,categoryOrEmpty,person,date])
-            realm.commitWrite()
-        }
+        let personIndex = person.selectedSegmentIndex
+        let realm = Realm()
+        realm.beginWrite()
+        realm.create(Expense.self, value: [personIndex,amount,categoryOrEmpty,date])
+        realm.commitWrite()
     }
     
     func setAmountBackground(){
