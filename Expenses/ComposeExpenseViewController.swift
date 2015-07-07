@@ -49,13 +49,10 @@ class ComposeExpenseViewController: UIViewController {
     func setAmountBackground(){
         UIView.animateWithDuration(0.5, animations: { [unowned self] in
             self.amount.backgroundColor = UIColor.redColor()
-            })
-        NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "resetAmountBackground:", userInfo: nil, repeats: false)
-    }
-    
-    func resetAmountBackground(nsTimer: NSTimer) {
-        UIView.animateWithDuration(0.5, animations: { [unowned self] in
-            self.amount.backgroundColor = self.amountDefaultBackgroundColor
-            })
+            }) { (_) -> Void in
+                UIView.animateWithDuration(0.5, animations: { [unowned self] in
+                    self.amount.backgroundColor = self.amountDefaultBackgroundColor
+                    })
+        }
     }
 }
