@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4B3ADD5DE8E5911DA477B05B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B04D7993F9E605EE35BD78F /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		E6251210A9C0DDD8FA236AC8 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B04D7993F9E605EE35BD78F /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		EA0BB10D1B4C6A7000703D4F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0BB10C1B4C6A7000703D4F /* Constants.swift */; };
 		EA877CD81B4B0BD100F4B4E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA877CCB1B4B0BD100F4B4E8 /* AppDelegate.swift */; };
 		EA877CD91B4B0BD100F4B4E8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA877CCD1B4B0BD100F4B4E8 /* LaunchScreen.xib */; };
 		EA877CDA1B4B0BD100F4B4E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA877CCF1B4B0BD100F4B4E8 /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 		BF6F2CD0CBBC936C01AD5D32 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		EA01153E1B4752E700EA613C /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Pods/Alamofire.framework"; sourceTree = "<group>"; };
 		EA01153F1B4752E700EA613C /* SwiftyDropbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyDropbox.framework; path = "Pods/../build/Debug-iphoneos/Pods/SwiftyDropbox.framework"; sourceTree = "<group>"; };
+		EA0BB10C1B4C6A7000703D4F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = SOURCE_ROOT; };
 		EA4B59B81B472457000BE503 /* Expenses:2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Expenses:2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA4B59CD1B472458000BE503 /* ExpensesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExpensesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA877CCB1B4B0BD100F4B4E8 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Expenses/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
@@ -144,6 +146,7 @@
 				EA877CD51B4B0BD100F4B4E8 /* Images.xcassets */,
 				EA877CD61B4B0BD100F4B4E8 /* Info.plist */,
 				EA877CD71B4B0BD100F4B4E8 /* StringExtension.swift */,
+				EA0BB10C1B4C6A7000703D4F /* Constants.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 				EA877CD81B4B0BD100F4B4E8 /* AppDelegate.swift in Sources */,
 				EA877CE11B4B0BD100F4B4E8 /* StringExtension.swift in Sources */,
 				EA877CDC1B4B0BD100F4B4E8 /* Expense.swift in Sources */,
+				EA0BB10D1B4C6A7000703D4F /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
