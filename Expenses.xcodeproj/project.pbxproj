@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3DA9AF8A8B8C25FE056EE9BA /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B04D7993F9E605EE35BD78F /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		BF38C9AE07B115ACB33ECDD6 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B04D7993F9E605EE35BD78F /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		EA877CD81B4B0BD100F4B4E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA877CCB1B4B0BD100F4B4E8 /* AppDelegate.swift */; };
 		EA877CD91B4B0BD100F4B4E8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA877CCD1B4B0BD100F4B4E8 /* LaunchScreen.xib */; };
 		EA877CDA1B4B0BD100F4B4E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA877CCF1B4B0BD100F4B4E8 /* Main.storyboard */; };
@@ -65,7 +63,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3DA9AF8A8B8C25FE056EE9BA /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,7 +70,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF38C9AE07B115ACB33ECDD6 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,9 +176,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EA4B59B71B472457000BE503 /* Expenses:2 */ = {
+		EA4B59B71B472457000BE503 /* Expenses */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EA4B59D71B472458000BE503 /* Build configuration list for PBXNativeTarget "Expenses:2" */;
+			buildConfigurationList = EA4B59D71B472458000BE503 /* Build configuration list for PBXNativeTarget "Expenses" */;
 			buildPhases = (
 				914E82A27E4ED15BCFBA9A5B /* Check Pods Manifest.lock */,
 				EA4B59B41B472457000BE503 /* Sources */,
@@ -195,7 +191,7 @@
 			);
 			dependencies = (
 			);
-			name = "Expenses:2";
+			name = Expenses;
 			productName = "Expenses:2";
 			productReference = EA4B59B81B472457000BE503 /* Expenses:2.app */;
 			productType = "com.apple.product-type.application";
@@ -252,7 +248,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EA4B59B71B472457000BE503 /* Expenses:2 */,
+				EA4B59B71B472457000BE503 /* Expenses */,
 				EA4B59CC1B472458000BE503 /* ExpensesTests */,
 			);
 		};
@@ -400,7 +396,7 @@
 /* Begin PBXTargetDependency section */
 		EA4B59CF1B472458000BE503 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = EA4B59B71B472457000BE503 /* Expenses:2 */;
+			target = EA4B59B71B472457000BE503 /* Expenses */;
 			targetProxy = EA4B59CE1B472458000BE503 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -513,11 +509,7 @@
 			baseConfigurationReference = 6D343559D24EBFBA61C084C6 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/build/Debug-iphoneos/Pods",
-					"$(PROJECT_DIR)/build/Debug-iphoneos",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Expenses/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -530,11 +522,7 @@
 			baseConfigurationReference = BF6F2CD0CBBC936C01AD5D32 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/build/Debug-iphoneos/Pods",
-					"$(PROJECT_DIR)/build/Debug-iphoneos",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Expenses/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -551,8 +539,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
-					"$(PROJECT_DIR)/build/Debug-iphoneos/Pods",
-					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -562,7 +548,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = ExpensesTests;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Expenses.app/Expenses";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Expenses:2.app/Expenses:2";
 			};
 			name = Debug;
 		};
@@ -575,13 +561,11 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
-					"$(PROJECT_DIR)/build/Debug-iphoneos/Pods",
-					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = ExpensesTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = ExpensesTests;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Expenses.app/Expenses";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Expenses:2.app/Expenses:2";
 			};
 			name = Release;
 		};
@@ -597,7 +581,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EA4B59D71B472458000BE503 /* Build configuration list for PBXNativeTarget "Expenses:2" */ = {
+		EA4B59D71B472458000BE503 /* Build configuration list for PBXNativeTarget "Expenses" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EA4B59D81B472458000BE503 /* Debug */,
