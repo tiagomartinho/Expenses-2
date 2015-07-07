@@ -220,8 +220,8 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="erl-27-m6l" id="Dzl-U5-Uv4">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of the Person #2" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K0d-HC-VFB">
-                                                    <rect key="frame" x="104" y="7" width="478" height="30"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of the Person #2" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K0d-HC-VFB">
+                                                    <rect key="frame" x="104" y="13" width="478" height="17"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="507" id="eOJ-30-OkA"/>
                                                     </constraints>
