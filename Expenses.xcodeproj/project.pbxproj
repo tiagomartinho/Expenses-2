@@ -19,7 +19,6 @@
 		EA877CDF1B4B0BD100F4B4E8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA877CD51B4B0BD100F4B4E8 /* Images.xcassets */; };
 		EA877CE11B4B0BD100F4B4E8 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA877CD71B4B0BD100F4B4E8 /* StringExtension.swift */; };
 		EA877CE81B4B0BF800F4B4E8 /* ConvertAmountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA877CE21B4B0BED00F4B4E8 /* ConvertAmountTests.swift */; };
-		EA877CE91B4B0BFB00F4B4E8 /* DropboxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA877CE31B4B0BED00F4B4E8 /* DropboxTests.swift */; };
 		EA877CEB1B4B0C3D00F4B4E8 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA877CD71B4B0BD100F4B4E8 /* StringExtension.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,7 +38,7 @@
 		BF6F2CD0CBBC936C01AD5D32 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		EA01153E1B4752E700EA613C /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Pods/Alamofire.framework"; sourceTree = "<group>"; };
 		EA01153F1B4752E700EA613C /* SwiftyDropbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyDropbox.framework; path = "Pods/../build/Debug-iphoneos/Pods/SwiftyDropbox.framework"; sourceTree = "<group>"; };
-		EA4B59B81B472457000BE503 /* Expenses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Expenses.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA4B59B81B472457000BE503 /* Expenses:2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Expenses:2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA4B59CD1B472458000BE503 /* ExpensesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExpensesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA877CCB1B4B0BD100F4B4E8 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Expenses/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		EA877CCE1B4B0BD100F4B4E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = LaunchScreen.xib; sourceTree = "<group>"; };
@@ -115,7 +114,7 @@
 		EA4B59B91B472457000BE503 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EA4B59B81B472457000BE503 /* Expenses.app */,
+				EA4B59B81B472457000BE503 /* Expenses:2.app */,
 				EA4B59CD1B472458000BE503 /* ExpensesTests.xctest */,
 			);
 			name = Products;
@@ -195,7 +194,7 @@
 			);
 			name = "Expenses:2";
 			productName = "Expenses:2";
-			productReference = EA4B59B81B472457000BE503 /* Expenses.app */;
+			productReference = EA4B59B81B472457000BE503 /* Expenses:2.app */;
 			productType = "com.apple.product-type.application";
 		};
 		EA4B59CC1B472458000BE503 /* ExpensesTests */ = {
@@ -387,7 +386,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA877CE91B4B0BFB00F4B4E8 /* DropboxTests.swift in Sources */,
 				EA877CE81B4B0BF800F4B4E8 /* ConvertAmountTests.swift in Sources */,
 				EA877CEB1B4B0C3D00F4B4E8 /* StringExtension.swift in Sources */,
 			);
@@ -519,7 +517,7 @@
 				INFOPLIST_FILE = Expenses/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = Expenses;
+				PRODUCT_NAME = "Expenses:2";
 			};
 			name = Debug;
 		};
@@ -536,7 +534,7 @@
 				INFOPLIST_FILE = Expenses/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = Expenses;
+				PRODUCT_NAME = "Expenses:2";
 			};
 			name = Release;
 		};
