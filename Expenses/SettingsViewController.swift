@@ -33,5 +33,7 @@ class SettingsViewController: UITableViewController {
         if sender.placeholder?.hasSuffix("2") ?? false {
             defaults.setObject(name, forKey: kUD_Person2)
         }
+        
+        defaults.synchronize()
     }
 }

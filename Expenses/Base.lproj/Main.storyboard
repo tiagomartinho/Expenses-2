@@ -17,15 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X owes Y €23.42" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="szT-fg-1GZ">
-                                <rect key="frame" x="16" y="84" width="568" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="DUf-0j-P2A">
-                                <rect key="frame" x="0.0" y="125" width="600" height="475"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="113" width="600" height="487"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ExpenseCell" textLabel="UTs-B5-Pqp" detailTextLabel="6d6-Vb-b1b" style="IBUITableViewCellStyleSubtitle" id="L3Q-7J-aQd" customClass="ExpenseCell" customModule="Expenses_2" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -50,12 +43,18 @@
                                 </prototypes>
                                 <sections/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 owes 2 €23.42" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="szT-fg-1GZ">
+                                <rect key="frame" x="16" y="84" width="568" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="DUf-0j-P2A" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="7Eq-Xz-n1Q"/>
                             <constraint firstItem="DUf-0j-P2A" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="DFE-k6-R7e"/>
-                            <constraint firstItem="DUf-0j-P2A" firstAttribute="top" secondItem="szT-fg-1GZ" secondAttribute="bottom" constant="20" id="E2u-XK-44Z"/>
+                            <constraint firstItem="DUf-0j-P2A" firstAttribute="top" secondItem="szT-fg-1GZ" secondAttribute="bottom" constant="8" symbolic="YES" id="E2u-XK-44Z"/>
                             <constraint firstItem="DUf-0j-P2A" firstAttribute="centerX" secondItem="szT-fg-1GZ" secondAttribute="centerX" id="F9M-57-kyx"/>
                             <constraint firstItem="DUf-0j-P2A" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="R8i-65-uiv"/>
                             <constraint firstAttribute="trailingMargin" secondItem="szT-fg-1GZ" secondAttribute="trailing" id="cjy-eD-5cj"/>
@@ -86,6 +85,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="expensesTableView" destination="DUf-0j-P2A" id="VNh-QK-LIf"/>
+                        <outlet property="summary" destination="szT-fg-1GZ" id="ksp-VS-nrJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -107,8 +107,8 @@
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="L2p-3C-R8a">
                                 <rect key="frame" x="16" y="72" width="568" height="29"/>
                                 <segments>
-                                    <segment title="X"/>
-                                    <segment title="Y"/>
+                                    <segment title="1"/>
+                                    <segment title="2"/>
                                 </segments>
                             </segmentedControl>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Amount" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bZO-H8-ZQA">

@@ -7,6 +7,7 @@ class ExpensesViewController: UIViewController, UITableViewDataSource, UITableVi
     var array = Realm().objects(Expense).sorted("date",ascending:false)
     var notificationToken: NotificationToken?
 
+    @IBOutlet weak var summary: UILabel!
     @IBOutlet weak var expensesTableView: UITableView!
     
     override func viewDidLoad() {
@@ -19,6 +20,17 @@ class ExpensesViewController: UIViewController, UITableViewDataSource, UITableVi
         }
         
         expensesTableView.reloadData()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        updateSummary()
+    }
+    
+    func updateSummary(){
+        if let person1Name = defaults.objectForKey(kUD_Person1) as? String, let person2Name = defaults.objectForKey(kUD_Person2) as? String {
+            summary.text = person1Name + " owns " + person2Name + " 12.34€"
+        }
     }
     
     func setupTableView(){
