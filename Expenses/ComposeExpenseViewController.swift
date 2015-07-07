@@ -15,20 +15,14 @@ class ComposeExpenseViewController: UIViewController {
         amountDefaultBackgroundColor = amount.backgroundColor
     }
     
-    @IBAction func cancel(sender: UIBarButtonItem) {
-        dismissViewController()
-    }
-    
-    func dismissViewController(){
-        amount.resignFirstResponder()
-        category.resignFirstResponder()
-        self.dismissViewControllerAnimated(true, completion: nil)
+    func popToExpensesViewController(){
+        self.navigationController?.popToRootViewControllerAnimated(true)
     }
     
     @IBAction func save(sender: UIBarButtonItem) {
         if let amount = amount?.text.amount {
             addExpense(amount)
-            dismissViewController()
+            popToExpensesViewController()
         }
         else {
             setAmountBackground()
