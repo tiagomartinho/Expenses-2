@@ -32,12 +32,26 @@ class ExpensesViewController: UIViewController, UITableViewDataSource, UITableVi
         }
     }
     
+    @IBAction func settings(sender: UIBarButtonItem) {
+        pushSettingsViewController()
+    }
+    
     @IBAction func composeExpense(sender: UIBarButtonItem) {
         pushComposeExpenseViewController()
     }
     
+    // MARK: Push View Controllers
+
+    func pushSettingsViewController(){
+        pushViewController("SettingsViewController")
+    }
+    
     func pushComposeExpenseViewController(){
-        if let vc = self.storyboard?.instantiateViewControllerWithIdentifier("ComposeExpenseViewController") as? UIViewController {
+        pushViewController("ComposeExpenseViewController")
+    }
+    
+    func pushViewController(identifier:String){
+        if let vc = self.storyboard?.instantiateViewControllerWithIdentifier(identifier) as? UIViewController {
             self.presentViewController(vc, animated: true, completion: nil)
         }
     }

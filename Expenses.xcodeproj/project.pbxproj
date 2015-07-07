@@ -20,6 +20,7 @@
 		EA877CE11B4B0BD100F4B4E8 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA877CD71B4B0BD100F4B4E8 /* StringExtension.swift */; };
 		EA877CE81B4B0BF800F4B4E8 /* ConvertAmountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA877CE21B4B0BED00F4B4E8 /* ConvertAmountTests.swift */; };
 		EA877CEB1B4B0C3D00F4B4E8 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA877CD71B4B0BD100F4B4E8 /* StringExtension.swift */; };
+		EAC3547B1B4BA2060088ACF7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC3547A1B4BA2060088ACF7 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		EA877CE21B4B0BED00F4B4E8 /* ConvertAmountTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConvertAmountTests.swift; path = ExpensesTests/ConvertAmountTests.swift; sourceTree = SOURCE_ROOT; };
 		EA877CE31B4B0BED00F4B4E8 /* DropboxTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DropboxTests.swift; path = ExpensesTests/DropboxTests.swift; sourceTree = SOURCE_ROOT; };
 		EA877CE41B4B0BED00F4B4E8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ExpensesTests/Info.plist; sourceTree = SOURCE_ROOT; };
+		EAC3547A1B4BA2060088ACF7 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Expenses/SettingsViewController.swift; sourceTree = SOURCE_ROOT; };
 		EAEFF59F1B4750B900C70CB1 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Pods/Alamofire.framework"; sourceTree = "<group>"; };
 		EAEFF5A01B4750B900C70CB1 /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = "Pods/../build/Debug-iphoneos/Pods.framework"; sourceTree = "<group>"; };
 		EAEFF5A11B4750B900C70CB1 /* SwiftyDropbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyDropbox.framework; path = "Pods/../build/Debug-iphoneos/Pods/SwiftyDropbox.framework"; sourceTree = "<group>"; };
@@ -124,10 +126,11 @@
 			isa = PBXGroup;
 			children = (
 				EA877CCB1B4B0BD100F4B4E8 /* AppDelegate.swift */,
-				EA877CD11B4B0BD100F4B4E8 /* ComposeExpenseViewController.swift */,
 				EA877CD21B4B0BD100F4B4E8 /* Expense.swift */,
 				EA877CD31B4B0BD100F4B4E8 /* ExpenseCell.swift */,
 				EA877CD41B4B0BD100F4B4E8 /* ExpensesViewController.swift */,
+				EA877CD11B4B0BD100F4B4E8 /* ComposeExpenseViewController.swift */,
+				EAC3547A1B4BA2060088ACF7 /* SettingsViewController.swift */,
 				EA4B59BB1B472457000BE503 /* Supporting Files */,
 			);
 			name = Expenses;
@@ -375,6 +378,7 @@
 			files = (
 				EA877CDD1B4B0BD100F4B4E8 /* ExpenseCell.swift in Sources */,
 				EA877CDE1B4B0BD100F4B4E8 /* ExpensesViewController.swift in Sources */,
+				EAC3547B1B4BA2060088ACF7 /* SettingsViewController.swift in Sources */,
 				EA877CDB1B4B0BD100F4B4E8 /* ComposeExpenseViewController.swift in Sources */,
 				EA877CD81B4B0BD100F4B4E8 /* AppDelegate.swift in Sources */,
 				EA877CE11B4B0BD100F4B4E8 /* StringExtension.swift in Sources */,
