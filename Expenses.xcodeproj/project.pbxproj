@@ -143,6 +143,7 @@
 		EA4B59BA1B472457000BE503 /* Expenses */ = {
 			isa = PBXGroup;
 			children = (
+				EA877CCF1B4B0BD100F4B4E8 /* Main.storyboard */,
 				EA877CCB1B4B0BD100F4B4E8 /* AppDelegate.swift */,
 				EA0B5F1D1B4D97F4007B91FE /* Balance */,
 				EA877CD21B4B0BD100F4B4E8 /* Expense.swift */,
@@ -192,7 +193,6 @@
 			isa = PBXGroup;
 			children = (
 				EA877CCD1B4B0BD100F4B4E8 /* LaunchScreen.xib */,
-				EA877CCF1B4B0BD100F4B4E8 /* Main.storyboard */,
 			);
 			name = Base.lproj;
 			path = Expenses/Base.lproj;
@@ -455,6 +455,7 @@
 				EA877CD01B4B0BD100F4B4E8 /* Base */,
 			);
 			name = Main.storyboard;
+			path = ../Expenses/Base.lproj;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
