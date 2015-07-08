@@ -18,14 +18,11 @@ class ExpensesViewController: UIViewController, UITableViewDataSource, UITableVi
         notificationToken = Realm().addNotificationBlock { [unowned self] note, realm in
             self.expensesTableView.reloadData()
         }
-        
-        expensesTableView.reloadData()
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         updateSummary()
-        expensesTableView.reloadData()
     }
     
     func updateSummary(){
