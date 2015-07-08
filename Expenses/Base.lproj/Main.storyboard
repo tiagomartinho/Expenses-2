@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 owes 2 €23.42" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="szT-fg-1GZ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 owes 2 €23.42" textAlignment="center" lineBreakMode="middleTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="szT-fg-1GZ">
                                 <rect key="frame" x="16" y="104" width="568" height="36"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -45,9 +45,22 @@
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKo-8H-96l">
                                                     <rect key="frame" x="304" y="11" width="140" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" id="DaZ-LE-sBq"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="DaZ-LE-sBq"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                        <mask key="constraints">
+                                                            <include reference="DaZ-LE-sBq"/>
+                                                        </mask>
+                                                    </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="500€" textAlignment="right" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cey-0q-Sbh">
                                                     <rect key="frame" x="8" y="11" width="140" height="21"/>
@@ -58,6 +71,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="centerY" secondItem="PKo-8H-96l" secondAttribute="centerY" id="8Ry-Cg-3LN"/>
+                                                <constraint firstItem="tFb-Bf-0HF" firstAttribute="width" secondItem="cey-0q-Sbh" secondAttribute="width" id="8hZ-W2-Kp7"/>
                                                 <constraint firstItem="PKo-8H-96l" firstAttribute="leading" secondItem="tFb-Bf-0HF" secondAttribute="trailing" constant="8" symbolic="YES" id="9R4-Mn-PE3"/>
                                                 <constraint firstItem="PKo-8H-96l" firstAttribute="width" secondItem="tFb-Bf-0HF" secondAttribute="width" id="DVS-05-SPM"/>
                                                 <constraint firstAttribute="centerY" secondItem="cey-0q-Sbh" secondAttribute="centerY" id="F74-Tb-FJt"/>
@@ -68,8 +82,24 @@
                                                 <constraint firstItem="cey-0q-Sbh" firstAttribute="width" secondItem="PKo-8H-96l" secondAttribute="width" id="dj3-4f-fSR"/>
                                                 <constraint firstItem="4Nf-6E-FPk" firstAttribute="trailing" secondItem="4Ye-6P-SGB" secondAttribute="trailingMargin" id="nz5-rF-J4B"/>
                                                 <constraint firstItem="4Nf-6E-FPk" firstAttribute="width" secondItem="PKo-8H-96l" secondAttribute="width" id="oCj-wu-FFq"/>
+                                                <constraint firstItem="4Nf-6E-FPk" firstAttribute="width" secondItem="tFb-Bf-0HF" secondAttribute="width" id="ouJ-nN-9LZ"/>
                                                 <constraint firstItem="cey-0q-Sbh" firstAttribute="leading" secondItem="4Ye-6P-SGB" secondAttribute="leadingMargin" id="wAL-Lu-1Nb"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="8hZ-W2-Kp7"/>
+                                                    <exclude reference="ouJ-nN-9LZ"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=compact">
+                                                <mask key="constraints">
+                                                    <exclude reference="dj3-4f-fSR"/>
+                                                    <include reference="8hZ-W2-Kp7"/>
+                                                    <exclude reference="DVS-05-SPM"/>
+                                                    <exclude reference="oCj-wu-FFq"/>
+                                                    <include reference="ouJ-nN-9LZ"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="amountLabel" destination="cey-0q-Sbh" id="e93-fi-39S"/>
