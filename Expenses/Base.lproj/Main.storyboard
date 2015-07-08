@@ -261,8 +261,8 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of the Person #1" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Rn-op-K3q">
-                                                    <rect key="frame" x="104" y="13" width="478" height="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of the Person #1" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="6Rn-op-K3q">
+                                                    <rect key="frame" x="104" y="12" width="478" height="19"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="507" id="PiX-12-TDE"/>
                                                     </constraints>
@@ -298,7 +298,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="erl-27-m6l" id="Dzl-U5-Uv4">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of the Person #2" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K0d-HC-VFB">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of the Person #2" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="K0d-HC-VFB">
                                                     <rect key="frame" x="104" y="13" width="478" height="17"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="507" id="eOJ-30-OkA"/>
