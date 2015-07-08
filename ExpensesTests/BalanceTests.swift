@@ -4,16 +4,24 @@ import Expenses_2
 
 class BalanceTests: XCTestCase {
 
+    let value = 12.34
+
     func testEmptyRealmGivesZeroBalance() {
         deleteAllEntries()
         XCTAssertEqual(0.0, Balance.total())
     }
     
     func testOneEntryGivesSameAmountBalance() {
-        let value = 12.34
         deleteAllEntries()
         addEntry(value)
         XCTAssertEqual(value, Balance.total())
+    }
+    
+    func testTwoEntriesGivesSumAmountBalance() {
+        deleteAllEntries()
+        addEntry(value)
+        addEntry(value)
+        XCTAssertEqual(value+value, Balance.total())
     }
     
     func deleteAllEntries(){
