@@ -24,6 +24,13 @@ class BalanceTests: XCTestCase {
         XCTAssertEqual(value+value, Balance.total())
     }
     
+    func testTwoEqualEntriesFromDifferentPersonsGivesZeroBalance() {
+        deleteAllEntries()
+        addEntry(value)
+        addEntry(value,personIndex:1)
+        XCTAssertEqual(0.0, Balance.total())
+    }
+    
     func deleteAllEntries(){
         let realm = Realm()
         realm.beginWrite()

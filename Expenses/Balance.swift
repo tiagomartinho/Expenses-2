@@ -4,7 +4,12 @@ public class Balance {
     public static func total()->Double{
         var total = 0.0
         for expense in Realm().objects(Expense) {
-            total += expense.amount
+            if expense.personIndex == 0 {
+                total += expense.amount
+            }
+            else {
+                total -= expense.amount
+            }
         }
         return total
     }
