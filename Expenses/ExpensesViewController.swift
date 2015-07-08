@@ -26,9 +26,7 @@ class ExpensesViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func updateSummary(){
-        let person1Name = defaults.objectForKey(kUD_Person1) as? String ?? "1"
-        let person2Name = defaults.objectForKey(kUD_Person2) as? String ?? "2"
-        summary.text = person1Name + " owes " + person2Name + " 12.34€"
+        summary.text = Balance.summary()
     }
     
     func setupTableView(){
@@ -49,7 +47,7 @@ class ExpensesViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("ExpenseCell") as! ExpenseCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("ExpenseCell") as! UITableViewCell
         
         let expense = array[indexPath.row]
         cell.textLabel?.text = "\(expense.amount) €"

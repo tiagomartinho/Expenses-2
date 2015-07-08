@@ -19,7 +19,6 @@
 		EA877CDA1B4B0BD100F4B4E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA877CCF1B4B0BD100F4B4E8 /* Main.storyboard */; };
 		EA877CDB1B4B0BD100F4B4E8 /* ComposeExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA877CD11B4B0BD100F4B4E8 /* ComposeExpenseViewController.swift */; };
 		EA877CDC1B4B0BD100F4B4E8 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA877CD21B4B0BD100F4B4E8 /* Expense.swift */; };
-		EA877CDD1B4B0BD100F4B4E8 /* ExpenseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA877CD31B4B0BD100F4B4E8 /* ExpenseCell.swift */; };
 		EA877CDE1B4B0BD100F4B4E8 /* ExpensesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA877CD41B4B0BD100F4B4E8 /* ExpensesViewController.swift */; };
 		EA877CDF1B4B0BD100F4B4E8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA877CD51B4B0BD100F4B4E8 /* Images.xcassets */; };
 		EA877CE11B4B0BD100F4B4E8 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA877CD71B4B0BD100F4B4E8 /* StringExtension.swift */; };
@@ -55,7 +54,6 @@
 		EA877CD01B4B0BD100F4B4E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
 		EA877CD11B4B0BD100F4B4E8 /* ComposeExpenseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ComposeExpenseViewController.swift; path = Expenses/ComposeExpenseViewController.swift; sourceTree = SOURCE_ROOT; };
 		EA877CD21B4B0BD100F4B4E8 /* Expense.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Expense.swift; path = "/Users/martinho/Desktop/Expenses/Expenses:2/../Expenses/Expense.swift"; sourceTree = "<absolute>"; };
-		EA877CD31B4B0BD100F4B4E8 /* ExpenseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExpenseCell.swift; path = Expenses/ExpenseCell.swift; sourceTree = SOURCE_ROOT; };
 		EA877CD41B4B0BD100F4B4E8 /* ExpensesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExpensesViewController.swift; path = Expenses/ExpensesViewController.swift; sourceTree = SOURCE_ROOT; };
 		EA877CD51B4B0BD100F4B4E8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Expenses/Images.xcassets; sourceTree = SOURCE_ROOT; };
 		EA877CD61B4B0BD100F4B4E8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Expenses/Info.plist; sourceTree = SOURCE_ROOT; };
@@ -146,7 +144,6 @@
 				EA877CCB1B4B0BD100F4B4E8 /* AppDelegate.swift */,
 				EA0B5F1D1B4D97F4007B91FE /* Balance */,
 				EA877CD21B4B0BD100F4B4E8 /* Expense.swift */,
-				EA877CD31B4B0BD100F4B4E8 /* ExpenseCell.swift */,
 				EA877CD41B4B0BD100F4B4E8 /* ExpensesViewController.swift */,
 				EA877CD11B4B0BD100F4B4E8 /* ComposeExpenseViewController.swift */,
 				EAC3547A1B4BA2060088ACF7 /* SettingsViewController.swift */,
@@ -398,7 +395,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA877CDD1B4B0BD100F4B4E8 /* ExpenseCell.swift in Sources */,
 				EA877CDE1B4B0BD100F4B4E8 /* ExpensesViewController.swift in Sources */,
 				EAC3547B1B4BA2060088ACF7 /* SettingsViewController.swift in Sources */,
 				EA877CDB1B4B0BD100F4B4E8 /* ComposeExpenseViewController.swift in Sources */,
