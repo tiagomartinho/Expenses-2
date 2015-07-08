@@ -6,9 +6,10 @@ class BalanceTests: XCTestCase {
 
     let value = 12.34
 
-    func testEmptyRealmGivesZeroBalance() {
+    func testEmpty() {
         deleteAllEntries()
         XCTAssertEqual(0.0, Balance.total())
+        XCTAssertEqual("zero_balance".localized, Balance.summary())
     }
     
     func testOneEntryGivesSameAmountBalance() {

@@ -1,6 +1,10 @@
 import Foundation
 
 extension String {
+    var localized: String {
+        return NSLocalizedString(self, tableName: nil, bundle: NSBundle.mainBundle(), value: "", comment: "")
+    }
+    
     var amount: Double? {
         let amount = self.removeWhitespaces()
         if let doubleValue = amount.doubleValueComma {

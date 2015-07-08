@@ -12,6 +12,7 @@
 		EA0B5F161B4D95B8007B91FE /* BalanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0B5F151B4D95B8007B91FE /* BalanceTests.swift */; };
 		EA0B5F181B4D95C8007B91FE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0B5F171B4D95C8007B91FE /* Constants.swift */; };
 		EA0B5F1C1B4D97D4007B91FE /* Balance.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0B5F1B1B4D97D4007B91FE /* Balance.swift */; };
+		EA0B5F281B4DAE25007B91FE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA0B5F2A1B4DAE25007B91FE /* Localizable.strings */; };
 		EA877CD81B4B0BD100F4B4E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA877CCB1B4B0BD100F4B4E8 /* AppDelegate.swift */; };
 		EA877CD91B4B0BD100F4B4E8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA877CCD1B4B0BD100F4B4E8 /* LaunchScreen.xib */; };
 		EA877CDA1B4B0BD100F4B4E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA877CCF1B4B0BD100F4B4E8 /* Main.storyboard */; };
@@ -45,6 +46,7 @@
 		EA0B5F151B4D95B8007B91FE /* BalanceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BalanceTests.swift; path = ExpensesTests/BalanceTests.swift; sourceTree = SOURCE_ROOT; };
 		EA0B5F171B4D95C8007B91FE /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Expenses/Constants.swift; sourceTree = SOURCE_ROOT; };
 		EA0B5F1B1B4D97D4007B91FE /* Balance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Balance.swift; path = Expenses/Balance.swift; sourceTree = SOURCE_ROOT; };
+		EA0B5F291B4DAE25007B91FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EA4B59B81B472457000BE503 /* Expenses:2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Expenses:2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA4B59CD1B472458000BE503 /* ExpensesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExpensesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA877CCB1B4B0BD100F4B4E8 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Expenses/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
@@ -148,6 +150,7 @@
 				EA877CD11B4B0BD100F4B4E8 /* ComposeExpenseViewController.swift */,
 				EAC3547A1B4BA2060088ACF7 /* SettingsViewController.swift */,
 				EA4B59BB1B472457000BE503 /* Supporting Files */,
+				EA0B5F2A1B4DAE25007B91FE /* Localizable.strings */,
 			);
 			name = Expenses;
 			path = "Expenses:2";
@@ -281,6 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA877CD91B4B0BD100F4B4E8 /* LaunchScreen.xib in Resources */,
+				EA0B5F281B4DAE25007B91FE /* Localizable.strings in Resources */,
 				EA877CDA1B4B0BD100F4B4E8 /* Main.storyboard in Resources */,
 				EA877CDF1B4B0BD100F4B4E8 /* Images.xcassets in Resources */,
 			);
@@ -426,6 +430,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		EA0B5F2A1B4DAE25007B91FE /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EA0B5F291B4DAE25007B91FE /* Base */,
+			);
+			name = Localizable.strings;
+			path = Expenses;
+			sourceTree = SOURCE_ROOT;
+		};
 		EA877CCD1B4B0BD100F4B4E8 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
