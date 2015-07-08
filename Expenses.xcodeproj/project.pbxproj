@@ -9,8 +9,10 @@
 /* Begin PBXBuildFile section */
 		4B3ADD5DE8E5911DA477B05B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B04D7993F9E605EE35BD78F /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		E6251210A9C0DDD8FA236AC8 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B04D7993F9E605EE35BD78F /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		EA0B5F161B4D95B8007B91FE /* SummaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0B5F151B4D95B8007B91FE /* SummaryTests.swift */; };
+		EA0B5F161B4D95B8007B91FE /* BalanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0B5F151B4D95B8007B91FE /* BalanceTests.swift */; };
 		EA0B5F181B4D95C8007B91FE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0B5F171B4D95C8007B91FE /* Constants.swift */; };
+		EA0B5F1C1B4D97D4007B91FE /* Balance.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0B5F1B1B4D97D4007B91FE /* Balance.swift */; };
+		EA0B5F1E1B4D9809007B91FE /* Balance.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0B5F1B1B4D97D4007B91FE /* Balance.swift */; };
 		EA877CD81B4B0BD100F4B4E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA877CCB1B4B0BD100F4B4E8 /* AppDelegate.swift */; };
 		EA877CD91B4B0BD100F4B4E8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA877CCD1B4B0BD100F4B4E8 /* LaunchScreen.xib */; };
 		EA877CDA1B4B0BD100F4B4E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA877CCF1B4B0BD100F4B4E8 /* Main.storyboard */; };
@@ -41,15 +43,16 @@
 		BF6F2CD0CBBC936C01AD5D32 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		EA01153E1B4752E700EA613C /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Pods/Alamofire.framework"; sourceTree = "<group>"; };
 		EA01153F1B4752E700EA613C /* SwiftyDropbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyDropbox.framework; path = "Pods/../build/Debug-iphoneos/Pods/SwiftyDropbox.framework"; sourceTree = "<group>"; };
-		EA0B5F151B4D95B8007B91FE /* SummaryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SummaryTests.swift; path = ExpensesTests/SummaryTests.swift; sourceTree = SOURCE_ROOT; };
+		EA0B5F151B4D95B8007B91FE /* BalanceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BalanceTests.swift; path = ExpensesTests/BalanceTests.swift; sourceTree = SOURCE_ROOT; };
 		EA0B5F171B4D95C8007B91FE /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Expenses/Constants.swift; sourceTree = SOURCE_ROOT; };
+		EA0B5F1B1B4D97D4007B91FE /* Balance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Balance.swift; path = Expenses/Balance.swift; sourceTree = SOURCE_ROOT; };
 		EA4B59B81B472457000BE503 /* Expenses:2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Expenses:2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA4B59CD1B472458000BE503 /* ExpensesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExpensesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA877CCB1B4B0BD100F4B4E8 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Expenses/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		EA877CCE1B4B0BD100F4B4E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		EA877CD01B4B0BD100F4B4E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
 		EA877CD11B4B0BD100F4B4E8 /* ComposeExpenseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ComposeExpenseViewController.swift; path = Expenses/ComposeExpenseViewController.swift; sourceTree = SOURCE_ROOT; };
-		EA877CD21B4B0BD100F4B4E8 /* Expense.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Expense.swift; path = Expenses/Expense.swift; sourceTree = SOURCE_ROOT; };
+		EA877CD21B4B0BD100F4B4E8 /* Expense.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Expense.swift; path = "/Users/martinho/Desktop/Expenses/Expenses:2/../Expenses/Expense.swift"; sourceTree = "<absolute>"; };
 		EA877CD31B4B0BD100F4B4E8 /* ExpenseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExpenseCell.swift; path = Expenses/ExpenseCell.swift; sourceTree = SOURCE_ROOT; };
 		EA877CD41B4B0BD100F4B4E8 /* ExpensesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExpensesViewController.swift; path = Expenses/ExpensesViewController.swift; sourceTree = SOURCE_ROOT; };
 		EA877CD51B4B0BD100F4B4E8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Expenses/Images.xcassets; sourceTree = SOURCE_ROOT; };
@@ -106,6 +109,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		EA0B5F1D1B4D97F4007B91FE /* Balance */ = {
+			isa = PBXGroup;
+			children = (
+				EA0B5F1B1B4D97D4007B91FE /* Balance.swift */,
+				EA0B5F151B4D95B8007B91FE /* BalanceTests.swift */,
+			);
+			name = Balance;
+			sourceTree = "<group>";
+		};
 		EA4B59AF1B472457000BE503 = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				EA877CCB1B4B0BD100F4B4E8 /* AppDelegate.swift */,
+				EA0B5F1D1B4D97F4007B91FE /* Balance */,
 				EA877CD21B4B0BD100F4B4E8 /* Expense.swift */,
 				EA877CD31B4B0BD100F4B4E8 /* ExpenseCell.swift */,
 				EA877CD41B4B0BD100F4B4E8 /* ExpensesViewController.swift */,
@@ -159,7 +172,6 @@
 				EA877CE21B4B0BED00F4B4E8 /* ConvertAmountTests.swift */,
 				EA877CE31B4B0BED00F4B4E8 /* DropboxTests.swift */,
 				EA4B59D11B472458000BE503 /* Supporting Files */,
-				EA0B5F151B4D95B8007B91FE /* SummaryTests.swift */,
 			);
 			name = ExpensesTests;
 			path = "Expenses:2Tests";
@@ -389,6 +401,7 @@
 				EA877CD81B4B0BD100F4B4E8 /* AppDelegate.swift in Sources */,
 				EA877CE11B4B0BD100F4B4E8 /* StringExtension.swift in Sources */,
 				EA877CDC1B4B0BD100F4B4E8 /* Expense.swift in Sources */,
+				EA0B5F1C1B4D97D4007B91FE /* Balance.swift in Sources */,
 				EA0B5F181B4D95C8007B91FE /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -399,7 +412,8 @@
 			files = (
 				EA877CE81B4B0BF800F4B4E8 /* ConvertAmountTests.swift in Sources */,
 				EA877CEB1B4B0C3D00F4B4E8 /* StringExtension.swift in Sources */,
-				EA0B5F161B4D95B8007B91FE /* SummaryTests.swift in Sources */,
+				EA0B5F1E1B4D9809007B91FE /* Balance.swift in Sources */,
+				EA0B5F161B4D95B8007B91FE /* BalanceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
