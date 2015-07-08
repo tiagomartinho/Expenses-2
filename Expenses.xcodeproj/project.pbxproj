@@ -12,7 +12,6 @@
 		EA0B5F161B4D95B8007B91FE /* BalanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0B5F151B4D95B8007B91FE /* BalanceTests.swift */; };
 		EA0B5F181B4D95C8007B91FE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0B5F171B4D95C8007B91FE /* Constants.swift */; };
 		EA0B5F1C1B4D97D4007B91FE /* Balance.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0B5F1B1B4D97D4007B91FE /* Balance.swift */; };
-		EA0B5F1E1B4D9809007B91FE /* Balance.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0B5F1B1B4D97D4007B91FE /* Balance.swift */; };
 		EA877CD81B4B0BD100F4B4E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA877CCB1B4B0BD100F4B4E8 /* AppDelegate.swift */; };
 		EA877CD91B4B0BD100F4B4E8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA877CCD1B4B0BD100F4B4E8 /* LaunchScreen.xib */; };
 		EA877CDA1B4B0BD100F4B4E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA877CCF1B4B0BD100F4B4E8 /* Main.storyboard */; };
@@ -412,7 +411,6 @@
 			files = (
 				EA877CE81B4B0BF800F4B4E8 /* ConvertAmountTests.swift in Sources */,
 				EA877CEB1B4B0C3D00F4B4E8 /* StringExtension.swift in Sources */,
-				EA0B5F1E1B4D9809007B91FE /* Balance.swift in Sources */,
 				EA0B5F161B4D95B8007B91FE /* BalanceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
