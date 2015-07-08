@@ -3,47 +3,13 @@ import RealmSwift
 import Expenses_2
 
 class BalanceTests: XCTestCase {
-
+    
+    // MARK: Constants
     let value = 12.34
-
-    func testEmpty() {
-        deleteAllEntries()
-        XCTAssertEqual(0.0, Balance.total())
-        XCTAssertEqual("zero_balance".localized, Balance.summary())
-    }
+    let person1Name = defaults.objectForKey(kUD_Person1) as? String ?? "1"
+    let person2Name = defaults.objectForKey(kUD_Person2) as? String ?? "2"
     
-    func testOneEntryGivesSameAmountBalance() {
-        deleteAllEntries()
-        addEntry(value)
-        XCTAssertEqual(value, Balance.total())
-    }
-    
-    func testTwoEntriesGivesSumAmountBalance() {
-        deleteAllEntries()
-        addEntry(value)
-        addEntry(value)
-        XCTAssertEqual(value+value, Balance.total())
-    }
-    
-    func testTwoEqualEntriesFromDifferentPersonsGivesZeroBalance() {
-        deleteAllEntries()
-        addEntry(value)
-        addEntry(value,personIndex:1)
-        XCTAssertEqual(0.0, Balance.total())
-    }
-    
-    func testSomeEntriesFromDifferentPersonsGivesCorrectBalance() {
-        deleteAllEntries()
-        addEntry(value)
-        addEntry(value)
-        addEntry(value,personIndex:1)
-        XCTAssertEqual(value, Balance.total())
-        addEntry(value,personIndex:1)
-        XCTAssertEqual(0.0, Balance.total())
-        addEntry(value,personIndex:1)
-        XCTAssertEqual(-value, Balance.total())
-    }
-    
+    // MARK: Utilities
     func deleteAllEntries(){
         let realm = Realm()
         realm.beginWrite()
@@ -57,5 +23,80 @@ class BalanceTests: XCTestCase {
         realm.beginWrite()
         realm.create(Expense.self, value: [personIndex,amount,"",date])
         realm.commitWrite()
+    }
+    
+    // MARK: SetUp
+    override func setUp() {
+        deleteAllEntries()
+    }
+    
+    // MARK: Total Tests
+    func testTotalForEmptyEntries() {
+        XCTAssertEqual(0.0, Balance.total())
+    }
+    
+    func testTotalOneEntryForPerson1() {
+        addEntry(value)
+        XCTAssertEqual(value, Balance.total())
+    }
+    
+    func testTwoEntriesGivesSumAmountBalance() {
+        addEntry(value)
+        addEntry(value)
+        XCTAssertEqual(value+value, Balance.total())
+    }
+    
+    func testTwoEqualEntriesFromDifferentPersonsGivesZeroBalance() {
+        addEntry(value)
+        addEntry(value,personIndex:1)
+        XCTAssertEqual(0.0, Balance.total())
+    }
+    
+    func testSomeEntriesFromDifferentPersonsGivesCorrectBalance() {
+        addEntry(value)
+        addEntry(value)
+        addEntry(value,personIndex:1)
+        XCTAssertEqual(value, Balance.total())
+        addEntry(value,personIndex:1)
+        XCTAssertEqual(0.0, Balance.total())
+        addEntry(value,personIndex:1)
+        XCTAssertEqual(-value, Balance.total())
+    }
+    
+    // MARK: Summary Tests
+    func testSummaryForEmptyEntries(){
+        XCTAssertEqual("zero_balance".localized, Balance.summary())
+    }
+    
+    func testSummaryOneEntryForPerson1() {
+        addEntry(value)
+        let summary = person2Name + " owes " + person1Name + " " + "\(value)" + "€"
+        XCTAssertEqual(summary, Balance.summary())
+    }
+    
+    func testTwoEntriesGivesSummary() {
+        addEntry(value)
+        addEntry(value)
+        let summary = person2Name + " owes " + person1Name + " " + "\(value+value)" + "€"
+        XCTAssertEqual(summary, Balance.summary())
+    }
+    
+    func testTwoEqualEntriesFromDifferentPersonsGivesSummary() {
+        addEntry(value)
+        addEntry(value,personIndex:1)
+        XCTAssertEqual("zero_balance".localized, Balance.summary())
+    }
+    
+    func testSomeEntriesFromDifferentPersonsGivesSummary() {
+        addEntry(value)
+        addEntry(value)
+        addEntry(value,personIndex:1)
+        var summary = person2Name + " owes " + person1Name + " " + "\(value)" + "€"
+        XCTAssertEqual(summary, Balance.summary())
+        addEntry(value,personIndex:1)
+        XCTAssertEqual("zero_balance".localized, Balance.summary())
+        addEntry(value,personIndex:1)
+        summary = person1Name + " owes " + person2Name + " " + "\(value)" + "€"
+        XCTAssertEqual(summary, Balance.summary())
     }
 }
