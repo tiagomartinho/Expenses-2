@@ -197,7 +197,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Category" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AvT-Ih-0na">
                                 <rect key="frame" x="16" y="146" width="568" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -267,7 +267,7 @@
                                                         <constraint firstAttribute="width" constant="507" id="PiX-12-TDE"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
                                                             <exclude reference="PiX-12-TDE"/>
@@ -304,7 +304,7 @@
                                                         <constraint firstAttribute="width" constant="507" id="eOJ-30-OkA"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
                                                             <exclude reference="eOJ-30-OkA"/>
