@@ -47,10 +47,11 @@ class ExpensesViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("ExpenseCell") as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("ExpenseCell") as! ExpensesTableViewCell
         
         let expense = array[indexPath.row]
-        cell.textLabel?.text = "\(expense.amount) €"
+        
+        cell.amount = "\(expense.amount) €"
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "dd/MM/YY"
         let formattedDate = dateFormatter.stringFromDate(expense.date).uppercaseString
@@ -63,7 +64,9 @@ class ExpensesViewController: UIViewController, UITableViewDataSource, UITableVi
             person = defaults.objectForKey(kUD_Person2) as? String ?? "2"
         }
         
-        cell.detailTextLabel?.text = person + " " + expense.category + " "  + formattedDate
+        cell.person = person
+        cell.category = expense.category
+        cell.date = formattedDate
         
         return cell
     }

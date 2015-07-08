@@ -14,6 +14,7 @@
 		EA0B5F1C1B4D97D4007B91FE /* Balance.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0B5F1B1B4D97D4007B91FE /* Balance.swift */; };
 		EA0B5F281B4DAE25007B91FE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA0B5F2A1B4DAE25007B91FE /* Localizable.strings */; };
 		EA0B5F2C1B4DAF24007B91FE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0B5F171B4D95C8007B91FE /* Constants.swift */; };
+		EA0B5F2E1B4DB724007B91FE /* ExpensesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0B5F2D1B4DB724007B91FE /* ExpensesTableViewCell.swift */; };
 		EA877CD81B4B0BD100F4B4E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA877CCB1B4B0BD100F4B4E8 /* AppDelegate.swift */; };
 		EA877CD91B4B0BD100F4B4E8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA877CCD1B4B0BD100F4B4E8 /* LaunchScreen.xib */; };
 		EA877CDA1B4B0BD100F4B4E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA877CCF1B4B0BD100F4B4E8 /* Main.storyboard */; };
@@ -47,6 +48,7 @@
 		EA0B5F171B4D95C8007B91FE /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Expenses/Constants.swift; sourceTree = SOURCE_ROOT; };
 		EA0B5F1B1B4D97D4007B91FE /* Balance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Balance.swift; path = Expenses/Balance.swift; sourceTree = SOURCE_ROOT; };
 		EA0B5F291B4DAE25007B91FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		EA0B5F2D1B4DB724007B91FE /* ExpensesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExpensesTableViewCell.swift; path = Expenses/ExpensesTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		EA4B59B81B472457000BE503 /* Expenses:2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Expenses:2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA4B59CD1B472458000BE503 /* ExpensesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExpensesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA877CCB1B4B0BD100F4B4E8 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Expenses/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
@@ -144,6 +146,7 @@
 				EA877CCB1B4B0BD100F4B4E8 /* AppDelegate.swift */,
 				EA0B5F1D1B4D97F4007B91FE /* Balance */,
 				EA877CD21B4B0BD100F4B4E8 /* Expense.swift */,
+				EA0B5F2D1B4DB724007B91FE /* ExpensesTableViewCell.swift */,
 				EA877CD41B4B0BD100F4B4E8 /* ExpensesViewController.swift */,
 				EA877CD11B4B0BD100F4B4E8 /* ComposeExpenseViewController.swift */,
 				EAC3547A1B4BA2060088ACF7 /* SettingsViewController.swift */,
@@ -402,6 +405,7 @@
 				EA877CE11B4B0BD100F4B4E8 /* StringExtension.swift in Sources */,
 				EA877CDC1B4B0BD100F4B4E8 /* Expense.swift in Sources */,
 				EA0B5F1C1B4D97D4007B91FE /* Balance.swift in Sources */,
+				EA0B5F2E1B4DB724007B91FE /* ExpensesTableViewCell.swift in Sources */,
 				EA0B5F181B4D95C8007B91FE /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
