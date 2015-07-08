@@ -33,9 +33,22 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23/06/15" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Nf-6E-FPk">
                                                     <rect key="frame" x="452" y="11" width="140" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" id="28l-M2-zKo"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="28l-M2-zKo"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                        <mask key="constraints">
+                                                            <include reference="28l-M2-zKo"/>
+                                                        </mask>
+                                                    </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tFb-Bf-0HF">
                                                     <rect key="frame" x="156" y="11" width="140" height="21"/>
@@ -58,7 +71,7 @@
                                                     </variation>
                                                     <variation key="heightClass=regular-widthClass=compact">
                                                         <mask key="constraints">
-                                                            <include reference="DaZ-LE-sBq"/>
+                                                            <exclude reference="DaZ-LE-sBq"/>
                                                         </mask>
                                                     </variation>
                                                 </label>
@@ -83,10 +96,12 @@
                                                 <constraint firstItem="4Nf-6E-FPk" firstAttribute="trailing" secondItem="4Ye-6P-SGB" secondAttribute="trailingMargin" id="nz5-rF-J4B"/>
                                                 <constraint firstItem="4Nf-6E-FPk" firstAttribute="width" secondItem="PKo-8H-96l" secondAttribute="width" id="oCj-wu-FFq"/>
                                                 <constraint firstItem="4Nf-6E-FPk" firstAttribute="width" secondItem="tFb-Bf-0HF" secondAttribute="width" id="ouJ-nN-9LZ"/>
+                                                <constraint firstItem="cey-0q-Sbh" firstAttribute="width" secondItem="PKo-8H-96l" secondAttribute="width" id="sg6-lJ-lBx"/>
                                                 <constraint firstItem="cey-0q-Sbh" firstAttribute="leading" secondItem="4Ye-6P-SGB" secondAttribute="leadingMargin" id="wAL-Lu-1Nb"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
+                                                    <exclude reference="sg6-lJ-lBx"/>
                                                     <exclude reference="8hZ-W2-Kp7"/>
                                                     <exclude reference="ouJ-nN-9LZ"/>
                                                 </mask>
@@ -94,10 +109,11 @@
                                             <variation key="heightClass=regular-widthClass=compact">
                                                 <mask key="constraints">
                                                     <exclude reference="dj3-4f-fSR"/>
+                                                    <include reference="sg6-lJ-lBx"/>
                                                     <include reference="8hZ-W2-Kp7"/>
                                                     <exclude reference="DVS-05-SPM"/>
                                                     <exclude reference="oCj-wu-FFq"/>
-                                                    <include reference="ouJ-nN-9LZ"/>
+                                                    <exclude reference="ouJ-nN-9LZ"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
