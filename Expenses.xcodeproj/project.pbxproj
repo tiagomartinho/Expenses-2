@@ -17,7 +17,6 @@
 		EA0B5F2E1B4DB724007B91FE /* ExpensesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0B5F2D1B4DB724007B91FE /* ExpensesTableViewCell.swift */; };
 		EA877CD81B4B0BD100F4B4E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA877CCB1B4B0BD100F4B4E8 /* AppDelegate.swift */; };
 		EA877CD91B4B0BD100F4B4E8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA877CCD1B4B0BD100F4B4E8 /* LaunchScreen.xib */; };
-		EA877CDA1B4B0BD100F4B4E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA877CCF1B4B0BD100F4B4E8 /* Main.storyboard */; };
 		EA877CDB1B4B0BD100F4B4E8 /* ComposeExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA877CD11B4B0BD100F4B4E8 /* ComposeExpenseViewController.swift */; };
 		EA877CDC1B4B0BD100F4B4E8 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA877CD21B4B0BD100F4B4E8 /* Expense.swift */; };
 		EA877CDE1B4B0BD100F4B4E8 /* ExpensesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA877CD41B4B0BD100F4B4E8 /* ExpensesViewController.swift */; };
@@ -25,6 +24,7 @@
 		EA877CE11B4B0BD100F4B4E8 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA877CD71B4B0BD100F4B4E8 /* StringExtension.swift */; };
 		EA877CE81B4B0BF800F4B4E8 /* ConvertAmountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA877CE21B4B0BED00F4B4E8 /* ConvertAmountTests.swift */; };
 		EA877CEB1B4B0C3D00F4B4E8 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA877CD71B4B0BD100F4B4E8 /* StringExtension.swift */; };
+		EA8CB7431B4DBE1F002BB1EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA8CB7411B4DBE1F002BB1EC /* Main.storyboard */; };
 		EAC3547B1B4BA2060088ACF7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC3547A1B4BA2060088ACF7 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,7 +53,6 @@
 		EA4B59CD1B472458000BE503 /* ExpensesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExpensesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA877CCB1B4B0BD100F4B4E8 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Expenses/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		EA877CCE1B4B0BD100F4B4E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = LaunchScreen.xib; sourceTree = "<group>"; };
-		EA877CD01B4B0BD100F4B4E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
 		EA877CD11B4B0BD100F4B4E8 /* ComposeExpenseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ComposeExpenseViewController.swift; path = Expenses/ComposeExpenseViewController.swift; sourceTree = SOURCE_ROOT; };
 		EA877CD21B4B0BD100F4B4E8 /* Expense.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Expense.swift; path = "/Users/martinho/Desktop/Expenses/Expenses:2/../Expenses/Expense.swift"; sourceTree = "<absolute>"; };
 		EA877CD41B4B0BD100F4B4E8 /* ExpensesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExpensesViewController.swift; path = Expenses/ExpensesViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -63,6 +62,7 @@
 		EA877CE21B4B0BED00F4B4E8 /* ConvertAmountTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConvertAmountTests.swift; path = ExpensesTests/ConvertAmountTests.swift; sourceTree = SOURCE_ROOT; };
 		EA877CE31B4B0BED00F4B4E8 /* DropboxTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DropboxTests.swift; path = ExpensesTests/DropboxTests.swift; sourceTree = SOURCE_ROOT; };
 		EA877CE41B4B0BED00F4B4E8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ExpensesTests/Info.plist; sourceTree = SOURCE_ROOT; };
+		EA8CB7421B4DBE1F002BB1EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Expenses/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		EAC3547A1B4BA2060088ACF7 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Expenses/SettingsViewController.swift; sourceTree = SOURCE_ROOT; };
 		EAEFF59F1B4750B900C70CB1 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Pods/Alamofire.framework"; sourceTree = "<group>"; };
 		EAEFF5A01B4750B900C70CB1 /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = "Pods/../build/Debug-iphoneos/Pods.framework"; sourceTree = "<group>"; };
@@ -143,7 +143,7 @@
 		EA4B59BA1B472457000BE503 /* Expenses */ = {
 			isa = PBXGroup;
 			children = (
-				EA877CCF1B4B0BD100F4B4E8 /* Main.storyboard */,
+				EA8CB7411B4DBE1F002BB1EC /* Main.storyboard */,
 				EA877CCB1B4B0BD100F4B4E8 /* AppDelegate.swift */,
 				EA0B5F1D1B4D97F4007B91FE /* Balance */,
 				EA877CD21B4B0BD100F4B4E8 /* Expense.swift */,
@@ -286,8 +286,8 @@
 			files = (
 				EA877CD91B4B0BD100F4B4E8 /* LaunchScreen.xib in Resources */,
 				EA0B5F281B4DAE25007B91FE /* Localizable.strings in Resources */,
-				EA877CDA1B4B0BD100F4B4E8 /* Main.storyboard in Resources */,
 				EA877CDF1B4B0BD100F4B4E8 /* Images.xcassets in Resources */,
+				EA8CB7431B4DBE1F002BB1EC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,13 +449,12 @@
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
-		EA877CCF1B4B0BD100F4B4E8 /* Main.storyboard */ = {
+		EA8CB7411B4DBE1F002BB1EC /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				EA877CD01B4B0BD100F4B4E8 /* Base */,
+				EA8CB7421B4DBE1F002BB1EC /* Base */,
 			);
 			name = Main.storyboard;
-			path = ../Expenses/Base.lproj;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
