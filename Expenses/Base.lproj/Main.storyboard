@@ -332,12 +332,28 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Section-2" id="vaY-1W-pdc">
+                            <tableViewSection headerTitle="Reset" id="vaY-1W-pdc">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="9AG-ny-mV3">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9AG-ny-mV3" id="Wks-71-747">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jFS-kN-A1X">
+                                                    <rect key="frame" x="232" y="7" width="136" height="30"/>
+                                                    <state key="normal" title="Delete All Expenses">
+                                                        <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="promptToDeleteAllExpenses" destination="AGd-U8-aDq" eventType="touchUpInside" id="6tw-Aa-fJJ"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="centerY" secondItem="jFS-kN-A1X" secondAttribute="centerY" id="58c-Ko-ZgJ"/>
+                                                <constraint firstAttribute="centerX" secondItem="jFS-kN-A1X" secondAttribute="centerX" id="Jbo-yX-BDJ"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="XEn-23-Mcf">

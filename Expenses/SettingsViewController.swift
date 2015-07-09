@@ -36,4 +36,13 @@ class SettingsViewController: UITableViewController {
         
         defaults.synchronize()
     }
+    
+    @IBAction func promptToDeleteAllExpenses() {
+        var alert = UIAlertController(title: "Attention", message: "This will delete all your expenses", preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action:UIAlertAction!) -> Void in
+            RealmUtilities.deleteAllEntries()
+        }))
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
 }

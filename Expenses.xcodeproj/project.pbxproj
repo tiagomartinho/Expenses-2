@@ -27,6 +27,7 @@
 		EA8CB7431B4DBE1F002BB1EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA8CB7411B4DBE1F002BB1EC /* Main.storyboard */; };
 		EAC3547B1B4BA2060088ACF7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC3547A1B4BA2060088ACF7 /* SettingsViewController.swift */; };
 		EAF9B1C21B4F0B840065905E /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF9B1C11B4F0B840065905E /* DoubleExtension.swift */; };
+		EAF9B1C61B4F11AF0065905E /* RealmUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF9B1C51B4F11AF0065905E /* RealmUtilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		EAEFF5A01B4750B900C70CB1 /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = "Pods/../build/Debug-iphoneos/Pods.framework"; sourceTree = "<group>"; };
 		EAEFF5A11B4750B900C70CB1 /* SwiftyDropbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyDropbox.framework; path = "Pods/../build/Debug-iphoneos/Pods/SwiftyDropbox.framework"; sourceTree = "<group>"; };
 		EAF9B1C11B4F0B840065905E /* DoubleExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = SOURCE_ROOT; };
+		EAF9B1C51B4F11AF0065905E /* RealmUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmUtilities.swift; path = Expenses/RealmUtilities.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 				EA877CD41B4B0BD100F4B4E8 /* ExpensesViewController.swift */,
 				EA877CD11B4B0BD100F4B4E8 /* ComposeExpenseViewController.swift */,
 				EAC3547A1B4BA2060088ACF7 /* SettingsViewController.swift */,
+				EAF9B1C51B4F11AF0065905E /* RealmUtilities.swift */,
 				EA4B59BB1B472457000BE503 /* Supporting Files */,
 				EA0B5F2A1B4DAE25007B91FE /* Localizable.strings */,
 			);
@@ -410,6 +413,7 @@
 				EA877CDC1B4B0BD100F4B4E8 /* Expense.swift in Sources */,
 				EA0B5F1C1B4D97D4007B91FE /* Balance.swift in Sources */,
 				EA0B5F2E1B4DB724007B91FE /* ExpensesTableViewCell.swift in Sources */,
+				EAF9B1C61B4F11AF0065905E /* RealmUtilities.swift in Sources */,
 				EA0B5F181B4D95C8007B91FE /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

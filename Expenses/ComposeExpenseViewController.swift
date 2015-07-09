@@ -1,5 +1,4 @@
 import UIKit
-import RealmSwift
 
 class ComposeExpenseViewController: UIViewController {
 
@@ -40,13 +39,9 @@ class ComposeExpenseViewController: UIViewController {
     }
     
     func addExpense(amount:Double) {
-        let date = NSDate()
         let categoryOrEmpty = category?.text ?? ""
         let personIndex = person.selectedSegmentIndex
-        let realm = Realm()
-        realm.beginWrite()
-        realm.create(Expense.self, value: [personIndex,amount,categoryOrEmpty,date])
-        realm.commitWrite()
+        RealmUtilities.addEntry(amount, personIndex: personIndex, category: categoryOrEmpty)
     }
     
     func setAmountBackground(){
