@@ -58,8 +58,7 @@ class ExpensesViewController: UIViewController, UITableViewDataSource, UITableVi
         
         cell.category = expense.category
 
-        let amount = String(format: "%.2f", expense.amount)
-        cell.amount = amount + "€"
+        cell.amount = expense.amount.currency
         
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "dd/MM/YY"

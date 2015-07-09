@@ -102,8 +102,8 @@ class BalanceTests: XCTestCase {
     
     // MARK: Totals Formatted Tests
     func testBalanceTotalFormatted(){
-        XCTAssertEqual("0.00", Balance.absoluteTotalFormatted())
+        XCTAssertEqual("0.00€", Balance.absoluteTotalFormatted())
         addEntry(2.0)
-        XCTAssertEqual("1.00", Balance.absoluteTotalFormatted())
+        XCTAssertEqual("1.00€", Balance.absoluteTotalFormatted())
     }
 }
