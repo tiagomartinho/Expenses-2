@@ -6,12 +6,16 @@ public class Balance {
         let person2Name = defaults.objectForKey(kUD_Person2) as? String ?? "2"
         let total = self.total()
         if total > 0 {
-            return person2Name + " " + "owes".localized + " " + person1Name + " " + "\(abs(total))" + "currency".localized
+            return person2Name + " " + "owes".localized + " " + person1Name + " " + absoluteTotalFormatted() + "currency".localized
         }
         if total < 0 {
-            return person1Name + " " + "owes".localized + " " + person2Name + " " + "\(abs(total))" + "currency".localized
+            return person1Name + " " + "owes".localized + " " + person2Name + " " + absoluteTotalFormatted() + "currency".localized
         }
         return "zero_balance".localized
+    }
+    
+    public static func absoluteTotalFormatted()->String{
+        return String(format: "%.2f", abs(total()))
     }
     
     public static func total()->Double{

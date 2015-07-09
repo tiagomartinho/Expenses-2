@@ -99,4 +99,11 @@ class BalanceTests: XCTestCase {
         summary = person1Name + " owes " + person2Name + " " + "\(value/2)" + "€"
         XCTAssertEqual(summary, Balance.summary())
     }
+    
+    // MARK: Totals Formatted Tests
+    func testBalanceTotalFormatted(){
+        XCTAssertEqual("0.00", Balance.absoluteTotalFormatted())
+        addEntry(2.0)
+        XCTAssertEqual("1.00", Balance.absoluteTotalFormatted())
+    }
 }
