@@ -19,7 +19,7 @@ public class Balance {
         for expense in Realm().objects(Expense) {
             total += expense.amount * sign(expense.personIndex)
         }
-        return total
+        return total / 2
     }
     
     private static func sign(personIndex:Int)->Double{

@@ -37,13 +37,13 @@ class BalanceTests: XCTestCase {
     
     func testTotalOneEntryForPerson1() {
         addEntry(value)
-        XCTAssertEqual(value, Balance.total())
+        XCTAssertEqual(value/2, Balance.total())
     }
     
     func testTwoEntriesGivesSumAmountBalance() {
         addEntry(value)
         addEntry(value)
-        XCTAssertEqual(value+value, Balance.total())
+        XCTAssertEqual((value+value)/2, Balance.total())
     }
     
     func testTwoEqualEntriesFromDifferentPersonsGivesZeroBalance() {
@@ -56,11 +56,11 @@ class BalanceTests: XCTestCase {
         addEntry(value)
         addEntry(value)
         addEntry(value,personIndex:1)
-        XCTAssertEqual(value, Balance.total())
+        XCTAssertEqual(value/2, Balance.total())
         addEntry(value,personIndex:1)
         XCTAssertEqual(0.0, Balance.total())
         addEntry(value,personIndex:1)
-        XCTAssertEqual(-value, Balance.total())
+        XCTAssertEqual(-value/2, Balance.total())
     }
     
     // MARK: Summary Tests
@@ -70,14 +70,14 @@ class BalanceTests: XCTestCase {
     
     func testSummaryOneEntryForPerson1() {
         addEntry(value)
-        let summary = person2Name + " owes " + person1Name + " " + "\(value)" + "€"
+        let summary = person2Name + " owes " + person1Name + " " + "\(value/2)" + "€"
         XCTAssertEqual(summary, Balance.summary())
     }
     
     func testTwoEntriesGivesSummary() {
         addEntry(value)
         addEntry(value)
-        let summary = person2Name + " owes " + person1Name + " " + "\(value+value)" + "€"
+        let summary = person2Name + " owes " + person1Name + " " + "\((value+value)/2)" + "€"
         XCTAssertEqual(summary, Balance.summary())
     }
     
@@ -91,12 +91,12 @@ class BalanceTests: XCTestCase {
         addEntry(value)
         addEntry(value)
         addEntry(value,personIndex:1)
-        var summary = person2Name + " owes " + person1Name + " " + "\(value)" + "€"
+        var summary = person2Name + " owes " + person1Name + " " + "\(value/2)" + "€"
         XCTAssertEqual(summary, Balance.summary())
         addEntry(value,personIndex:1)
         XCTAssertEqual("zero_balance".localized, Balance.summary())
         addEntry(value,personIndex:1)
-        summary = person1Name + " owes " + person2Name + " " + "\(value)" + "€"
+        summary = person1Name + " owes " + person2Name + " " + "\(value/2)" + "€"
         XCTAssertEqual(summary, Balance.summary())
     }
 }
