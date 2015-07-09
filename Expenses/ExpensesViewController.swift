@@ -56,11 +56,16 @@ class ExpensesViewController: UIViewController, UITableViewDataSource, UITableVi
         
         let expense = array[indexPath.row]
         
-        cell.amount = "\(expense.amount) €"
+        cell.category = expense.category
+
+        let amount = String(format: "%.2f", expense.amount)
+        cell.amount = amount + "€"
+        
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "dd/MM/YY"
         let formattedDate = dateFormatter.stringFromDate(expense.date).uppercaseString
-        
+        cell.date = formattedDate
+
         let person:String
         if expense.personIndex == 0 {
             person = defaults.objectForKey(kUD_Person1) as? String ?? "1"
@@ -70,8 +75,6 @@ class ExpensesViewController: UIViewController, UITableViewDataSource, UITableVi
         }
         
         cell.person = person
-        cell.category = expense.category
-        cell.date = formattedDate
         
         return cell
     }
