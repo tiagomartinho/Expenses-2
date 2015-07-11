@@ -230,6 +230,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="expensesTableView" destination="DUf-0j-P2A" id="VNh-QK-LIf"/>
+                        <outlet property="initialView" destination="NCD-6n-tDd" id="T5A-5Z-7uo"/>
                         <outlet property="summary" destination="szT-fg-1GZ" id="ksp-VS-nrJ"/>
                     </connections>
                 </viewController>

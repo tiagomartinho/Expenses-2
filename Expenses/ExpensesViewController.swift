@@ -9,15 +9,21 @@ class ExpensesViewController: UIViewController, UITableViewDataSource, UITableVi
 
     @IBOutlet weak var summary: UILabel!
     @IBOutlet weak var expensesTableView: UITableView!
+    @IBOutlet weak var initialView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        setupTableView()
+        
+        setTableViewDelegateAndDataSource()
         
         notificationToken = Realm().addNotificationBlock { [unowned self] note, realm in
             self.updateUI()
         }
+    }
+    
+    func setTableViewDelegateAndDataSource(){
+        self.expensesTableView.delegate = self;
+        self.expensesTableView.dataSource = self;
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -27,6 +33,7 @@ class ExpensesViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func updateUI(){
         updateSummary()
+        showInitialViewIfThereAreNoExpenses()
         expensesTableView.reloadData()
     }
     
@@ -34,9 +41,9 @@ class ExpensesViewController: UIViewController, UITableViewDataSource, UITableVi
         summary.text = Balance.summary()
     }
     
-    func setupTableView(){
-        self.expensesTableView.delegate = self;
-        self.expensesTableView.dataSource = self;
+    func showInitialViewIfThereAreNoExpenses(){
+        let thereAreNoExpenses = array.count == 0
+        initialView.hidden = thereAreNoExpenses ? false : true
     }
     
     @IBAction func linkDropbox(sender: UIBarButtonItem) {
