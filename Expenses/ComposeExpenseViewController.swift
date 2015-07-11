@@ -8,9 +8,12 @@ class ComposeExpenseViewController: UITableViewController {
     
     var amountDefaultBackgroundColor:UIColor?
     
+    let textFieldShouldReturn = TextFieldShouldReturn()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         amount.becomeFirstResponder()
+        textFieldShouldReturn.addTextField(category)
         amountDefaultBackgroundColor = amount.backgroundColor
         updateSegmentedControl()
     }

@@ -5,9 +5,12 @@ class SettingsViewController: UITableViewController {
     @IBOutlet weak var person1: UITextField!
     @IBOutlet weak var person2: UITextField!
     
+    let textFieldShouldReturn = TextFieldShouldReturn()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        textFieldShouldReturn.addTextField(person1)
+        textFieldShouldReturn.addTextField(person2)
         loadPersonsNames()
     }
     
