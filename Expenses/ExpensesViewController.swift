@@ -11,20 +11,33 @@ class ExpensesViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var expensesTableView: UITableView!
     @IBOutlet weak var initialView: UIView!
     
+    var searchController = UISearchController()
+
+    // MARK: viewDidLoad
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setTableViewDelegateAndDataSource()
-
-        notificationToken = Realm().addNotificationBlock { [unowned self] note, realm in
-            self.updateUI()
-        }
+        setSearchController()
+        setNotificationsForRealmUpdates()
     }
     
     func setTableViewDelegateAndDataSource(){
         self.expensesTableView.delegate = self;
         self.expensesTableView.dataSource = self;
     }
+    
+    func setSearchController(){
+        
+    }
+    
+    func setNotificationsForRealmUpdates(){
+        notificationToken = Realm().addNotificationBlock { [unowned self] note, realm in
+            self.updateUI()
+        }
+    }
+    
+    // MARK: viewDidAppear
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
@@ -52,8 +65,8 @@ class ExpensesViewController: UIViewController, UITableViewDataSource, UITableVi
         }
     }
     
-    // MARK: Tableview data source
-    
+    // MARK: TableView Data Source
+
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return array.count
     }
