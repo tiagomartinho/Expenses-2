@@ -2,33 +2,41 @@ import UIKit
 import SwiftyDropbox
 import RealmSwift
 
-class ExpensesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ExpensesViewController: UIViewController, UITableViewDataSource, UISearchBarDelegate, UISearchControllerDelegate, UISearchResultsUpdating {
     
     var array = Realm().objects(Expense).sorted("date",ascending:false)
     var notificationToken: NotificationToken?
-
+    
     @IBOutlet weak var summary: UILabel!
     @IBOutlet weak var expensesTableView: UITableView!
     @IBOutlet weak var initialView: UIView!
     
     var searchController = UISearchController()
-
+    
     // MARK: viewDidLoad
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setTableViewDelegateAndDataSource()
+        setTableViewDataSource()
         setSearchController()
         setNotificationsForRealmUpdates()
     }
     
-    func setTableViewDelegateAndDataSource(){
-        self.expensesTableView.delegate = self;
+    func setTableViewDataSource(){
         self.expensesTableView.dataSource = self;
     }
     
     func setSearchController(){
+        self.searchController = UISearchController(searchResultsController: ExpensesResultsTableController())
         
+        self.expensesTableView.tableHeaderView = self.searchController.searchBar
+        self.searchController.searchBar.sizeToFit()
+
+        self.searchController.delegate = self
+        self.searchController.searchBar.delegate = self
+        self.searchController.searchResultsUpdater = self
+        
+        self.searchController.dimsBackgroundDuringPresentation = false
     }
     
     func setNotificationsForRealmUpdates(){
@@ -65,8 +73,38 @@ class ExpensesViewController: UIViewController, UITableViewDataSource, UITableVi
         }
     }
     
+    // MARK: UISearchBarDelegate
+    
+    func searchBarSearchButtonClicked(searchBar:UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
+    
+    // MARK: UISearchControllerDelegate
+    func presentSearchController(searchController:UISearchController) {
+    }
+    
+    func willPresentSearchController(searchController:UISearchController) {
+        // do something before the search controller is presented
+    }
+    
+    func didPresentSearchController(searchController:UISearchController) {
+        // do something after the search controller is presented
+    }
+    
+    func willDismissSearchController(searchController:UISearchController) {
+        // do something before the search controller is dismissed
+    }
+    
+    func didDismissSearchController(searchController:UISearchController) {
+        // do something after the search controller is dismissed
+    }
+    
+    // MARK: UISearchResultsUpdating
+    func updateSearchResultsForSearchController(searchController:UISearchController) {
+    }
+    
     // MARK: TableView Data Source
-
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return array.count
     }
