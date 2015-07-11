@@ -8,16 +8,16 @@ extension String {
     var amount: Double? {
         let amount = self.removeWhitespaces()
         if let doubleValue = amount.doubleValueComma {
-            return doubleValue
-        }
-        else {
-            if let doubleValue = amount.doubleValueDot {
+            if doubleValue > 0 {
                 return doubleValue
             }
-            else {
-                return nil
+        }
+        if let doubleValue = amount.doubleValueDot {
+            if doubleValue > 0 {
+                return doubleValue
             }
         }
+        return nil
     }
     
     var doubleValueComma:Double?{
