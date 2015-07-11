@@ -15,7 +15,7 @@ class ExpensesViewController: UIViewController, UITableViewDataSource, UITableVi
         super.viewDidLoad()
         
         setTableViewDelegateAndDataSource()
-        
+
         notificationToken = Realm().addNotificationBlock { [unowned self] note, realm in
             self.updateUI()
         }
@@ -59,30 +59,34 @@ class ExpensesViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("ExpenseCell") as! ExpensesTableViewCell
-        
-        let expense = array[indexPath.row]
-        
-        cell.category = expense.category
-
-        cell.amount = expense.amount.currency
-        
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "dd/MM/YY"
-        let formattedDate = dateFormatter.stringFromDate(expense.date).uppercaseString
-        cell.date = formattedDate
-
-        let person:String
-        if expense.personIndex == 0 {
-            person = defaults.objectForKey(kUD_Person1) as? String ?? "1"
+        if let cell = tableView.dequeueReusableCellWithIdentifier("ExpenseCell") as? ExpensesTableViewCell {
+            
+            let expense = array[indexPath.row]
+            
+            cell.category = expense.category
+            
+            cell.amount = expense.amount.currency
+            
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "dd/MM/YY"
+            let formattedDate = dateFormatter.stringFromDate(expense.date).uppercaseString
+            cell.date = formattedDate
+            
+            let person:String
+            if expense.personIndex == 0 {
+                person = defaults.objectForKey(kUD_Person1) as? String ?? "1"
+            }
+            else {
+                person = defaults.objectForKey(kUD_Person2) as? String ?? "2"
+            }
+            
+            cell.person = person
+            
+            return cell
         }
         else {
-            person = defaults.objectForKey(kUD_Person2) as? String ?? "2"
+            return UITableViewCell()
         }
-        
-        cell.person = person
-        
-        return cell
     }
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
