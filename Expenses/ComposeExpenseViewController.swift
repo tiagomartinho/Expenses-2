@@ -1,6 +1,6 @@
 import UIKit
 
-class ComposeExpenseViewController: UIViewController {
+class ComposeExpenseViewController: UITableViewController {
 
     @IBOutlet weak var person: UISegmentedControl!
     @IBOutlet weak var amount: UITextField!
