@@ -27,7 +27,6 @@
 		EA8CB7431B4DBE1F002BB1EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA8CB7411B4DBE1F002BB1EC /* Main.storyboard */; };
 		EA9F106A1B51894B0065FA37 /* TextFieldShouldReturn.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9F10691B51894B0065FA37 /* TextFieldShouldReturn.swift */; };
 		EA9F106C1B518B0C0065FA37 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9F106B1B518B0C0065FA37 /* DoubleExtension.swift */; };
-		EAA846641B51B62600721FDD /* ExpensesResultsTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA846631B51B62600721FDD /* ExpensesResultsTableController.swift */; };
 		EAC3547B1B4BA2060088ACF7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC3547A1B4BA2060088ACF7 /* SettingsViewController.swift */; };
 		EAF9B1C61B4F11AF0065905E /* RealmUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF9B1C51B4F11AF0065905E /* RealmUtilities.swift */; };
 /* End PBXBuildFile section */
@@ -69,7 +68,6 @@
 		EA8CB7421B4DBE1F002BB1EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Expenses/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		EA9F10691B51894B0065FA37 /* TextFieldShouldReturn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextFieldShouldReturn.swift; path = Expenses/TextFieldShouldReturn.swift; sourceTree = SOURCE_ROOT; };
 		EA9F106B1B518B0C0065FA37 /* DoubleExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DoubleExtension.swift; path = Expenses/DoubleExtension.swift; sourceTree = SOURCE_ROOT; };
-		EAA846631B51B62600721FDD /* ExpensesResultsTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExpensesResultsTableController.swift; path = Expenses/ExpensesResultsTableController.swift; sourceTree = SOURCE_ROOT; };
 		EAC3547A1B4BA2060088ACF7 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Expenses/SettingsViewController.swift; sourceTree = SOURCE_ROOT; };
 		EAEFF59F1B4750B900C70CB1 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Pods/Alamofire.framework"; sourceTree = "<group>"; };
 		EAEFF5A01B4750B900C70CB1 /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = "Pods/../build/Debug-iphoneos/Pods.framework"; sourceTree = "<group>"; };
@@ -156,7 +154,6 @@
 				EA0B5F1D1B4D97F4007B91FE /* Balance */,
 				EA877CD21B4B0BD100F4B4E8 /* Expense.swift */,
 				EA0B5F2D1B4DB724007B91FE /* ExpensesTableViewCell.swift */,
-				EAA846631B51B62600721FDD /* ExpensesResultsTableController.swift */,
 				EA877CD41B4B0BD100F4B4E8 /* ExpensesViewController.swift */,
 				EA877CD11B4B0BD100F4B4E8 /* ComposeExpenseViewController.swift */,
 				EAC3547A1B4BA2060088ACF7 /* SettingsViewController.swift */,
@@ -412,7 +409,6 @@
 			files = (
 				EA877CDE1B4B0BD100F4B4E8 /* ExpensesViewController.swift in Sources */,
 				EAC3547B1B4BA2060088ACF7 /* SettingsViewController.swift in Sources */,
-				EAA846641B51B62600721FDD /* ExpensesResultsTableController.swift in Sources */,
 				EA877CDB1B4B0BD100F4B4E8 /* ComposeExpenseViewController.swift in Sources */,
 				EA877CD81B4B0BD100F4B4E8 /* AppDelegate.swift in Sources */,
 				EA877CE11B4B0BD100F4B4E8 /* StringExtension.swift in Sources */,

@@ -2,7 +2,7 @@ import UIKit
 import SwiftyDropbox
 import RealmSwift
 
-class ExpensesViewController: UIViewController, UITableViewDataSource, UISearchBarDelegate, UISearchControllerDelegate, UISearchResultsUpdating {
+class ExpensesViewController: UIViewController, UITableViewDataSource {
     
     var array = Realm().objects(Expense).sorted("date",ascending:false)
     var notificationToken: NotificationToken?
@@ -11,32 +11,16 @@ class ExpensesViewController: UIViewController, UITableViewDataSource, UISearchB
     @IBOutlet weak var expensesTableView: UITableView!
     @IBOutlet weak var initialView: UIView!
     
-    var searchController = UISearchController()
-    
     // MARK: viewDidLoad
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setTableViewDataSource()
-        setSearchController()
         setNotificationsForRealmUpdates()
     }
     
     func setTableViewDataSource(){
         self.expensesTableView.dataSource = self;
-    }
-    
-    func setSearchController(){
-        let expensesResultsTableController = ExpensesResultsTableController()
-        searchController = UISearchController(searchResultsController: expensesResultsTableController)
-        self.expensesTableView.tableHeaderView = self.searchController.searchBar
-        self.searchController.searchBar.sizeToFit()
-        
-        self.searchController.delegate = self
-        self.searchController.searchBar.delegate = self
-        self.searchController.searchResultsUpdater = self
-        
-        self.searchController.dimsBackgroundDuringPresentation = false
     }
     
     func setNotificationsForRealmUpdates(){
@@ -70,35 +54,6 @@ class ExpensesViewController: UIViewController, UITableViewDataSource, UISearchB
     @IBAction func linkDropbox(sender: UIBarButtonItem) {
         if Dropbox.authorizedClient == nil {
             Dropbox.authorizeFromController(self)
-        }
-    }
-    
-    // MARK: UISearchBarDelegate
-    
-    func searchBarSearchButtonClicked(searchBar:UISearchBar) {
-        searchBar.resignFirstResponder()
-    }
-    
-    // MARK: UISearchResultsUpdating
-    func updateSearchResultsForSearchController(searchController:UISearchController) {
-        let searchText = searchController.searchBar.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
-        let searchItems = searchText.componentsSeparatedByString(" ")
-        if searchItems.count != 0 {
-            var searchItemsPredicate = [NSComparisonPredicate]()
-            for searchString in searchItems {
-                let lhs = NSExpression(forKeyPath: "category")
-                let rhs = NSExpression(forConstantValue: searchString)
-                let predicate = NSComparisonPredicate(leftExpression: lhs, rightExpression: rhs, modifier: .DirectPredicateModifier, type: .ContainsPredicateOperatorType, options: .CaseInsensitivePredicateOption)
-                searchItemsPredicate.append(predicate)
-            }
-            
-            let compoundPredicate = NSCompoundPredicate(type: .AndPredicateType, subpredicates: searchItemsPredicate)
-            
-            //        let predicate = NSPredicate(format: "category BEGINSWITH %@", searchText)
-            let searchResults = array.filter(compoundPredicate)
-            let expensesResultsTableController = self.searchController.searchResultsController as!ExpensesResultsTableController
-            expensesResultsTableController.filteredExpenses = searchResults;
-            expensesResultsTableController.tableView.reloadData()
         }
     }
     
@@ -146,28 +101,6 @@ class ExpensesViewController: UIViewController, UITableViewDataSource, UISearchB
             realm.delete(array[indexPath.row])
             realm.commitWrite()
         }
-    }
-    
-    // MARK: UISearchControllerDelegate
-    func presentSearchController(searchController:UISearchController) {
-    }
-    
-    func willPresentSearchController(searchController:UISearchController) {
-        // do something before the search controller is presented
-        summary.text = ""
-    }
-    
-    func didPresentSearchController(searchController:UISearchController) {
-        // do something after the search controller is presented
-    }
-    
-    func willDismissSearchController(searchController:UISearchController) {
-        // do something before the search controller is dismissed
-        updateUI()
-    }
-    
-    func didDismissSearchController(searchController:UISearchController) {
-        // do something after the search controller is dismissed
     }
 }
 
