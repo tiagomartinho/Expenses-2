@@ -46,7 +46,7 @@ class ExpensesViewController: UIViewController, UITableViewDataSource {
     }
     
     func showInitialViewIfThereAreNoExpenses(){
-        let thereAreNoExpenses = array.count == 0
+        let thereAreNoExpenses = (array.count == 0)
         initialView.hidden = thereAreNoExpenses ? false : true
     }
     
@@ -60,31 +60,31 @@ class ExpensesViewController: UIViewController, UITableViewDataSource {
         if let cell = tableView.dequeueReusableCellWithIdentifier(kExpenseCell) as? ExpensesTableViewCell {
             
             let expense = array[indexPath.row]
-            
+            cell.person = personForIndex(expense.personIndex)
             cell.category = expense.category
-            
             cell.amount = expense.amount.currency
-            
-            let dateFormatter = NSDateFormatter()
-            dateFormatter.dateFormat = "dd/MM/YY"
-            let formattedDate = dateFormatter.stringFromDate(expense.date).uppercaseString
-            cell.date = formattedDate
-            
-            let person:String
-            if expense.personIndex == 0 {
-                person = defaults.objectForKey(kUD_Person1) as? String ?? "1"
-            }
-            else {
-                person = defaults.objectForKey(kUD_Person2) as? String ?? "2"
-            }
-            
-            cell.person = person
-            
+            cell.date = formatDate(expense.date)
+
             return cell
         }
         else {
             return UITableViewCell()
         }
+    }
+    
+    func personForIndex(index:Int)->String{
+        if index == 0 {
+            return defaults.objectForKey(kUD_Person1) as? String ?? "1"
+        }
+        else {
+            return defaults.objectForKey(kUD_Person2) as? String ?? "2"
+        }
+    }
+    
+    func formatDate(date: NSDate)->String{
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "dd/MM/YY"
+        return dateFormatter.stringFromDate(date).uppercaseString
     }
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
