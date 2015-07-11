@@ -63,7 +63,6 @@
 		EA877CD61B4B0BD100F4B4E8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Expenses/Info.plist; sourceTree = SOURCE_ROOT; };
 		EA877CD71B4B0BD100F4B4E8 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtension.swift; path = Expenses/StringExtension.swift; sourceTree = SOURCE_ROOT; };
 		EA877CE21B4B0BED00F4B4E8 /* ConvertAmountTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConvertAmountTests.swift; path = ExpensesTests/ConvertAmountTests.swift; sourceTree = SOURCE_ROOT; };
-		EA877CE31B4B0BED00F4B4E8 /* DropboxTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DropboxTests.swift; path = ExpensesTests/DropboxTests.swift; sourceTree = SOURCE_ROOT; };
 		EA877CE41B4B0BED00F4B4E8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ExpensesTests/Info.plist; sourceTree = SOURCE_ROOT; };
 		EA8CB7421B4DBE1F002BB1EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Expenses/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		EA9F10691B51894B0065FA37 /* TextFieldShouldReturn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextFieldShouldReturn.swift; path = Expenses/TextFieldShouldReturn.swift; sourceTree = SOURCE_ROOT; };
@@ -150,7 +149,6 @@
 			isa = PBXGroup;
 			children = (
 				EA8CB7411B4DBE1F002BB1EC /* Main.storyboard */,
-				EA877CCB1B4B0BD100F4B4E8 /* AppDelegate.swift */,
 				EA0B5F1D1B4D97F4007B91FE /* Balance */,
 				EA877CD21B4B0BD100F4B4E8 /* Expense.swift */,
 				EA0B5F2D1B4DB724007B91FE /* ExpensesTableViewCell.swift */,
@@ -168,6 +166,7 @@
 		EA4B59BB1B472457000BE503 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EA877CCB1B4B0BD100F4B4E8 /* AppDelegate.swift */,
 				EA877CCC1B4B0BD100F4B4E8 /* Base.lproj */,
 				EA877CD51B4B0BD100F4B4E8 /* Images.xcassets */,
 				EA877CD61B4B0BD100F4B4E8 /* Info.plist */,
@@ -183,7 +182,6 @@
 			isa = PBXGroup;
 			children = (
 				EA877CE21B4B0BED00F4B4E8 /* ConvertAmountTests.swift */,
-				EA877CE31B4B0BED00F4B4E8 /* DropboxTests.swift */,
 				EA4B59D11B472458000BE503 /* Supporting Files */,
 			);
 			name = ExpensesTests;

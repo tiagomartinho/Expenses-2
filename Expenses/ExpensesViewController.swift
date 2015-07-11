@@ -1,5 +1,4 @@
 import UIKit
-import SwiftyDropbox
 import RealmSwift
 
 class ExpensesViewController: UIViewController, UITableViewDataSource {
@@ -49,12 +48,6 @@ class ExpensesViewController: UIViewController, UITableViewDataSource {
     func showInitialViewIfThereAreNoExpenses(){
         let thereAreNoExpenses = array.count == 0
         initialView.hidden = thereAreNoExpenses ? false : true
-    }
-    
-    @IBAction func linkDropbox(sender: UIBarButtonItem) {
-        if Dropbox.authorizedClient == nil {
-            Dropbox.authorizeFromController(self)
-        }
     }
     
     // MARK: TableView Data Source
