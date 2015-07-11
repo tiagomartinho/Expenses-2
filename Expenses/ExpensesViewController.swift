@@ -27,11 +27,11 @@ class ExpensesViewController: UIViewController, UITableViewDataSource, UISearchB
     }
     
     func setSearchController(){
-        self.searchController = UISearchController(searchResultsController: ExpensesResultsTableController())
-        
+        let expensesResultsTableController = ExpensesResultsTableController()
+        searchController = UISearchController(searchResultsController: expensesResultsTableController)
         self.expensesTableView.tableHeaderView = self.searchController.searchBar
         self.searchController.searchBar.sizeToFit()
-
+        
         self.searchController.delegate = self
         self.searchController.searchBar.delegate = self
         self.searchController.searchResultsUpdater = self
@@ -79,28 +79,27 @@ class ExpensesViewController: UIViewController, UITableViewDataSource, UISearchB
         searchBar.resignFirstResponder()
     }
     
-    // MARK: UISearchControllerDelegate
-    func presentSearchController(searchController:UISearchController) {
-    }
-    
-    func willPresentSearchController(searchController:UISearchController) {
-        // do something before the search controller is presented
-    }
-    
-    func didPresentSearchController(searchController:UISearchController) {
-        // do something after the search controller is presented
-    }
-    
-    func willDismissSearchController(searchController:UISearchController) {
-        // do something before the search controller is dismissed
-    }
-    
-    func didDismissSearchController(searchController:UISearchController) {
-        // do something after the search controller is dismissed
-    }
-    
     // MARK: UISearchResultsUpdating
     func updateSearchResultsForSearchController(searchController:UISearchController) {
+        let searchText = searchController.searchBar.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+        let searchItems = searchText.componentsSeparatedByString(" ")
+        if searchItems.count != 0 {
+            var searchItemsPredicate = [NSComparisonPredicate]()
+            for searchString in searchItems {
+                let lhs = NSExpression(forKeyPath: "category")
+                let rhs = NSExpression(forConstantValue: searchString)
+                let predicate = NSComparisonPredicate(leftExpression: lhs, rightExpression: rhs, modifier: .DirectPredicateModifier, type: .ContainsPredicateOperatorType, options: .CaseInsensitivePredicateOption)
+                searchItemsPredicate.append(predicate)
+            }
+            
+            let compoundPredicate = NSCompoundPredicate(type: .AndPredicateType, subpredicates: searchItemsPredicate)
+            
+            //        let predicate = NSPredicate(format: "category BEGINSWITH %@", searchText)
+            let searchResults = array.filter(compoundPredicate)
+            let expensesResultsTableController = self.searchController.searchResultsController as!ExpensesResultsTableController
+            expensesResultsTableController.filteredExpenses = searchResults;
+            expensesResultsTableController.tableView.reloadData()
+        }
     }
     
     // MARK: TableView Data Source
@@ -110,7 +109,7 @@ class ExpensesViewController: UIViewController, UITableViewDataSource, UISearchB
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCellWithIdentifier("ExpenseCell") as? ExpensesTableViewCell {
+        if let cell = tableView.dequeueReusableCellWithIdentifier(kExpenseCell) as? ExpensesTableViewCell {
             
             let expense = array[indexPath.row]
             
@@ -147,6 +146,28 @@ class ExpensesViewController: UIViewController, UITableViewDataSource, UISearchB
             realm.delete(array[indexPath.row])
             realm.commitWrite()
         }
+    }
+    
+    // MARK: UISearchControllerDelegate
+    func presentSearchController(searchController:UISearchController) {
+    }
+    
+    func willPresentSearchController(searchController:UISearchController) {
+        // do something before the search controller is presented
+        summary.text = ""
+    }
+    
+    func didPresentSearchController(searchController:UISearchController) {
+        // do something after the search controller is presented
+    }
+    
+    func willDismissSearchController(searchController:UISearchController) {
+        // do something before the search controller is dismissed
+        updateUI()
+    }
+    
+    func didDismissSearchController(searchController:UISearchController) {
+        // do something after the search controller is dismissed
     }
 }
 
