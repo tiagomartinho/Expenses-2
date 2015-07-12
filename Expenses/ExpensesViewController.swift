@@ -89,10 +89,8 @@ class ExpensesViewController: UIViewController, UITableViewDataSource {
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-            let realm = Realm()
-            realm.beginWrite()
-            realm.delete(array[indexPath.row])
-            realm.commitWrite()
+            let entry = array[indexPath.row]
+            RealmUtilities.deleteEntry(entry)
         }
     }
 }

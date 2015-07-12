@@ -116,6 +116,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		EA003E5D1B5247ED005F4AFA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EA877CD71B4B0BD100F4B4E8 /* StringExtension.swift */,
+				EA9F106B1B518B0C0065FA37 /* DoubleExtension.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		EA0B5F1D1B4D97F4007B91FE /* Balance */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,9 +164,8 @@
 				EA877CD41B4B0BD100F4B4E8 /* ExpensesViewController.swift */,
 				EA877CD11B4B0BD100F4B4E8 /* ComposeExpenseViewController.swift */,
 				EAC3547A1B4BA2060088ACF7 /* SettingsViewController.swift */,
-				EAF9B1C51B4F11AF0065905E /* RealmUtilities.swift */,
+				EA003E5D1B5247ED005F4AFA /* Extensions */,
 				EA4B59BB1B472457000BE503 /* Supporting Files */,
-				EA0B5F2A1B4DAE25007B91FE /* Localizable.strings */,
 			);
 			name = Expenses;
 			path = "Expenses:2";
@@ -166,14 +174,14 @@
 		EA4B59BB1B472457000BE503 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				EA877CCB1B4B0BD100F4B4E8 /* AppDelegate.swift */,
 				EA877CCC1B4B0BD100F4B4E8 /* Base.lproj */,
 				EA877CD51B4B0BD100F4B4E8 /* Images.xcassets */,
+				EA0B5F2A1B4DAE25007B91FE /* Localizable.strings */,
 				EA877CD61B4B0BD100F4B4E8 /* Info.plist */,
-				EA877CD71B4B0BD100F4B4E8 /* StringExtension.swift */,
-				EA9F106B1B518B0C0065FA37 /* DoubleExtension.swift */,
+				EA877CCB1B4B0BD100F4B4E8 /* AppDelegate.swift */,
 				EA0B5F171B4D95C8007B91FE /* Constants.swift */,
 				EA9F10691B51894B0065FA37 /* TextFieldShouldReturn.swift */,
+				EAF9B1C51B4F11AF0065905E /* RealmUtilities.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";

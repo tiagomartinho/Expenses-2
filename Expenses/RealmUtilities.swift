@@ -15,4 +15,11 @@ public class RealmUtilities {
         realm.create(Expense.self, value: [personIndex,amount,category,date])
         realm.commitWrite()
     }
+    
+    public static func deleteEntry(entry: Expense){
+        let realm = Realm()
+        realm.beginWrite()
+        realm.delete(entry)
+        realm.commitWrite()
+    }
 }
