@@ -79,22 +79,24 @@ class ExpensesViewController: UIViewController, UITableViewDataSource {
         let person1Start = String(person1Name[person1Name.startIndex])
         let person2Start = String(person2Name[person2Name.startIndex])
         
+        let FirstSeparator = "by "
+        let SecondSeparator = " to "
         var result = ""
         
         if paidBy == 0 {
-            result += "by " + person1Start
+            result += FirstSeparator + person1Start
         }
         
         if paidBy == 1 {
-            result += "by " + person2Start
+            result += FirstSeparator + person2Start
         }
         
         if paidTo == 0 {
-            result += " to " +  person1Start
+            result += SecondSeparator +  person1Start
         }
         
         if paidTo == 1 {
-            result += " to " +  person2Start
+            result += SecondSeparator +  person2Start
         }
         
         return result
