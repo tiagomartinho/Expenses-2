@@ -58,6 +58,23 @@ class BalanceTests: XCTestCase {
         XCTAssertEqual(-value, Balance.total())
     }
     
+    func testTotalOneEntryForPerson1ToPerson1() {
+        RealmUtilities.addEntryWithAmount(value, PaidBy: 0, PaidTo: 0)
+        XCTAssertEqual(0.0, Balance.total())
+    }
+    
+    func testTotalOneEntryForPerson2ToPerson2() {
+        RealmUtilities.addEntryWithAmount(value, PaidBy: 1, PaidTo: 1)
+        XCTAssertEqual(0.0, Balance.total())
+    }
+    
+    func testSomeEntriesFromDifferentPersonsBetweenThemselvesGivesCorrectBalance() {
+        RealmUtilities.addEntryWithAmount(value, PaidBy: 0)
+        RealmUtilities.addEntryWithAmount(value, PaidBy: 0, PaidTo: 0)
+        RealmUtilities.addEntryWithAmount(value, PaidBy: 0, PaidTo: 1)
+        XCTAssertEqual(value + value/2, Balance.total())
+    }
+    
     // MARK: Summary Tests
     func testSummaryForEmptyEntries(){
         XCTAssertEqual("zero_balance".localized, Balance.summary())

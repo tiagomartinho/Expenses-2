@@ -13,10 +13,14 @@ class ComposeExpenseViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        amount.becomeFirstResponder()
         textFieldShouldReturn.addTextField(category)
         amountDefaultBackgroundColor = amount.backgroundColor
         updateSegmentedControl()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        amount.becomeFirstResponder()
     }
     
     func updateSegmentedControl(){

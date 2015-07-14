@@ -20,9 +20,13 @@ public class Balance {
     public static func total()->Double{
         var total = 0.0
         for expense in Realm().objects(Expense) {
-            total += expense.amount * sign(expense.paidBy) / divider(expense.paidTo)
+            total += expense.amount * multiplier(expense.paidBy,To:expense.paidTo)
         }
         return total
+    }
+    
+    private static func multiplier(paidBy:Int,To paidTo:Int)->Double{
+        return paidBy == paidTo ? 0.0 : sign(paidBy) / divider(paidTo)
     }
     
     private static func sign(paidBy:Int)->Double{
