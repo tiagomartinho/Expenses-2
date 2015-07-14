@@ -60,7 +60,7 @@ class ExpensesViewController: UIViewController, UITableViewDataSource {
         if let cell = tableView.dequeueReusableCellWithIdentifier(kExpenseCell) as? ExpensesTableViewCell {
             
             let expense = array[indexPath.row]
-            cell.person = personForIndex(expense.paidBy)
+            cell.person = paidBy(expense.paidBy,To:expense.paidTo)
             cell.category = expense.category
             cell.amount = expense.amount.currency
             cell.date = formatDate(expense.date)
@@ -72,13 +72,32 @@ class ExpensesViewController: UIViewController, UITableViewDataSource {
         }
     }
     
-    func personForIndex(index:Int)->String{
-        if index == 0 {
-            return defaults.objectForKey(kUD_Person1) as? String ?? "1"
+    func paidBy(paidBy:Int,To paidTo:Int)->String{
+        let person1Name = defaults.objectForKey(kUD_Person1) as? String ?? "1"
+        let person2Name = defaults.objectForKey(kUD_Person2) as? String ?? "2"
+        
+        let person1Start = String(person1Name[person1Name.startIndex])
+        let person2Start = String(person2Name[person2Name.startIndex])
+        
+        var result = ""
+        
+        if paidBy == 0 {
+            result += "by " + person1Start
         }
-        else {
-            return defaults.objectForKey(kUD_Person2) as? String ?? "2"
+        
+        if paidBy == 1 {
+            result += "by " + person2Start
         }
+        
+        if paidTo == 0 {
+            result += " to " +  person1Start
+        }
+        
+        if paidTo == 1 {
+            result += " to " +  person2Start
+        }
+        
+        return result
     }
     
     func formatDate(date: NSDate)->String{
