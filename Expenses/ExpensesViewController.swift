@@ -60,7 +60,7 @@ class ExpensesViewController: UIViewController, UITableViewDataSource {
         if let cell = tableView.dequeueReusableCellWithIdentifier(kExpenseCell) as? ExpensesTableViewCell {
             
             let expense = array[indexPath.row]
-            cell.person = personForIndex(expense.personIndex)
+            cell.person = personForIndex(expense.paidBy)
             cell.category = expense.category
             cell.amount = expense.amount.currency
             cell.date = formatDate(expense.date)

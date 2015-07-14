@@ -32,18 +32,18 @@ class BalanceTests: XCTestCase {
     
     func testTwoEqualEntriesFromDifferentPersonsGivesZeroBalance() {
         RealmUtilities.addEntryWithAmount(value)
-        RealmUtilities.addEntryWithAmount(value,paidBy:1)
+        RealmUtilities.addEntryWithAmount(value,PaidBy:1)
         XCTAssertEqual(0.0, Balance.total())
     }
     
     func testSomeEntriesFromDifferentPersonsGivesCorrectBalance() {
         RealmUtilities.addEntryWithAmount(value)
         RealmUtilities.addEntryWithAmount(value)
-        RealmUtilities.addEntryWithAmount(value,paidBy:1)
+        RealmUtilities.addEntryWithAmount(value,PaidBy:1)
         XCTAssertEqual(value/2, Balance.total())
-        RealmUtilities.addEntryWithAmount(value,paidBy:1)
+        RealmUtilities.addEntryWithAmount(value,PaidBy:1)
         XCTAssertEqual(0.0, Balance.total())
-        RealmUtilities.addEntryWithAmount(value,paidBy:1)
+        RealmUtilities.addEntryWithAmount(value,PaidBy:1)
         XCTAssertEqual(-value/2, Balance.total())
     }
     
@@ -67,19 +67,19 @@ class BalanceTests: XCTestCase {
     
     func testTwoEqualEntriesFromDifferentPersonsGivesSummary() {
         RealmUtilities.addEntryWithAmount(value)
-        RealmUtilities.addEntryWithAmount(value,paidBy:1)
+        RealmUtilities.addEntryWithAmount(value,PaidBy:1)
         XCTAssertEqual("zero_balance".localized, Balance.summary())
     }
     
     func testSomeEntriesFromDifferentPersonsGivesSummary() {
         RealmUtilities.addEntryWithAmount(value)
         RealmUtilities.addEntryWithAmount(value)
-        RealmUtilities.addEntryWithAmount(value,paidBy:1)
+        RealmUtilities.addEntryWithAmount(value,PaidBy:1)
         var summary = person2Name + " owes " + person1Name + " " + "\(value/2)" + "€"
         XCTAssertEqual(summary, Balance.summary())
-        RealmUtilities.addEntryWithAmount(value,paidBy:1)
+        RealmUtilities.addEntryWithAmount(value,PaidBy:1)
         XCTAssertEqual("zero_balance".localized, Balance.summary())
-        RealmUtilities.addEntryWithAmount(value,paidBy:1)
+        RealmUtilities.addEntryWithAmount(value,PaidBy:1)
         summary = person1Name + " owes " + person2Name + " " + "\(value/2)" + "€"
         XCTAssertEqual(summary, Balance.summary())
     }

@@ -8,10 +8,10 @@ public class RealmUtilities {
         realm.commitWrite()
     }
     
-    public static func addEntryWithAmount(amount:Double,paidBy personIndex:Int=0,AtDate date:NSDate=NSDate(),WithCategory category:String=""){
+    public static func addEntryWithAmount(amount:Double,PaidBy by:Int=0,PaidTo to:Int=2,AtDate date:NSDate=NSDate(),WithCategory category:String=""){
         let realm = Realm()
         realm.beginWrite()
-        realm.create(Expense.self, value: [personIndex,amount,category,date])
+        realm.create(Expense.self, value: [amount, by, to, category,date])
         realm.commitWrite()
     }
     

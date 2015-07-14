@@ -21,12 +21,12 @@ public class Balance {
     public static func total()->Double{
         var total = 0.0
         for expense in Realm().objects(Expense) {
-            total += expense.amount * sign(expense.personIndex)
+            total += expense.amount * sign(expense.paidBy)
         }
         return total / 2
     }
     
-    private static func sign(personIndex:Int)->Double{
-        return personIndex == 0 ? 1.0 : -1.0
+    private static func sign(paidBy:Int)->Double{
+        return paidBy == 0 ? 1.0 : -1.0
     }
 }
