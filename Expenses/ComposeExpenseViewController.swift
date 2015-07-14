@@ -6,7 +6,6 @@ class ComposeExpenseViewController: UITableViewController {
     @IBOutlet weak var amount: UITextField!
     @IBOutlet weak var paidTo: UISegmentedControl!
     @IBOutlet weak var category: UITextField!
-    @IBOutlet weak var date: UIDatePicker!
     
     var amountDefaultBackgroundColor:UIColor?
     
@@ -49,7 +48,7 @@ class ComposeExpenseViewController: UITableViewController {
         let categoryOrEmpty = category?.text ?? ""
         let by = paidBy.selectedSegmentIndex
         let to = paidToConversion[paidTo.selectedSegmentIndex]
-        RealmUtilities.addEntryWithAmount(amount, PaidBy: by, PaidTo: to, AtDate: date.date, WithCategory: categoryOrEmpty)
+        RealmUtilities.addEntryWithAmount(amount, PaidBy: by, PaidTo: to, AtDate: NSDate(), WithCategory: categoryOrEmpty)
     }
     
     func setAmountBackground(){

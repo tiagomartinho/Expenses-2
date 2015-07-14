@@ -88,12 +88,15 @@
                                                     <constraints>
                                                         <constraint firstItem="4Nf-6E-FPk" firstAttribute="width" secondItem="tFb-Bf-0HF" secondAttribute="width" id="5sL-n7-0Di"/>
                                                         <constraint firstAttribute="centerY" secondItem="PKo-8H-96l" secondAttribute="centerY" id="8Ry-Cg-3LN"/>
+                                                        <constraint firstItem="4Nf-6E-FPk" firstAttribute="width" secondItem="PKo-8H-96l" secondAttribute="width" id="Cmg-N7-RhK"/>
                                                         <constraint firstItem="cey-0q-Sbh" firstAttribute="width" secondItem="4Nf-6E-FPk" secondAttribute="width" id="DPv-hA-mrU"/>
                                                         <constraint firstAttribute="centerY" secondItem="cey-0q-Sbh" secondAttribute="centerY" id="F74-Tb-FJt"/>
+                                                        <constraint firstItem="PKo-8H-96l" firstAttribute="width" secondItem="tFb-Bf-0HF" secondAttribute="width" id="HbU-DM-Fzz"/>
                                                         <constraint firstItem="4Nf-6E-FPk" firstAttribute="leading" secondItem="PKo-8H-96l" secondAttribute="trailing" constant="8" symbolic="YES" id="MTt-5c-Nqz"/>
                                                         <constraint firstAttribute="centerY" secondItem="4Nf-6E-FPk" secondAttribute="centerY" id="PUb-H5-5Rx"/>
                                                         <constraint firstItem="tFb-Bf-0HF" firstAttribute="leading" secondItem="cey-0q-Sbh" secondAttribute="trailing" constant="8" symbolic="YES" id="Py0-gm-1Lo"/>
                                                         <constraint firstAttribute="centerY" secondItem="tFb-Bf-0HF" secondAttribute="centerY" id="S2C-ZZ-Czc"/>
+                                                        <constraint firstItem="PKo-8H-96l" firstAttribute="width" secondItem="cey-0q-Sbh" secondAttribute="width" id="YvS-rX-chW"/>
                                                         <constraint firstItem="cey-0q-Sbh" firstAttribute="width" secondItem="PKo-8H-96l" secondAttribute="width" id="dj3-4f-fSR"/>
                                                         <constraint firstItem="PKo-8H-96l" firstAttribute="leading" secondItem="tFb-Bf-0HF" secondAttribute="trailing" constant="8" symbolic="YES" id="lQe-LT-bpq"/>
                                                         <constraint firstItem="4Nf-6E-FPk" firstAttribute="trailing" secondItem="4Ye-6P-SGB" secondAttribute="trailingMargin" id="nz5-rF-J4B"/>
@@ -103,14 +106,18 @@
                                                     </constraints>
                                                     <variation key="default">
                                                         <mask key="constraints">
+                                                            <exclude reference="DPv-hA-mrU"/>
                                                             <exclude reference="dj3-4f-fSR"/>
                                                             <exclude reference="sg6-lJ-lBx"/>
+                                                            <exclude reference="5sL-n7-0Di"/>
+                                                            <exclude reference="oCj-wu-FFq"/>
                                                         </mask>
                                                     </variation>
                                                     <variation key="heightClass=regular-widthClass=compact">
                                                         <mask key="constraints">
                                                             <exclude reference="dj3-4f-fSR"/>
                                                             <include reference="sg6-lJ-lBx"/>
+                                                            <exclude reference="Cmg-N7-RhK"/>
                                                             <exclude reference="oCj-wu-FFq"/>
                                                         </mask>
                                                     </variation>
@@ -345,42 +352,6 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Date" id="rLs-z1-e6k">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="162" id="2va-cA-Dgg">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2va-cA-Dgg" id="WcF-jf-EiU">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="kAo-hS-DiP">
-                                                    <rect key="frame" x="8" y="-1" width="584" height="162"/>
-                                                    <date key="date" timeIntervalSinceReferenceDate="458596571.31325102">
-                                                        <!--2015-07-14 19:56:11 +0000-->
-                                                    </date>
-                                                </datePicker>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="kAo-hS-DiP" secondAttribute="trailing" id="8S2-Un-bMK"/>
-                                                <constraint firstItem="kAo-hS-DiP" firstAttribute="leading" secondItem="WcF-jf-EiU" secondAttribute="leadingMargin" id="8q4-eR-Py4"/>
-                                                <constraint firstAttribute="centerY" secondItem="kAo-hS-DiP" secondAttribute="centerY" id="Gad-DO-xl5"/>
-                                                <constraint firstItem="kAo-hS-DiP" firstAttribute="top" secondItem="WcF-jf-EiU" secondAttribute="topMargin" id="awA-rk-kBE"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="kAo-hS-DiP" secondAttribute="bottom" id="czz-cy-kW1"/>
-                                            </constraints>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="Gad-DO-xl5"/>
-                                                </mask>
-                                            </variation>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="EoU-4M-TG6">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EoU-4M-TG6" id="DzU-xg-e5L">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="cde-H7-rpV" id="AMS-Fy-Fva"/>
@@ -399,7 +370,6 @@
                     <connections>
                         <outlet property="amount" destination="e7I-ch-cc9" id="Y4F-ej-cye"/>
                         <outlet property="category" destination="udk-3y-e7N" id="Cxr-PQ-GMO"/>
-                        <outlet property="date" destination="kAo-hS-DiP" id="87L-Cj-HVB"/>
                         <outlet property="paidBy" destination="QbK-ua-Puz" id="ITT-La-e0H"/>
                         <outlet property="paidTo" destination="joL-SQ-rHO" id="sRB-w7-vci"/>
                     </connections>
