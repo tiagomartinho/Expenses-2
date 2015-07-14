@@ -308,7 +308,7 @@
                                                     <rect key="frame" x="8" y="8" width="584" height="29"/>
                                                     <segments>
                                                         <segment title="1"/>
-                                                        <segment title="In Common"/>
+                                                        <segment title="In common"/>
                                                         <segment title="2"/>
                                                     </segments>
                                                 </segmentedControl>
@@ -347,13 +347,13 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Date" id="rLs-z1-e6k">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="2va-cA-Dgg">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="162" id="2va-cA-Dgg">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2va-cA-Dgg" id="WcF-jf-EiU">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="kAo-hS-DiP">
-                                                    <rect key="frame" x="8" y="-60" width="584" height="162"/>
+                                                    <rect key="frame" x="8" y="-1" width="584" height="162"/>
                                                     <date key="date" timeIntervalSinceReferenceDate="458596571.31325102">
                                                         <!--2015-07-14 19:56:11 +0000-->
                                                     </date>
@@ -371,6 +371,12 @@
                                                     <exclude reference="Gad-DO-xl5"/>
                                                 </mask>
                                             </variation>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="EoU-4M-TG6">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EoU-4M-TG6" id="DzU-xg-e5L">
+                                            <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -393,7 +399,9 @@
                     <connections>
                         <outlet property="amount" destination="e7I-ch-cc9" id="Y4F-ej-cye"/>
                         <outlet property="category" destination="udk-3y-e7N" id="Cxr-PQ-GMO"/>
-                        <outlet property="person" destination="QbK-ua-Puz" id="sM5-jS-1DE"/>
+                        <outlet property="date" destination="kAo-hS-DiP" id="87L-Cj-HVB"/>
+                        <outlet property="paidBy" destination="QbK-ua-Puz" id="ITT-La-e0H"/>
+                        <outlet property="paidTo" destination="joL-SQ-rHO" id="sRB-w7-vci"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Adc-a7-CcI" userLabel="First Responder" sceneMemberID="firstResponder"/>

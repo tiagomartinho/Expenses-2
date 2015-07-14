@@ -2,9 +2,11 @@ import UIKit
 
 class ComposeExpenseViewController: UITableViewController {
 
-    @IBOutlet weak var person: UISegmentedControl!
+    @IBOutlet weak var paidBy: UISegmentedControl!
     @IBOutlet weak var amount: UITextField!
+    @IBOutlet weak var paidTo: UISegmentedControl!
     @IBOutlet weak var category: UITextField!
+    @IBOutlet weak var date: UIDatePicker!
     
     var amountDefaultBackgroundColor:UIColor?
     
@@ -20,10 +22,10 @@ class ComposeExpenseViewController: UITableViewController {
     
     func updateSegmentedControl(){
         if let person1Name = defaults.objectForKey(kUD_Person1) as? String {
-            person.setTitle(person1Name, forSegmentAtIndex: 0)
+            paidBy.setTitle(person1Name, forSegmentAtIndex: 0)
         }
         if let person2Name = defaults.objectForKey(kUD_Person2) as? String {
-            person.setTitle(person2Name, forSegmentAtIndex: 1)
+            paidBy.setTitle(person2Name, forSegmentAtIndex: 1)
         }
     }
     
@@ -38,13 +40,14 @@ class ComposeExpenseViewController: UITableViewController {
         }
         else {
             setAmountBackground()
+            tableView.scrollToRowAtIndexPath(NSIndexPath(forItem: 0, inSection: 0), atScrollPosition: .Top, animated: true)
         }
     }
     
     func addExpense(amount:Double) {
         let categoryOrEmpty = category?.text ?? ""
-        let personIndex = person.selectedSegmentIndex
-        RealmUtilities.addEntry(amount, personIndex: personIndex, category: categoryOrEmpty)
+        let personIndex = paidBy.selectedSegmentIndex
+        RealmUtilities.addEntryWithAmount(amount, paidBy: personIndex, AtDate: date.date, WithCategory: categoryOrEmpty)
     }
     
     func setAmountBackground(){

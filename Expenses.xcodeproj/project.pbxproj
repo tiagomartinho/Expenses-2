@@ -216,9 +216,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EA4B59B71B472457000BE503 /* Expenses */ = {
+		EA4B59B71B472457000BE503 /* ExpensesBy2 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EA4B59D71B472458000BE503 /* Build configuration list for PBXNativeTarget "Expenses" */;
+			buildConfigurationList = EA4B59D71B472458000BE503 /* Build configuration list for PBXNativeTarget "ExpensesBy2" */;
 			buildPhases = (
 				914E82A27E4ED15BCFBA9A5B /* Check Pods Manifest.lock */,
 				EA4B59B41B472457000BE503 /* Sources */,
@@ -231,7 +231,7 @@
 			);
 			dependencies = (
 			);
-			name = Expenses;
+			name = ExpensesBy2;
 			productName = "Expenses:2";
 			productReference = EA4B59B81B472457000BE503 /* ExpensesBy2.app */;
 			productType = "com.apple.product-type.application";
@@ -289,7 +289,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EA4B59B71B472457000BE503 /* Expenses */,
+				EA4B59B71B472457000BE503 /* ExpensesBy2 */,
 				EA4B59CC1B472458000BE503 /* ExpensesTests */,
 			);
 		};
@@ -445,7 +445,7 @@
 /* Begin PBXTargetDependency section */
 		EA4B59CF1B472458000BE503 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = EA4B59B71B472457000BE503 /* Expenses */;
+			target = EA4B59B71B472457000BE503 /* ExpensesBy2 */;
 			targetProxy = EA4B59CE1B472458000BE503 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -610,7 +610,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = ExpensesTests;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Expenses:2.app/Expenses:2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ExpensesBy2.app/ExpensesBy2";
 			};
 			name = Debug;
 		};
@@ -627,7 +627,7 @@
 				INFOPLIST_FILE = ExpensesTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = ExpensesTests;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Expenses:2.app/Expenses:2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ExpensesBy2.app/ExpensesBy2";
 			};
 			name = Release;
 		};
@@ -643,7 +643,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EA4B59D71B472458000BE503 /* Build configuration list for PBXNativeTarget "Expenses" */ = {
+		EA4B59D71B472458000BE503 /* Build configuration list for PBXNativeTarget "ExpensesBy2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EA4B59D81B472458000BE503 /* Debug */,

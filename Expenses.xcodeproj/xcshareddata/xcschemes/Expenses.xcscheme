@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "EA4B59B71B472457000BE503"
                BuildableName = "ExpensesBy2.app"
-               BlueprintName = "Expenses"
+               BlueprintName = "ExpensesBy2"
                ReferencedContainer = "container:Expenses.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -58,7 +58,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EA4B59B71B472457000BE503"
             BuildableName = "ExpensesBy2.app"
-            BlueprintName = "Expenses"
+            BlueprintName = "ExpensesBy2"
             ReferencedContainer = "container:Expenses.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -78,7 +78,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EA4B59B71B472457000BE503"
             BuildableName = "ExpensesBy2.app"
-            BlueprintName = "Expenses"
+            BlueprintName = "ExpensesBy2"
             ReferencedContainer = "container:Expenses.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -97,7 +97,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EA4B59B71B472457000BE503"
             BuildableName = "ExpensesBy2.app"
-            BlueprintName = "Expenses"
+            BlueprintName = "ExpensesBy2"
             ReferencedContainer = "container:Expenses.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

@@ -2,7 +2,7 @@ import XCTest
 
 class ConvertAmountTests: XCTestCase {
     func testZero() {
-        XCTAssertEqual("0".amount!, 0.0)
+        XCTAssertNil("0".amount)
     }
     
     func testValidInputsWithComma() {

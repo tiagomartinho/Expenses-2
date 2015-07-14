@@ -1,6 +1,6 @@
 import XCTest
 import RealmSwift
-import Expenses_2
+import ExpensesBy2
 
 class BalanceTests: XCTestCase {
     
@@ -20,30 +20,30 @@ class BalanceTests: XCTestCase {
     }
     
     func testTotalOneEntryForPerson1() {
-        RealmUtilities.addEntry(value)
+        RealmUtilities.addEntryWithAmount(value)
         XCTAssertEqual(value/2, Balance.total())
     }
     
     func testTwoEntriesGivesSumAmountBalance() {
-        RealmUtilities.addEntry(value)
-        RealmUtilities.addEntry(value)
+        RealmUtilities.addEntryWithAmount(value)
+        RealmUtilities.addEntryWithAmount(value)
         XCTAssertEqual((value+value)/2, Balance.total())
     }
     
     func testTwoEqualEntriesFromDifferentPersonsGivesZeroBalance() {
-        RealmUtilities.addEntry(value)
-        RealmUtilities.addEntry(value,personIndex:1)
+        RealmUtilities.addEntryWithAmount(value)
+        RealmUtilities.addEntryWithAmount(value,paidBy:1)
         XCTAssertEqual(0.0, Balance.total())
     }
     
     func testSomeEntriesFromDifferentPersonsGivesCorrectBalance() {
-        RealmUtilities.addEntry(value)
-        RealmUtilities.addEntry(value)
-        RealmUtilities.addEntry(value,personIndex:1)
+        RealmUtilities.addEntryWithAmount(value)
+        RealmUtilities.addEntryWithAmount(value)
+        RealmUtilities.addEntryWithAmount(value,paidBy:1)
         XCTAssertEqual(value/2, Balance.total())
-        RealmUtilities.addEntry(value,personIndex:1)
+        RealmUtilities.addEntryWithAmount(value,paidBy:1)
         XCTAssertEqual(0.0, Balance.total())
-        RealmUtilities.addEntry(value,personIndex:1)
+        RealmUtilities.addEntryWithAmount(value,paidBy:1)
         XCTAssertEqual(-value/2, Balance.total())
     }
     
@@ -53,33 +53,33 @@ class BalanceTests: XCTestCase {
     }
     
     func testSummaryOneEntryForPerson1() {
-        RealmUtilities.addEntry(value)
+        RealmUtilities.addEntryWithAmount(value)
         let summary = person2Name + " owes " + person1Name + " " + "\(value/2)" + "€"
         XCTAssertEqual(summary, Balance.summary())
     }
     
     func testTwoEntriesGivesSummary() {
-        RealmUtilities.addEntry(value)
-        RealmUtilities.addEntry(value)
+        RealmUtilities.addEntryWithAmount(value)
+        RealmUtilities.addEntryWithAmount(value)
         let summary = person2Name + " owes " + person1Name + " " + "\((value+value)/2)" + "€"
         XCTAssertEqual(summary, Balance.summary())
     }
     
     func testTwoEqualEntriesFromDifferentPersonsGivesSummary() {
-        RealmUtilities.addEntry(value)
-        RealmUtilities.addEntry(value,personIndex:1)
+        RealmUtilities.addEntryWithAmount(value)
+        RealmUtilities.addEntryWithAmount(value,paidBy:1)
         XCTAssertEqual("zero_balance".localized, Balance.summary())
     }
     
     func testSomeEntriesFromDifferentPersonsGivesSummary() {
-        RealmUtilities.addEntry(value)
-        RealmUtilities.addEntry(value)
-        RealmUtilities.addEntry(value,personIndex:1)
+        RealmUtilities.addEntryWithAmount(value)
+        RealmUtilities.addEntryWithAmount(value)
+        RealmUtilities.addEntryWithAmount(value,paidBy:1)
         var summary = person2Name + " owes " + person1Name + " " + "\(value/2)" + "€"
         XCTAssertEqual(summary, Balance.summary())
-        RealmUtilities.addEntry(value,personIndex:1)
+        RealmUtilities.addEntryWithAmount(value,paidBy:1)
         XCTAssertEqual("zero_balance".localized, Balance.summary())
-        RealmUtilities.addEntry(value,personIndex:1)
+        RealmUtilities.addEntryWithAmount(value,paidBy:1)
         summary = person1Name + " owes " + person2Name + " " + "\(value/2)" + "€"
         XCTAssertEqual(summary, Balance.summary())
     }
@@ -87,7 +87,7 @@ class BalanceTests: XCTestCase {
     // MARK: Totals Formatted Tests
     func testBalanceTotalFormatted(){
         XCTAssertEqual("0.00€", Balance.absoluteTotalFormatted())
-        RealmUtilities.addEntry(2.0)
+        RealmUtilities.addEntryWithAmount(2.0)
         XCTAssertEqual("1.00€", Balance.absoluteTotalFormatted())
     }
 }
