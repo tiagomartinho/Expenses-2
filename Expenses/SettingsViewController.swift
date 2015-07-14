@@ -6,7 +6,7 @@ class SettingsViewController: UITableViewController {
     @IBOutlet weak var person2: UITextField!
     
     let textFieldShouldReturn = TextFieldShouldReturn()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         textFieldShouldReturn.addTextField(person1)
@@ -25,16 +25,23 @@ class SettingsViewController: UITableViewController {
     
     @IBAction func person(sender: UITextField) {
         let name = sender.text.removeWhitespaces()
-        if name == "" {
-            return
-        }
         
         if sender.placeholder?.hasSuffix("1") ?? false {
-            defaults.setObject(name, forKey: kUD_Person1)
+            if name == "" {
+                defaults.setObject("1", forKey: kUD_Person1)
+            }
+            else {
+                defaults.setObject(name, forKey: kUD_Person1)
+            }
         }
         
         if sender.placeholder?.hasSuffix("2") ?? false {
-            defaults.setObject(name, forKey: kUD_Person2)
+            if name == "" {
+                defaults.setObject("2", forKey: kUD_Person2)
+            }
+            else {
+                defaults.setObject(name, forKey: kUD_Person2)
+            }
         }
         
         defaults.synchronize()

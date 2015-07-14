@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "EA4B59B71B472457000BE503"
-               BuildableName = "Expenses:2.app"
+               BuildableName = "ExpensesBy2.app"
                BlueprintName = "Expenses"
                ReferencedContainer = "container:Expenses.xcodeproj">
             </BuildableReference>
@@ -57,7 +57,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EA4B59B71B472457000BE503"
-            BuildableName = "Expenses:2.app"
+            BuildableName = "ExpensesBy2.app"
             BlueprintName = "Expenses"
             ReferencedContainer = "container:Expenses.xcodeproj">
          </BuildableReference>
@@ -77,7 +77,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EA4B59B71B472457000BE503"
-            BuildableName = "Expenses:2.app"
+            BuildableName = "ExpensesBy2.app"
             BlueprintName = "Expenses"
             ReferencedContainer = "container:Expenses.xcodeproj">
          </BuildableReference>
@@ -96,7 +96,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EA4B59B71B472457000BE503"
-            BuildableName = "Expenses:2.app"
+            BuildableName = "ExpensesBy2.app"
             BlueprintName = "Expenses"
             ReferencedContainer = "container:Expenses.xcodeproj">
          </BuildableReference>

@@ -8,7 +8,7 @@
         <!--Expenses-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ExpensesViewController" customModule="Expenses_2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ExpensesViewController" customModule="ExpensesBy2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -29,7 +29,7 @@
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="DUf-0j-P2A">
                                         <rect key="frame" x="0.0" y="76" width="600" height="460"/>
                                         <prototypes>
-                                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ExpenseCell" id="L3Q-7J-aQd" customClass="ExpensesTableViewCell" customModule="Expenses_2" customModuleProvider="target">
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ExpenseCell" id="L3Q-7J-aQd" customClass="ExpensesTableViewCell" customModule="ExpensesBy2" customModuleProvider="target">
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="L3Q-7J-aQd" id="4Ye-6P-SGB">
                                                     <autoresizingMask key="autoresizingMask"/>
@@ -53,7 +53,7 @@
                                                                 </mask>
                                                             </variation>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tFb-Bf-0HF">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tFb-Bf-0HF">
                                                             <rect key="frame" x="156" y="11" width="140" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -86,37 +86,32 @@
                                                         </label>
                                                     </subviews>
                                                     <constraints>
+                                                        <constraint firstItem="4Nf-6E-FPk" firstAttribute="width" secondItem="tFb-Bf-0HF" secondAttribute="width" id="5sL-n7-0Di"/>
                                                         <constraint firstAttribute="centerY" secondItem="PKo-8H-96l" secondAttribute="centerY" id="8Ry-Cg-3LN"/>
-                                                        <constraint firstItem="tFb-Bf-0HF" firstAttribute="width" secondItem="cey-0q-Sbh" secondAttribute="width" id="8hZ-W2-Kp7"/>
-                                                        <constraint firstItem="PKo-8H-96l" firstAttribute="leading" secondItem="tFb-Bf-0HF" secondAttribute="trailing" constant="8" symbolic="YES" id="9R4-Mn-PE3"/>
-                                                        <constraint firstItem="PKo-8H-96l" firstAttribute="width" secondItem="tFb-Bf-0HF" secondAttribute="width" id="DVS-05-SPM"/>
+                                                        <constraint firstItem="cey-0q-Sbh" firstAttribute="width" secondItem="4Nf-6E-FPk" secondAttribute="width" id="DPv-hA-mrU"/>
                                                         <constraint firstAttribute="centerY" secondItem="cey-0q-Sbh" secondAttribute="centerY" id="F74-Tb-FJt"/>
-                                                        <constraint firstAttribute="centerY" secondItem="tFb-Bf-0HF" secondAttribute="centerY" id="LMk-WU-qrU"/>
-                                                        <constraint firstItem="tFb-Bf-0HF" firstAttribute="leading" secondItem="cey-0q-Sbh" secondAttribute="trailing" constant="8" symbolic="YES" id="Ld7-mP-XH9"/>
                                                         <constraint firstItem="4Nf-6E-FPk" firstAttribute="leading" secondItem="PKo-8H-96l" secondAttribute="trailing" constant="8" symbolic="YES" id="MTt-5c-Nqz"/>
                                                         <constraint firstAttribute="centerY" secondItem="4Nf-6E-FPk" secondAttribute="centerY" id="PUb-H5-5Rx"/>
+                                                        <constraint firstItem="tFb-Bf-0HF" firstAttribute="leading" secondItem="cey-0q-Sbh" secondAttribute="trailing" constant="8" symbolic="YES" id="Py0-gm-1Lo"/>
+                                                        <constraint firstAttribute="centerY" secondItem="tFb-Bf-0HF" secondAttribute="centerY" id="S2C-ZZ-Czc"/>
                                                         <constraint firstItem="cey-0q-Sbh" firstAttribute="width" secondItem="PKo-8H-96l" secondAttribute="width" id="dj3-4f-fSR"/>
+                                                        <constraint firstItem="PKo-8H-96l" firstAttribute="leading" secondItem="tFb-Bf-0HF" secondAttribute="trailing" constant="8" symbolic="YES" id="lQe-LT-bpq"/>
                                                         <constraint firstItem="4Nf-6E-FPk" firstAttribute="trailing" secondItem="4Ye-6P-SGB" secondAttribute="trailingMargin" id="nz5-rF-J4B"/>
                                                         <constraint firstItem="4Nf-6E-FPk" firstAttribute="width" secondItem="PKo-8H-96l" secondAttribute="width" id="oCj-wu-FFq"/>
-                                                        <constraint firstItem="4Nf-6E-FPk" firstAttribute="width" secondItem="tFb-Bf-0HF" secondAttribute="width" id="ouJ-nN-9LZ"/>
                                                         <constraint firstItem="cey-0q-Sbh" firstAttribute="width" secondItem="PKo-8H-96l" secondAttribute="width" id="sg6-lJ-lBx"/>
                                                         <constraint firstItem="cey-0q-Sbh" firstAttribute="leading" secondItem="4Ye-6P-SGB" secondAttribute="leadingMargin" id="wAL-Lu-1Nb"/>
                                                     </constraints>
                                                     <variation key="default">
                                                         <mask key="constraints">
+                                                            <exclude reference="dj3-4f-fSR"/>
                                                             <exclude reference="sg6-lJ-lBx"/>
-                                                            <exclude reference="8hZ-W2-Kp7"/>
-                                                            <exclude reference="ouJ-nN-9LZ"/>
                                                         </mask>
                                                     </variation>
                                                     <variation key="heightClass=regular-widthClass=compact">
                                                         <mask key="constraints">
                                                             <exclude reference="dj3-4f-fSR"/>
                                                             <include reference="sg6-lJ-lBx"/>
-                                                            <include reference="8hZ-W2-Kp7"/>
-                                                            <exclude reference="DVS-05-SPM"/>
                                                             <exclude reference="oCj-wu-FFq"/>
-                                                            <exclude reference="ouJ-nN-9LZ"/>
                                                         </mask>
                                                     </variation>
                                                 </tableViewCellContentView>
@@ -241,7 +236,7 @@
         <!--Compose Expense-->
         <scene sceneID="gYY-kH-JLh">
             <objects>
-                <tableViewController id="cde-H7-rpV" userLabel="Compose Expense" customClass="ComposeExpenseViewController" customModule="Expenses_2" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="cde-H7-rpV" userLabel="Compose Expense" customClass="ComposeExpenseViewController" customModule="ExpensesBy2" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="1ej-rY-ZlZ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -353,7 +348,7 @@
         <!--Settings-->
         <scene sceneID="3i3-qN-odE">
             <objects>
-                <tableViewController id="AGd-U8-aDq" customClass="SettingsViewController" customModule="Expenses_2" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="AGd-U8-aDq" customClass="SettingsViewController" customModule="ExpensesBy2" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="CnT-ml-e1z">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
