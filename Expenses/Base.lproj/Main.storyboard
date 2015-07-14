@@ -243,7 +243,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
-                            <tableViewSection headerTitle="Person" id="gHe-0m-tDc">
+                            <tableViewSection headerTitle="Paid by" id="gHe-0m-tDc">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="aan-3O-Lie">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -297,25 +297,80 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Category" id="s66-xh-Jua">
+                            <tableViewSection headerTitle="Paid to" id="s66-xh-Jua">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Qsl-RN-7e6">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Qsl-RN-7e6" id="WhF-Gd-6ET">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="(Optional)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sve-Ve-hFV">
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="joL-SQ-rHO">
+                                                    <rect key="frame" x="8" y="8" width="584" height="29"/>
+                                                    <segments>
+                                                        <segment title="1"/>
+                                                        <segment title="In Common"/>
+                                                        <segment title="2"/>
+                                                    </segments>
+                                                </segmentedControl>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="joL-SQ-rHO" secondAttribute="trailing" id="MJ7-vU-d7F"/>
+                                                <constraint firstItem="joL-SQ-rHO" firstAttribute="leading" secondItem="WhF-Gd-6ET" secondAttribute="leadingMargin" id="UTc-bG-Nv6"/>
+                                                <constraint firstAttribute="centerY" secondItem="joL-SQ-rHO" secondAttribute="centerY" id="vnY-Th-Hto"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Category" id="DsR-j4-eN0">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="3Gq-o9-ctU">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3Gq-o9-ctU" id="x4h-Xj-eX8">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="(Optional)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="udk-3y-e7N">
                                                     <rect key="frame" x="8" y="8" width="584" height="27"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Sve-Ve-hFV" secondAttribute="trailing" id="5SZ-SF-Qea"/>
-                                                <constraint firstItem="Sve-Ve-hFV" firstAttribute="top" secondItem="WhF-Gd-6ET" secondAttribute="topMargin" id="Dn6-Ot-j6Q"/>
-                                                <constraint firstItem="Sve-Ve-hFV" firstAttribute="leading" secondItem="WhF-Gd-6ET" secondAttribute="leadingMargin" id="Ndp-cj-peP"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Sve-Ve-hFV" secondAttribute="bottom" id="us4-VS-vLx"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="udk-3y-e7N" secondAttribute="trailing" id="DDZ-db-BKm"/>
+                                                <constraint firstItem="udk-3y-e7N" firstAttribute="top" secondItem="x4h-Xj-eX8" secondAttribute="topMargin" id="MDy-Uc-WOv"/>
+                                                <constraint firstItem="udk-3y-e7N" firstAttribute="leading" secondItem="x4h-Xj-eX8" secondAttribute="leadingMargin" id="TkL-P1-q54"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="udk-3y-e7N" secondAttribute="bottom" id="VQ9-SH-I5J"/>
                                             </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Date" id="rLs-z1-e6k">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="2va-cA-Dgg">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2va-cA-Dgg" id="WcF-jf-EiU">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="kAo-hS-DiP">
+                                                    <rect key="frame" x="8" y="-60" width="584" height="162"/>
+                                                    <date key="date" timeIntervalSinceReferenceDate="458596571.31325102">
+                                                        <!--2015-07-14 19:56:11 +0000-->
+                                                    </date>
+                                                </datePicker>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="kAo-hS-DiP" secondAttribute="trailing" id="8S2-Un-bMK"/>
+                                                <constraint firstItem="kAo-hS-DiP" firstAttribute="leading" secondItem="WcF-jf-EiU" secondAttribute="leadingMargin" id="8q4-eR-Py4"/>
+                                                <constraint firstAttribute="centerY" secondItem="kAo-hS-DiP" secondAttribute="centerY" id="Gad-DO-xl5"/>
+                                                <constraint firstItem="kAo-hS-DiP" firstAttribute="top" secondItem="WcF-jf-EiU" secondAttribute="topMargin" id="awA-rk-kBE"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="kAo-hS-DiP" secondAttribute="bottom" id="czz-cy-kW1"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="Gad-DO-xl5"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -337,7 +392,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="amount" destination="e7I-ch-cc9" id="Y4F-ej-cye"/>
-                        <outlet property="category" destination="Sve-Ve-hFV" id="Zbv-Gh-uZe"/>
+                        <outlet property="category" destination="udk-3y-e7N" id="Cxr-PQ-GMO"/>
                         <outlet property="person" destination="QbK-ua-Puz" id="sM5-jS-1DE"/>
                     </connections>
                 </tableViewController>
