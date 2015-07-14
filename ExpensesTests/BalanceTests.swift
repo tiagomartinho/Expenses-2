@@ -14,7 +14,7 @@ class BalanceTests: XCTestCase {
         RealmUtilities.deleteAllEntries()
     }
     
-    // MARK: Total Tests
+    // MARK: Total Tests For In Common Expenses
     func testTotalForEmptyEntries() {
         XCTAssertEqual(0.0, Balance.total())
     }
@@ -45,6 +45,17 @@ class BalanceTests: XCTestCase {
         XCTAssertEqual(0.0, Balance.total())
         RealmUtilities.addEntryWithAmount(value,PaidBy:1)
         XCTAssertEqual(-value/2, Balance.total())
+    }
+    
+    // MARK: Total Tests For Not In Common Expenses
+    func testTotalOneEntryForPerson1ToPerson2() {
+        RealmUtilities.addEntryWithAmount(value, PaidBy: 0, PaidTo: 1)
+        XCTAssertEqual(value, Balance.total())
+    }
+    
+    func testTotalOneEntryForPerson2ToPerson1() {
+        RealmUtilities.addEntryWithAmount(value, PaidBy: 1, PaidTo: 0)
+        XCTAssertEqual(-value, Balance.total())
     }
     
     // MARK: Summary Tests
@@ -86,8 +97,8 @@ class BalanceTests: XCTestCase {
     
     // MARK: Totals Formatted Tests
     func testBalanceTotalFormatted(){
-        XCTAssertEqual("0.00€", Balance.absoluteTotalFormatted())
+        XCTAssertEqual("0.00€", Balance.total().currency)
         RealmUtilities.addEntryWithAmount(2.0)
-        XCTAssertEqual("1.00€", Balance.absoluteTotalFormatted())
+        XCTAssertEqual("1.00€", Balance.total().currency)
     }
 }

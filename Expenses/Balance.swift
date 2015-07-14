@@ -2,31 +2,34 @@ import RealmSwift
 
 public class Balance {
     public static func summary()->String{
+        let total = self.total()
+        
+        if total == 0 {
+            return "zero_balance".localized
+        }
+        
         let person1Name = defaults.objectForKey(kUD_Person1) as? String ?? "1"
         let person2Name = defaults.objectForKey(kUD_Person2) as? String ?? "2"
-        let total = self.total()
-        if total > 0 {
-            return person2Name + " " + "owes".localized + " " + person1Name + " " + absoluteTotalFormatted()
-        }
-        if total < 0 {
-            return person1Name + " " + "owes".localized + " " + person2Name + " " + absoluteTotalFormatted()
-        }
-        return "zero_balance".localized
-    }
-    
-    public static func absoluteTotalFormatted()->String{
-        return total().currency
+        
+        let personInCredit = total > 0 ? person1Name : person2Name
+        let personInDebt = total < 0 ? person1Name : person2Name
+        
+        return personInDebt + " " + "owes".localized + " " + personInCredit + " " + total.currency
     }
     
     public static func total()->Double{
         var total = 0.0
         for expense in Realm().objects(Expense) {
-            total += expense.amount * sign(expense.paidBy)
+            total += expense.amount * sign(expense.paidBy) / divider(expense.paidTo)
         }
-        return total / 2
+        return total
     }
     
     private static func sign(paidBy:Int)->Double{
         return paidBy == 0 ? 1.0 : -1.0
+    }
+    
+    private static func divider(paidTo:Int)->Double{
+        return paidTo == 2 ? 2.0 : 1.0
     }
 }
