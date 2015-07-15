@@ -5,8 +5,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateiCloudToken:", name: NSUbiquityIdentityDidChangeNotification, object: nil)
         updateiCloudToken()
         return true
+    }
+    
+    func updateiCloudToken(notification: NSNotification){
+        updateiCloudToken()
     }
     
     func updateiCloudToken(){

@@ -60,5 +60,23 @@ class SettingsViewController: UITableViewController {
     
     @IBAction func icloud(sender: UISwitch) {
         k.Defaults.setObject(sender.on, forKey: k.UD_isiCloudEnabled)
+        if sender.on {
+            getURLforiCloudContainer()
+        }
+    }
+    
+    func getURLforiCloudContainer(){
+            let background_queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+            dispatch_async(background_queue) {
+                let fileManager = NSFileManager.defaultManager()
+
+                if let myContainer = fileManager.URLForUbiquityContainerIdentifier("iCloud.com.tm.ExpensesBy2") {
+                    // Your app can write to the iCloud container
+                }
+                let main_queue = dispatch_get_main_queue()
+                dispatch_async(main_queue) {
+                // main thread update ui
+                }
+            }
     }
 }
