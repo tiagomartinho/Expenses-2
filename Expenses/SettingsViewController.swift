@@ -4,19 +4,25 @@ class SettingsViewController: UITableViewController {
     
     @IBOutlet weak var person1: UITextField!
     @IBOutlet weak var person2: UITextField!
+    @IBOutlet weak var icloud: UISwitch!
     
     let textFieldShouldReturn = TextFieldShouldReturn()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        textFieldShouldReturn.addTextField(person1)
-        textFieldShouldReturn.addTextField(person2)
         loadPersonsNames()
+        loadiCloudState()
     }
     
     func loadPersonsNames(){
+        textFieldShouldReturn.addTextField(person1)
+        textFieldShouldReturn.addTextField(person2)
         person1.text = k.Person1Name
         person2.text = k.Person2Name
+    }
+    
+    func loadiCloudState(){
+        icloud.on = k.isiCloudEnabled
     }
     
     @IBAction func person(sender: UITextField) {
@@ -50,5 +56,9 @@ class SettingsViewController: UITableViewController {
             RealmUtilities.deleteAllEntries()
         }))
         self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func icloud(sender: UISwitch) {
+        k.Defaults.setObject(sender.on, forKey: k.UD_isiCloudEnabled)
     }
 }
