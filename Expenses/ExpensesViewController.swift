@@ -57,7 +57,7 @@ class ExpensesViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCellWithIdentifier(kExpenseCell) as? ExpensesTableViewCell {
+        if let cell = tableView.dequeueReusableCellWithIdentifier(k.ExpenseCell) as? ExpensesTableViewCell {
             
             let expense = array[indexPath.row]
             cell.person = paidBy(expense.paidBy,To:expense.paidTo)
@@ -73,30 +73,27 @@ class ExpensesViewController: UIViewController, UITableViewDataSource {
     }
     
     func paidBy(paidBy:Int,To paidTo:Int)->String{
-        let person1Name = defaults.objectForKey(kUD_Person1) as? String ?? "1"
-        let person2Name = defaults.objectForKey(kUD_Person2) as? String ?? "2"
-        
-        let person1Start = String(person1Name[person1Name.startIndex])
-        let person2Start = String(person2Name[person2Name.startIndex])
+        let person1FirstLetter = String(k.Person1Name[k.Person1Name.startIndex])
+        let person2FirstLetter = String(k.Person2Name[k.Person2Name.startIndex])
         
         let FirstSeparator = ""
         let SecondSeparator = " -> "
         var result = ""
         
         if paidBy == 0 {
-            result += FirstSeparator + person1Start
+            result += FirstSeparator + person1FirstLetter
         }
         
         if paidBy == 1 {
-            result += FirstSeparator + person2Start
+            result += FirstSeparator + person2FirstLetter
         }
         
         if paidTo == 0 {
-            result += SecondSeparator +  person1Start
+            result += SecondSeparator +  person1FirstLetter
         }
         
         if paidTo == 1 {
-            result += SecondSeparator +  person2Start
+            result += SecondSeparator +  person2FirstLetter
         }
         
         return result

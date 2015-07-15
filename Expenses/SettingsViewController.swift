@@ -15,12 +15,8 @@ class SettingsViewController: UITableViewController {
     }
     
     func loadPersonsNames(){
-        if let person1Name = defaults.objectForKey(kUD_Person1) as? String {
-            person1.text = person1Name
-        }
-        if let person2Name = defaults.objectForKey(kUD_Person2) as? String {
-            person2.text = person2Name
-        }
+        person1.text = k.Person1Name
+        person2.text = k.Person2Name
     }
     
     @IBAction func person(sender: UITextField) {
@@ -28,23 +24,23 @@ class SettingsViewController: UITableViewController {
         
         if sender.placeholder?.hasSuffix("1") ?? false {
             if name == "" {
-                defaults.setObject("1", forKey: kUD_Person1)
+                k.Defaults.removeObjectForKey(k.UD_Person1)
             }
             else {
-                defaults.setObject(name, forKey: kUD_Person1)
+                k.Defaults.setObject(name, forKey: k.UD_Person1)
             }
         }
         
         if sender.placeholder?.hasSuffix("2") ?? false {
             if name == "" {
-                defaults.setObject("2", forKey: kUD_Person2)
+                k.Defaults.removeObjectForKey(k.UD_Person2)
             }
             else {
-                defaults.setObject(name, forKey: kUD_Person2)
+                k.Defaults.setObject(name, forKey: k.UD_Person2)
             }
         }
         
-        defaults.synchronize()
+        k.Defaults.synchronize()
     }
     
     @IBAction func promptToDeleteAllExpenses() {

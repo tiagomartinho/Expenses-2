@@ -16,6 +16,7 @@
 		EA0B5F2C1B4DAF24007B91FE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0B5F171B4D95C8007B91FE /* Constants.swift */; };
 		EA0B5F2E1B4DB724007B91FE /* ExpensesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0B5F2D1B4DB724007B91FE /* ExpensesTableViewCell.swift */; };
 		EA210A1D1B55B1710060711F /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9F106B1B518B0C0065FA37 /* DoubleExtension.swift */; };
+		EA5CC9BC1B56CA84008FB6EA /* ExpensesBy2.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = EA5CC9BB1B56CA84008FB6EA /* ExpensesBy2.entitlements */; };
 		EA877CD81B4B0BD100F4B4E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA877CCB1B4B0BD100F4B4E8 /* AppDelegate.swift */; };
 		EA877CD91B4B0BD100F4B4E8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA877CCD1B4B0BD100F4B4E8 /* LaunchScreen.xib */; };
 		EA877CDB1B4B0BD100F4B4E8 /* ComposeExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA877CD11B4B0BD100F4B4E8 /* ComposeExpenseViewController.swift */; };
@@ -48,13 +49,14 @@
 		BF6F2CD0CBBC936C01AD5D32 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		EA01153E1B4752E700EA613C /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Pods/Alamofire.framework"; sourceTree = "<group>"; };
 		EA01153F1B4752E700EA613C /* SwiftyDropbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyDropbox.framework; path = "Pods/../build/Debug-iphoneos/Pods/SwiftyDropbox.framework"; sourceTree = "<group>"; };
-		EA0B5F151B4D95B8007B91FE /* BalanceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BalanceTests.swift; path = ExpensesTests/BalanceTests.swift; sourceTree = SOURCE_ROOT; };
-		EA0B5F171B4D95C8007B91FE /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Expenses/Constants.swift; sourceTree = SOURCE_ROOT; };
+		EA0B5F151B4D95B8007B91FE /* BalanceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = BalanceTests.swift; path = ExpensesTests/BalanceTests.swift; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		EA0B5F171B4D95C8007B91FE /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = Constants.swift; path = Expenses/Constants.swift; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		EA0B5F1B1B4D97D4007B91FE /* Balance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = Balance.swift; path = Expenses/Balance.swift; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		EA0B5F291B4DAE25007B91FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EA0B5F2D1B4DB724007B91FE /* ExpensesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExpensesTableViewCell.swift; path = Expenses/ExpensesTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		EA4B59B81B472457000BE503 /* ExpensesBy2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExpensesBy2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA4B59CD1B472458000BE503 /* ExpensesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExpensesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA5CC9BB1B56CA84008FB6EA /* ExpensesBy2.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ExpensesBy2.entitlements; sourceTree = SOURCE_ROOT; };
 		EA877CCB1B4B0BD100F4B4E8 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Expenses/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		EA877CCE1B4B0BD100F4B4E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		EA877CD11B4B0BD100F4B4E8 /* ComposeExpenseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = ComposeExpenseViewController.swift; path = Expenses/ComposeExpenseViewController.swift; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -68,7 +70,7 @@
 		EA8CB7421B4DBE1F002BB1EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Expenses/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		EA9F10691B51894B0065FA37 /* TextFieldShouldReturn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextFieldShouldReturn.swift; path = Expenses/TextFieldShouldReturn.swift; sourceTree = SOURCE_ROOT; };
 		EA9F106B1B518B0C0065FA37 /* DoubleExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DoubleExtension.swift; path = Expenses/DoubleExtension.swift; sourceTree = SOURCE_ROOT; };
-		EAC3547A1B4BA2060088ACF7 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Expenses/SettingsViewController.swift; sourceTree = SOURCE_ROOT; };
+		EAC3547A1B4BA2060088ACF7 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = SettingsViewController.swift; path = Expenses/SettingsViewController.swift; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		EAEFF59F1B4750B900C70CB1 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Pods/Alamofire.framework"; sourceTree = "<group>"; };
 		EAEFF5A01B4750B900C70CB1 /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = "Pods/../build/Debug-iphoneos/Pods.framework"; sourceTree = "<group>"; };
 		EAEFF5A11B4750B900C70CB1 /* SwiftyDropbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyDropbox.framework; path = "Pods/../build/Debug-iphoneos/Pods/SwiftyDropbox.framework"; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 		EA4B59BB1B472457000BE503 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EA5CC9BB1B56CA84008FB6EA /* ExpensesBy2.entitlements */,
 				EA877CCC1B4B0BD100F4B4E8 /* Base.lproj */,
 				EA877CD51B4B0BD100F4B4E8 /* Images.xcassets */,
 				EA0B5F2A1B4DAE25007B91FE /* Localizable.strings */,
@@ -270,6 +273,11 @@
 					EA4B59B71B472457000BE503 = {
 						CreatedOnToolsVersion = 6.4;
 						DevelopmentTeam = 4C34FT6ABU;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					EA4B59CC1B472458000BE503 = {
 						CreatedOnToolsVersion = 6.4;
@@ -301,6 +309,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA5CC9BC1B56CA84008FB6EA /* ExpensesBy2.entitlements in Resources */,
 				EA877CD91B4B0BD100F4B4E8 /* LaunchScreen.xib in Resources */,
 				EA0B5F281B4DAE25007B91FE /* Localizable.strings in Resources */,
 				EA877CDF1B4B0BD100F4B4E8 /* Images.xcassets in Resources */,
@@ -569,13 +578,15 @@
 			baseConfigurationReference = 6D343559D24EBFBA61C084C6 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ExpensesBy2.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Expenses/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = ExpensesBy2;
-				PROVISIONING_PROFILE = "9b8c34d0-8baa-4cc1-b2eb-304b221ceabb";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -584,13 +595,15 @@
 			baseConfigurationReference = BF6F2CD0CBBC936C01AD5D32 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ExpensesBy2.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Expenses/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = ExpensesBy2;
-				PROVISIONING_PROFILE = "9b8c34d0-8baa-4cc1-b2eb-304b221ceabb";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

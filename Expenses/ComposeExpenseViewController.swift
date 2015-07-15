@@ -24,14 +24,10 @@ class ComposeExpenseViewController: UITableViewController {
     }
     
     func updateSegmentedControl(){
-        if let person1Name = defaults.objectForKey(kUD_Person1) as? String {
-            paidBy.setTitle(person1Name, forSegmentAtIndex: 0)
-            paidTo.setTitle(person1Name, forSegmentAtIndex: 0)
-        }
-        if let person2Name = defaults.objectForKey(kUD_Person2) as? String {
-            paidBy.setTitle(person2Name, forSegmentAtIndex: 1)
-            paidTo.setTitle(person2Name, forSegmentAtIndex: 2)
-        }
+            paidBy.setTitle(k.Person1Name, forSegmentAtIndex: 0)
+            paidTo.setTitle(k.Person1Name, forSegmentAtIndex: 0)
+            paidBy.setTitle(k.Person2Name, forSegmentAtIndex: 1)
+            paidTo.setTitle(k.Person2Name, forSegmentAtIndex: 2)
     }
     
     func popToExpensesViewController(){

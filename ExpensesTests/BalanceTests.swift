@@ -6,8 +6,8 @@ class BalanceTests: XCTestCase {
     
     // MARK: Constants
     let value = 12.34
-    let person1Name = defaults.objectForKey(kUD_Person1) as? String ?? "1"
-    let person2Name = defaults.objectForKey(kUD_Person2) as? String ?? "2"
+    let person1Name = k.Person1Name
+    let person2Name = k.Person2Name
     
     // MARK: SetUp
     override func setUp() {

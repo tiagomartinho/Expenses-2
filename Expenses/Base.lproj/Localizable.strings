@@ -1,3 +1,5 @@
 "zero_balance" = "Everything is settled up";
 "owes" = "owes";
 "currency" = "€";
+"default_person_1_name" = "1";
+"default_person_2_name" = "2";

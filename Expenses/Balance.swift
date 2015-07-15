@@ -8,11 +8,8 @@ public class Balance {
             return "zero_balance".localized
         }
         
-        let person1Name = defaults.objectForKey(kUD_Person1) as? String ?? "1"
-        let person2Name = defaults.objectForKey(kUD_Person2) as? String ?? "2"
-        
-        let personInCredit = total > 0 ? person1Name : person2Name
-        let personInDebt = total < 0 ? person1Name : person2Name
+        let personInCredit = total > 0 ? k.Person1Name : k.Person2Name
+        let personInDebt = total < 0 ? k.Person1Name : k.Person2Name
         
         return personInDebt + " " + "owes".localized + " " + personInCredit + " " + total.currency
     }
