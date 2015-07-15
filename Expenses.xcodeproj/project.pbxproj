@@ -17,6 +17,7 @@
 		EA0B5F2E1B4DB724007B91FE /* ExpensesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0B5F2D1B4DB724007B91FE /* ExpensesTableViewCell.swift */; };
 		EA210A1D1B55B1710060711F /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9F106B1B518B0C0065FA37 /* DoubleExtension.swift */; };
 		EA5CC9BC1B56CA84008FB6EA /* ExpensesBy2.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = EA5CC9BB1B56CA84008FB6EA /* ExpensesBy2.entitlements */; };
+		EA5CC9C01B56DABC008FB6EA /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5CC9BF1B56DABC008FB6EA /* CloudKit.framework */; };
 		EA877CD81B4B0BD100F4B4E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA877CCB1B4B0BD100F4B4E8 /* AppDelegate.swift */; };
 		EA877CD91B4B0BD100F4B4E8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA877CCD1B4B0BD100F4B4E8 /* LaunchScreen.xib */; };
 		EA877CDB1B4B0BD100F4B4E8 /* ComposeExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA877CD11B4B0BD100F4B4E8 /* ComposeExpenseViewController.swift */; };
@@ -57,6 +58,7 @@
 		EA4B59B81B472457000BE503 /* ExpensesBy2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExpensesBy2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA4B59CD1B472458000BE503 /* ExpensesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExpensesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA5CC9BB1B56CA84008FB6EA /* ExpensesBy2.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ExpensesBy2.entitlements; sourceTree = SOURCE_ROOT; };
+		EA5CC9BF1B56DABC008FB6EA /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		EA877CCB1B4B0BD100F4B4E8 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Expenses/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		EA877CCE1B4B0BD100F4B4E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		EA877CD11B4B0BD100F4B4E8 /* ComposeExpenseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = ComposeExpenseViewController.swift; path = Expenses/ComposeExpenseViewController.swift; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -83,6 +85,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B3ADD5DE8E5911DA477B05B /* Pods.framework in Frameworks */,
+				EA5CC9C01B56DABC008FB6EA /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +103,7 @@
 		3A33C906E577FD2AF0800F6A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EA5CC9BF1B56DABC008FB6EA /* CloudKit.framework */,
 				EA01153E1B4752E700EA613C /* Alamofire.framework */,
 				EA01153F1B4752E700EA613C /* SwiftyDropbox.framework */,
 				EAEFF59F1B4750B900C70CB1 /* Alamofire.framework */,
