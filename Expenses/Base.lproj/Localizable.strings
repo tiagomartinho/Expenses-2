@@ -3,3 +3,5 @@
 "currency" = "€";
 "default_person_1_name" = "1";
 "default_person_2_name" = "2";
+"spent" = "spent";
+"paid" = "paid";

@@ -78,12 +78,16 @@ class BalanceTests: XCTestCase {
     // MARK: Summary Tests
     func testSummaryForEmptyEntries(){
         XCTAssertEqual("zero_balance".localized, Balance.summary())
+        XCTAssertEqual(person1Name + " paid 0.00€", Balance.personSummary(0))
+        XCTAssertEqual(person2Name + " paid 0.00€", Balance.personSummary(1))
     }
     
     func testSummaryOneEntryForPerson1() {
         RealmUtilities.addEntryWithAmount(value)
         let summary = person2Name + " owes " + person1Name + " " + "\(value/2)" + "€"
         XCTAssertEqual(summary, Balance.summary())
+        XCTAssertEqual(person1Name + " paid 12.34€", Balance.personSummary(0))
+        XCTAssertEqual(person2Name + " paid 0.00€", Balance.personSummary(1))
     }
     
     func testTwoEntriesGivesSummary() {
@@ -91,12 +95,16 @@ class BalanceTests: XCTestCase {
         RealmUtilities.addEntryWithAmount(value)
         let summary = person2Name + " owes " + person1Name + " " + "\((value+value)/2)" + "€"
         XCTAssertEqual(summary, Balance.summary())
+        XCTAssertEqual(person1Name + " paid 24.68€", Balance.personSummary(0))
+        XCTAssertEqual(person2Name + " paid 0.00€", Balance.personSummary(1))
     }
     
     func testTwoEqualEntriesFromDifferentPersonsGivesSummary() {
         RealmUtilities.addEntryWithAmount(value)
         RealmUtilities.addEntryWithAmount(value,PaidBy:1)
         XCTAssertEqual("zero_balance".localized, Balance.summary())
+        XCTAssertEqual(person1Name + " paid 12.34€", Balance.personSummary(0))
+        XCTAssertEqual(person2Name + " paid 12.34€", Balance.personSummary(1))
     }
     
     func testSomeEntriesFromDifferentPersonsGivesSummary() {
@@ -117,5 +125,16 @@ class BalanceTests: XCTestCase {
         XCTAssertEqual("0.00€", Balance.total().currency)
         RealmUtilities.addEntryWithAmount(2.0)
         XCTAssertEqual("1.00€", Balance.total().currency)
+    }
+    
+    // MARK: Person Totals
+    func testPersonTotalOneEntryForPerson1() {
+        RealmUtilities.addEntryWithAmount(value)
+        XCTAssertEqual(value, Balance.personTotal(0))
+    }
+    
+    func testPersonTotalOneEntryForPerson2() {
+        RealmUtilities.addEntryWithAmount(value,PaidBy:1)
+        XCTAssertEqual(value, Balance.personTotal(1))
     }
 }

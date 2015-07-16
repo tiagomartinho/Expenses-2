@@ -1,6 +1,15 @@
 import RealmSwift
 
 public class Balance {
+    
+    public static func personSummary(personIndex:Int)->String{
+        let total = self.personTotal(personIndex)
+        
+        let personName = personIndex == 0 ? k.Person1Name : k.Person2Name
+        
+        return personName + " " + "paid".localized + " " + total.currency
+    }
+    
     public static func summary()->String{
         let total = self.total()
         
@@ -12,6 +21,16 @@ public class Balance {
         let personInDebt = total < 0 ? k.Person1Name : k.Person2Name
         
         return personInDebt + " " + "owes".localized + " " + personInCredit + " " + total.currency
+    }
+    
+    public static func personTotal(personIndex:Int)->Double{
+        var total = 0.0
+        for expense in Realm().objects(Expense) {
+            if expense.paidBy == personIndex {
+                total += expense.amount
+            }
+        }
+        return total
     }
     
     public static func total()->Double{
