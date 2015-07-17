@@ -6,6 +6,8 @@ class ExpensesViewController: UIViewController, UITableViewDataSource {
     var array = Realm().objects(Expense).sorted("date",ascending:false)
     var notificationToken: NotificationToken?
     
+    var currentSummary = 0
+    
     @IBOutlet weak var summary: UILabel!
     @IBOutlet weak var expensesTableView: UITableView!
     @IBOutlet weak var initialView: UIView!
@@ -42,12 +44,22 @@ class ExpensesViewController: UIViewController, UITableViewDataSource {
     }
     
     func updateSummary(){
-        summary.text = Balance.summaries[0]
+        summary.text = Balance.summaries[currentSummary]
     }
     
     func showInitialViewIfThereAreNoExpenses(){
         let thereAreNoExpenses = (array.count == 0)
         initialView.hidden = thereAreNoExpenses ? false : true
+    }
+    
+    @IBAction func previousSummary() {
+        currentSummary = currentSummary == 0 ? Balance.summaries.count - 1 : currentSummary - 1
+        summary.text = Balance.summaries[currentSummary]
+    }
+    
+    @IBAction func nextSummary() {
+        currentSummary = (currentSummary + 1) % Balance.summaries.count
+        summary.text = Balance.summaries[currentSummary]
     }
     
     // MARK: TableView Data Source
