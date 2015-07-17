@@ -2,7 +2,11 @@ import RealmSwift
 
 public class Balance {
     
-    public static func personSummary(personIndex:Int)->String{
+    public static var summaries:[String] {
+        return [summary(),personSummary(0),personSummary(1)]
+    }
+    
+    private static func personSummary(personIndex:Int)->String{
         let total = self.personTotal(personIndex)
         
         let personName = personIndex == 0 ? k.Person1Name : k.Person2Name
@@ -10,7 +14,7 @@ public class Balance {
         return personName + " " + "paid".localized + " " + total.currency
     }
     
-    public static func summary()->String{
+    private static func summary()->String{
         let total = self.total()
         
         if total == 0 {

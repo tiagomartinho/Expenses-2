@@ -42,7 +42,7 @@ class ExpensesViewController: UIViewController, UITableViewDataSource {
     }
     
     func updateSummary(){
-        summary.text = Balance.summary()
+        summary.text = Balance.summaries[0]
     }
     
     func showInitialViewIfThereAreNoExpenses(){
