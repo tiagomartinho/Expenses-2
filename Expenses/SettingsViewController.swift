@@ -5,6 +5,9 @@ class SettingsViewController: UITableViewController {
     @IBOutlet weak var person1: UITextField!
     @IBOutlet weak var person2: UITextField!
     
+    @IBOutlet weak var uploadDropbox: UITableViewCell!
+    @IBOutlet weak var linkDropbox: UITableViewCell!
+    
     let textFieldShouldReturn = TextFieldShouldReturn()
     
     override func viewDidLoad() {
@@ -19,6 +22,16 @@ class SettingsViewController: UITableViewController {
         person2.text = k.Person2Name
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        setVisibilityOfDropboxActions()
+    }
+    
+    func setVisibilityOfDropboxActions(){
+        uploadDropbox.hidden = k.isLinked ? false : true
+        linkDropbox.hidden = k.isLinked ? true : false
+    }
+
     @IBAction func person(sender: UITextField) {
         let name = sender.text.removeWhitespaces()
         
@@ -43,12 +56,12 @@ class SettingsViewController: UITableViewController {
         k.Defaults.synchronize()
     }
     
+    @IBAction func uploadToDropbox() {
+    }
+    
     @IBAction func linkWithDropbox() {
-        let sharedSession = DBSession.sharedSession()
-        let isSharedSessionLinked = sharedSession.isLinked()
-        
-        if isSharedSessionLinked == false {
-            sharedSession.linkFromController(self)
+        if k.isLinked == false {
+            k.sharedSession.linkFromController(self)
         }
     }
     

@@ -9,4 +9,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         DBSession.setSharedSession(dbSession)
         return true
     }
+    
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
+        if k.sharedSession.handleOpenURL(url) {
+            if k.isLinked {
+            }
+            return true
+        }
+        return false
+    }
 }

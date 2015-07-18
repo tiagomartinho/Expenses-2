@@ -523,37 +523,6 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Backup" id="IA3-P0-AcW" userLabel="Backup">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="3wz-9l-gz4">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3wz-9l-gz4" id="4sT-xG-0wk">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ABm-aP-b9W">
-                                                    <rect key="frame" x="238" y="7" width="125" height="30"/>
-                                                    <state key="normal" title="Link with Dropbox">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="linkWithDropbox" destination="AGd-U8-aDq" eventType="touchUpInside" id="hoY-WM-NaU"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="ABm-aP-b9W" firstAttribute="top" secondItem="4sT-xG-0wk" secondAttribute="topMargin" constant="-1" id="651-aV-b48"/>
-                                                <constraint firstItem="ABm-aP-b9W" firstAttribute="centerX" secondItem="4sT-xG-0wk" secondAttribute="centerX" id="pT1-qa-Ibv"/>
-                                                <constraint firstAttribute="centerY" secondItem="ABm-aP-b9W" secondAttribute="centerY" id="tEU-Wo-6DQ"/>
-                                            </constraints>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="651-aV-b48"/>
-                                                </mask>
-                                            </variation>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
                             <tableViewSection headerTitle="Reset" id="vaY-1W-pdc">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="9AG-ny-mV3">
@@ -580,6 +549,64 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="Backup" id="IA3-P0-AcW" userLabel="Backup">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="3wz-9l-gz4">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3wz-9l-gz4" id="4sT-xG-0wk">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ABm-aP-b9W">
+                                                    <rect key="frame" x="235" y="7" width="131" height="30"/>
+                                                    <state key="normal" title="Upload to Dropbox">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="uploadToDropbox" destination="AGd-U8-aDq" eventType="touchUpInside" id="jpp-Nx-lBF"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ABm-aP-b9W" firstAttribute="top" secondItem="4sT-xG-0wk" secondAttribute="topMargin" constant="-1" id="651-aV-b48"/>
+                                                <constraint firstItem="ABm-aP-b9W" firstAttribute="centerX" secondItem="4sT-xG-0wk" secondAttribute="centerX" id="pT1-qa-Ibv"/>
+                                                <constraint firstAttribute="centerY" secondItem="ABm-aP-b9W" secondAttribute="centerY" id="tEU-Wo-6DQ"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="651-aV-b48"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="fi3-Eg-9Zo">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fi3-Eg-9Zo" id="wVF-cN-Aom">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QWP-yg-Nzc">
+                                                    <rect key="frame" x="238" y="7" width="125" height="30"/>
+                                                    <state key="normal" title="Link with Dropbox">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="linkWithDropbox" destination="AGd-U8-aDq" eventType="touchUpInside" id="Jss-X8-Ctr"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="centerY" secondItem="QWP-yg-Nzc" secondAttribute="centerY" id="Qli-kk-Eql"/>
+                                                <constraint firstItem="QWP-yg-Nzc" firstAttribute="top" secondItem="wVF-cN-Aom" secondAttribute="topMargin" constant="-1" id="Yqg-V9-faS"/>
+                                                <constraint firstItem="QWP-yg-Nzc" firstAttribute="centerX" secondItem="wVF-cN-Aom" secondAttribute="centerX" id="ivR-Nc-LTu"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="Yqg-V9-faS"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="AGd-U8-aDq" id="ulO-hu-6OQ"/>
@@ -588,8 +615,10 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Settings" id="ogL-EN-FUF"/>
                     <connections>
+                        <outlet property="linkDropbox" destination="fi3-Eg-9Zo" id="nWq-UP-WIj"/>
                         <outlet property="person1" destination="6Rn-op-K3q" id="yw0-a8-nuA"/>
                         <outlet property="person2" destination="K0d-HC-VFB" id="WMy-UD-y2e"/>
+                        <outlet property="uploadDropbox" destination="3wz-9l-gz4" id="Dgj-vt-S3j"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tbu-ot-c5X" userLabel="First Responder" sceneMemberID="firstResponder"/>
