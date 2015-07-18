@@ -1,6 +1,7 @@
 import UIKit
+import RealmSwift
 
-class SettingsViewController: UITableViewController {
+class SettingsViewController: UITableViewController, DBRestClientDelegate {
     
     @IBOutlet weak var person1: UITextField!
     @IBOutlet weak var person2: UITextField!
@@ -57,6 +58,21 @@ class SettingsViewController: UITableViewController {
     }
     
     @IBAction func uploadToDropbox() {
+        if k.isLinked {
+            let restClient = DBRestClient(session: k.sharedSession)
+            restClient.delegate = self
+            let realmPath = Realm.defaultPath.stringByDeletingLastPathComponent
+            let realmFilename = "Expenses.realm"
+            restClient.uploadFile(realmFilename, toPath: "/", withParentRev: nil, fromPath: realmPath)
+        }
+    }
+    
+    func restClient(client: DBRestClient!, uploadedFile destPath: String!, from srcPath: String!, metadata: DBMetadata!) {
+        println("File uploaded successfully")
+    }
+    
+    func restClient(client: DBRestClient!, uploadFileFailedWithError error: NSError!) {
+        println("File failed with error")
     }
     
     @IBAction func linkWithDropbox() {
