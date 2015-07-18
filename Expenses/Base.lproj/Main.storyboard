@@ -529,35 +529,6 @@
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3wz-9l-gz4" id="4sT-xG-0wk">
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use iCloud" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Pq-pf-TeY">
-                                                    <rect key="frame" x="18" y="11" width="515" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G3U-Hb-NdD">
-                                                    <rect key="frame" x="533" y="6" width="51" height="31"/>
-                                                    <connections>
-                                                        <action selector="icloud:" destination="AGd-U8-aDq" eventType="valueChanged" id="SO3-89-Qr3"/>
-                                                    </connections>
-                                                </switch>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="centerY" secondItem="G3U-Hb-NdD" secondAttribute="centerY" id="6mG-3w-q9X"/>
-                                                <constraint firstItem="0Pq-pf-TeY" firstAttribute="leading" secondItem="4sT-xG-0wk" secondAttribute="leadingMargin" constant="10" id="9Zw-Ey-V32"/>
-                                                <constraint firstAttribute="centerY" secondItem="0Pq-pf-TeY" secondAttribute="centerY" id="McG-5g-Fus"/>
-                                                <constraint firstItem="G3U-Hb-NdD" firstAttribute="leading" secondItem="0Pq-pf-TeY" secondAttribute="trailing" id="Tuf-fb-v2f"/>
-                                                <constraint firstItem="G3U-Hb-NdD" firstAttribute="trailing" secondItem="4sT-xG-0wk" secondAttribute="trailingMargin" id="YIc-0k-wfh"/>
-                                                <constraint firstItem="G3U-Hb-NdD" firstAttribute="trailing" secondItem="4sT-xG-0wk" secondAttribute="trailingMargin" constant="-10" id="Yri-3V-He1"/>
-                                                <constraint firstItem="G3U-Hb-NdD" firstAttribute="leading" secondItem="4sT-xG-0wk" secondAttribute="leadingMargin" constant="535" id="zHe-i5-ANM"/>
-                                            </constraints>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="YIc-0k-wfh"/>
-                                                    <exclude reference="zHe-i5-ANM"/>
-                                                </mask>
-                                            </variation>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -596,7 +567,6 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Settings" id="ogL-EN-FUF"/>
                     <connections>
-                        <outlet property="icloud" destination="G3U-Hb-NdD" id="q9R-OT-IsM"/>
                         <outlet property="person1" destination="6Rn-op-K3q" id="yw0-a8-nuA"/>
                         <outlet property="person2" destination="K0d-HC-VFB" id="WMy-UD-y2e"/>
                     </connections>
