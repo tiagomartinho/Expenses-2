@@ -26,6 +26,8 @@
 		EA877CE81B4B0BF800F4B4E8 /* ConvertAmountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA877CE21B4B0BED00F4B4E8 /* ConvertAmountTests.swift */; };
 		EA877CEB1B4B0C3D00F4B4E8 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA877CD71B4B0BD100F4B4E8 /* StringExtension.swift */; };
 		EA8CB7431B4DBE1F002BB1EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA8CB7411B4DBE1F002BB1EC /* Main.storyboard */; };
+		EA96DD371B5ADE2E000A07AB /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA96DD361B5ADE2E000A07AB /* DropboxSDK.framework */; };
+		EA96DD381B5ADE41000A07AB /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA96DD361B5ADE2E000A07AB /* DropboxSDK.framework */; };
 		EA9F106A1B51894B0065FA37 /* TextFieldShouldReturn.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9F10691B51894B0065FA37 /* TextFieldShouldReturn.swift */; };
 		EA9F106C1B518B0C0065FA37 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9F106B1B518B0C0065FA37 /* DoubleExtension.swift */; };
 		EAC3547B1B4BA2060088ACF7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC3547A1B4BA2060088ACF7 /* SettingsViewController.swift */; };
@@ -66,6 +68,8 @@
 		EA877CE21B4B0BED00F4B4E8 /* ConvertAmountTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConvertAmountTests.swift; path = ExpensesTests/ConvertAmountTests.swift; sourceTree = SOURCE_ROOT; };
 		EA877CE41B4B0BED00F4B4E8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ExpensesTests/Info.plist; sourceTree = SOURCE_ROOT; };
 		EA8CB7421B4DBE1F002BB1EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Expenses/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
+		EA96DD331B5ADDFA000A07AB /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
+		EA96DD361B5ADE2E000A07AB /* DropboxSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DropboxSDK.framework; sourceTree = "<group>"; };
 		EA9F10691B51894B0065FA37 /* TextFieldShouldReturn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextFieldShouldReturn.swift; path = Expenses/TextFieldShouldReturn.swift; sourceTree = SOURCE_ROOT; };
 		EA9F106B1B518B0C0065FA37 /* DoubleExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DoubleExtension.swift; path = Expenses/DoubleExtension.swift; sourceTree = SOURCE_ROOT; };
 		EAC3547A1B4BA2060088ACF7 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = SettingsViewController.swift; path = Expenses/SettingsViewController.swift; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -80,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA96DD371B5ADE2E000A07AB /* DropboxSDK.framework in Frameworks */,
 				4B3ADD5DE8E5911DA477B05B /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -88,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA96DD381B5ADE41000A07AB /* DropboxSDK.framework in Frameworks */,
 				E6251210A9C0DDD8FA236AC8 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -98,6 +104,7 @@
 		3A33C906E577FD2AF0800F6A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EA96DD361B5ADE2E000A07AB /* DropboxSDK.framework */,
 				EA01153E1B4752E700EA613C /* Alamofire.framework */,
 				EA01153F1B4752E700EA613C /* SwiftyDropbox.framework */,
 				EAEFF59F1B4750B900C70CB1 /* Alamofire.framework */,
@@ -183,6 +190,7 @@
 				EA0B5F171B4D95C8007B91FE /* Constants.swift */,
 				EA9F10691B51894B0065FA37 /* TextFieldShouldReturn.swift */,
 				EAF9B1C51B4F11AF0065905E /* RealmUtilities.swift */,
+				EA96DD331B5ADDFA000A07AB /* BridgingHeader.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -526,6 +534,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = BridgingHeader.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -564,6 +573,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = BridgingHeader.h;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -574,15 +584,21 @@
 			baseConfigurationReference = 6D343559D24EBFBA61C084C6 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = ExpensesBy2.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Expenses/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = ExpensesBy2;
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = BridgingHeader.h;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -591,15 +607,20 @@
 			baseConfigurationReference = BF6F2CD0CBBC936C01AD5D32 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = ExpensesBy2.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Expenses/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = ExpensesBy2;
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = BridgingHeader.h;
 			};
 			name = Release;
 		};
@@ -612,6 +633,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -634,6 +656,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = ExpensesTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
