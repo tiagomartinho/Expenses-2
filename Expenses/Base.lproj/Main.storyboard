@@ -529,6 +529,27 @@
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3wz-9l-gz4" id="4sT-xG-0wk">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ABm-aP-b9W">
+                                                    <rect key="frame" x="238" y="7" width="125" height="30"/>
+                                                    <state key="normal" title="Link with Dropbox">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="linkWithDropbox" destination="AGd-U8-aDq" eventType="touchUpInside" id="hoY-WM-NaU"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ABm-aP-b9W" firstAttribute="top" secondItem="4sT-xG-0wk" secondAttribute="topMargin" constant="-1" id="651-aV-b48"/>
+                                                <constraint firstItem="ABm-aP-b9W" firstAttribute="centerX" secondItem="4sT-xG-0wk" secondAttribute="centerX" id="pT1-qa-Ibv"/>
+                                                <constraint firstAttribute="centerY" secondItem="ABm-aP-b9W" secondAttribute="centerY" id="tEU-Wo-6DQ"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="651-aV-b48"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>

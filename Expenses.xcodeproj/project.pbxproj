@@ -165,6 +165,7 @@
 		EA4B59BA1B472457000BE503 /* Expenses */ = {
 			isa = PBXGroup;
 			children = (
+				EA877CCB1B4B0BD100F4B4E8 /* AppDelegate.swift */,
 				EA8CB7411B4DBE1F002BB1EC /* Main.storyboard */,
 				EA0B5F1D1B4D97F4007B91FE /* Balance */,
 				EA877CD21B4B0BD100F4B4E8 /* Expense.swift */,
@@ -186,7 +187,6 @@
 				EA877CD51B4B0BD100F4B4E8 /* Images.xcassets */,
 				EA0B5F2A1B4DAE25007B91FE /* Localizable.strings */,
 				EA877CD61B4B0BD100F4B4E8 /* Info.plist */,
-				EA877CCB1B4B0BD100F4B4E8 /* AppDelegate.swift */,
 				EA0B5F171B4D95C8007B91FE /* Constants.swift */,
 				EA9F10691B51894B0065FA37 /* TextFieldShouldReturn.swift */,
 				EAF9B1C51B4F11AF0065905E /* RealmUtilities.swift */,

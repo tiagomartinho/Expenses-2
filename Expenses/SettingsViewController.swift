@@ -43,6 +43,15 @@ class SettingsViewController: UITableViewController {
         k.Defaults.synchronize()
     }
     
+    @IBAction func linkWithDropbox() {
+        let sharedSession = DBSession.sharedSession()
+        let isSharedSessionLinked = sharedSession.isLinked()
+        
+        if isSharedSessionLinked == false {
+            sharedSession.linkFromController(self)
+        }
+    }
+    
     @IBAction func promptToDeleteAllExpenses() {
         var alert = UIAlertController(title: "Attention", message: "This will delete all your expenses", preferredStyle: .Alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
