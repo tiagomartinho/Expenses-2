@@ -104,13 +104,8 @@ class SettingsViewController: UITableViewController, DBRestClientDelegate, MFMai
     }
     
     @IBAction func linkWithDropbox() {
-        if k.isLinked == false {
-            k.sharedSession.linkFromController(self)
-        }
-        else {
-            k.sharedSession.unlinkAll()
-            updateUI()
-        }
+        k.isLinked ? k.sharedSession.unlinkAll() : k.sharedSession.linkFromController(self)
+        updateUI()
     }
     
     // MARK : Send Email
