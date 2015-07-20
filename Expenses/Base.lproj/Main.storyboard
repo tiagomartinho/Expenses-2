@@ -583,13 +583,13 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fi3-Eg-9Zo" id="wVF-cN-Aom">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QWP-yg-Nzc">
-                                                    <rect key="frame" x="238" y="7" width="125" height="30"/>
-                                                    <state key="normal" title="Link Dropbox">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QWP-yg-Nzc">
+                                                    <rect key="frame" x="216" y="7" width="168" height="30"/>
+                                                    <state key="normal" title="Download from Dropbox">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="linkWithDropbox" destination="AGd-U8-aDq" eventType="touchUpInside" id="Jss-X8-Ctr"/>
+                                                        <action selector="downloadFromDropbox" destination="AGd-U8-aDq" eventType="touchUpInside" id="Qtm-Sz-Cd5"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -605,6 +605,60 @@
                                             </variation>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="66T-eS-VPF">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="66T-eS-VPF" id="3XJ-Nu-Oma">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="evf-St-CSR">
+                                                    <rect key="frame" x="254" y="7" width="92" height="30"/>
+                                                    <state key="normal" title="Link Dropbox">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="linkWithDropbox" destination="AGd-U8-aDq" eventType="touchUpInside" id="Nsb-Ld-lwR"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="evf-St-CSR" firstAttribute="centerX" secondItem="3XJ-Nu-Oma" secondAttribute="centerX" id="0FA-NS-IFB"/>
+                                                <constraint firstAttribute="centerY" secondItem="evf-St-CSR" secondAttribute="centerY" id="SCU-FJ-VZV"/>
+                                                <constraint firstItem="evf-St-CSR" firstAttribute="top" secondItem="3XJ-Nu-Oma" secondAttribute="topMargin" constant="-1" id="c1o-Kt-x3q"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="c1o-Kt-x3q"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Nl6-z4-gHe">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Nl6-z4-gHe" id="oCJ-u0-VCO">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4pb-ZQ-q3k">
+                                                    <rect key="frame" x="251" y="7" width="99" height="30"/>
+                                                    <state key="normal" title="Send by Email">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="sendByEmail" destination="AGd-U8-aDq" eventType="touchUpInside" id="qII-G2-acJ"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="4pb-ZQ-q3k" firstAttribute="centerX" secondItem="oCJ-u0-VCO" secondAttribute="centerX" id="Cbj-LK-wjr"/>
+                                                <constraint firstAttribute="centerY" secondItem="4pb-ZQ-q3k" secondAttribute="centerY" id="dtB-wX-cbC"/>
+                                                <constraint firstItem="4pb-ZQ-q3k" firstAttribute="top" secondItem="oCJ-u0-VCO" secondAttribute="topMargin" constant="-1" id="fOm-OC-3hl"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="fOm-OC-3hl"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -615,7 +669,8 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Settings" id="ogL-EN-FUF"/>
                     <connections>
-                        <outlet property="linkDropbox" destination="QWP-yg-Nzc" id="Kmb-UB-U2r"/>
+                        <outlet property="downloadDropbox" destination="QWP-yg-Nzc" id="ios-jl-mMg"/>
+                        <outlet property="linkDropbox" destination="evf-St-CSR" id="zUx-lh-M6c"/>
                         <outlet property="person1" destination="6Rn-op-K3q" id="yw0-a8-nuA"/>
                         <outlet property="person2" destination="K0d-HC-VFB" id="WMy-UD-y2e"/>
                         <outlet property="uploadDropbox" destination="ABm-aP-b9W" id="UnK-Tt-Xtg"/>

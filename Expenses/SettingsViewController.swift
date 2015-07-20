@@ -8,6 +8,7 @@ class SettingsViewController: UITableViewController, DBRestClientDelegate, MFMai
     @IBOutlet weak var person2: UITextField!
 
     @IBOutlet weak var uploadDropbox: UIButton!
+    @IBOutlet weak var downloadDropbox: UIButton!
     @IBOutlet weak var linkDropbox: UIButton!
     
     let textFieldShouldReturn = TextFieldShouldReturn()
@@ -35,10 +36,12 @@ class SettingsViewController: UITableViewController, DBRestClientDelegate, MFMai
         if k.isLinked {
             linkDropbox.setTitle("Unlink Dropbox", forState: UIControlState.Normal)
             uploadDropbox.enabled = true
+            downloadDropbox.enabled = true
         }
         else {
             linkDropbox.setTitle("Link Dropbox", forState: UIControlState.Normal)
             uploadDropbox.enabled = false
+            downloadDropbox.enabled = false
         }
     }
     
@@ -85,6 +88,9 @@ class SettingsViewController: UITableViewController, DBRestClientDelegate, MFMai
         }
     }
     
+    @IBAction func downloadFromDropbox() {
+    }
+    
     func restClient(client: DBRestClient!, uploadProgress progress: CGFloat, forFile destPath: String!, from srcPath: String!) {
         println("\(progress)")
     }
@@ -108,14 +114,15 @@ class SettingsViewController: UITableViewController, DBRestClientDelegate, MFMai
     }
     
     // MARK : Send Email
-    func sendEmail() {
+
+    @IBAction func sendByEmail() {
         if( MFMailComposeViewController.canSendMail() ) {
             
             let mailComposer = MFMailComposeViewController()
             mailComposer.mailComposeDelegate = self
             
-            mailComposer.setSubject("Subject")
-            mailComposer.setMessageBody("Message Body", isHTML: false)
+            mailComposer.setSubject("Expenses")
+            mailComposer.setMessageBody("Expenses Backup", isHTML: false)
             
             let filePath = Realm().path
             if let fileData = NSData(contentsOfFile: filePath) {
