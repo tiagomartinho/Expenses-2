@@ -12,6 +12,7 @@ class SettingsViewController: UITableViewController, DBRestClientDelegate, MFMai
     
     let textFieldShouldReturn = TextFieldShouldReturn()
     
+    // MARK : viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         loadPersonsNames()
@@ -24,6 +25,7 @@ class SettingsViewController: UITableViewController, DBRestClientDelegate, MFMai
         person2.text = k.Person2Name
     }
     
+    // MARK : viewWillAppear
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         updateUI()
@@ -64,6 +66,15 @@ class SettingsViewController: UITableViewController, DBRestClientDelegate, MFMai
         k.Defaults.synchronize()
     }
     
+    @IBAction func promptToDeleteAllExpenses() {
+        var alert = UIAlertController(title: "Attention", message: "This will delete all your expenses", preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action:UIAlertAction!) -> Void in
+            RealmUtilities.deleteAllEntries()
+        }))
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
     @IBAction func uploadToDropbox() {
         if k.isLinked {
             let restClient = DBRestClient(session: k.sharedSession)
@@ -96,6 +107,7 @@ class SettingsViewController: UITableViewController, DBRestClientDelegate, MFMai
         }
     }
     
+    // MARK : Send Email
     func sendEmail() {
         if( MFMailComposeViewController.canSendMail() ) {
             
@@ -118,12 +130,13 @@ class SettingsViewController: UITableViewController, DBRestClientDelegate, MFMai
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    @IBAction func promptToDeleteAllExpenses() {
-        var alert = UIAlertController(title: "Attention", message: "This will delete all your expenses", preferredStyle: .Alert)
-        alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
-        alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action:UIAlertAction!) -> Void in
-            RealmUtilities.deleteAllEntries()
-        }))
-        self.presentViewController(alert, animated: true, completion: nil)
+    func overwrite(){
+        // copy over old data files for migration
+        let defaultPath = Realm().path
+        let defaultParentPath = defaultPath.stringByDeletingLastPathComponent
+        
+        let v0Path = NSBundle.mainBundle().resourcePath!.stringByAppendingPathComponent("preloaded.realm")
+        NSFileManager.defaultManager().removeItemAtPath(defaultPath, error: nil)
+        NSFileManager.defaultManager().copyItemAtPath(v0Path, toPath: defaultPath, error: nil)
     }
 }
