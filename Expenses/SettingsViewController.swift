@@ -1,13 +1,14 @@
 import UIKit
 import RealmSwift
+import MessageUI
 
-class SettingsViewController: UITableViewController, DBRestClientDelegate {
+class SettingsViewController: UITableViewController, DBRestClientDelegate, MFMailComposeViewControllerDelegate {
     
     @IBOutlet weak var person1: UITextField!
     @IBOutlet weak var person2: UITextField!
-    
-    @IBOutlet weak var uploadDropbox: UITableViewCell!
-    @IBOutlet weak var linkDropbox: UITableViewCell!
+
+    @IBOutlet weak var uploadDropbox: UIButton!
+    @IBOutlet weak var linkDropbox: UIButton!
     
     let textFieldShouldReturn = TextFieldShouldReturn()
     
@@ -25,14 +26,20 @@ class SettingsViewController: UITableViewController, DBRestClientDelegate {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        setVisibilityOfDropboxActions()
-    }
-    
-    func setVisibilityOfDropboxActions(){
-        uploadDropbox.hidden = k.isLinked ? false : true
-        linkDropbox.hidden = k.isLinked ? true : false
+        updateUI()
     }
 
+    func updateUI(){
+        if k.isLinked {
+            linkDropbox.setTitle("Unlink Dropbox", forState: UIControlState.Normal)
+            uploadDropbox.enabled = true
+        }
+        else {
+            linkDropbox.setTitle("Link Dropbox", forState: UIControlState.Normal)
+            uploadDropbox.enabled = false
+        }
+    }
+    
     @IBAction func person(sender: UITextField) {
         let name = sender.text.removeWhitespaces()
         
@@ -61,9 +68,8 @@ class SettingsViewController: UITableViewController, DBRestClientDelegate {
         if k.isLinked {
             let restClient = DBRestClient(session: k.sharedSession)
             restClient.delegate = self
-            
-            let realmPath = Realm.defaultPath
-            let realmFilename = "Expenses.realm"
+            let realmPath = Realm().path
+            let realmFilename = "default.realm"
             restClient.uploadFile(realmFilename, toPath: "/", withParentRev: nil, fromPath: realmPath)
         }
     }
@@ -84,6 +90,32 @@ class SettingsViewController: UITableViewController, DBRestClientDelegate {
         if k.isLinked == false {
             k.sharedSession.linkFromController(self)
         }
+        else {
+            k.sharedSession.unlinkAll()
+            updateUI()
+        }
+    }
+    
+    func sendEmail() {
+        if( MFMailComposeViewController.canSendMail() ) {
+            
+            let mailComposer = MFMailComposeViewController()
+            mailComposer.mailComposeDelegate = self
+            
+            mailComposer.setSubject("Subject")
+            mailComposer.setMessageBody("Message Body", isHTML: false)
+            
+            let filePath = Realm().path
+            if let fileData = NSData(contentsOfFile: filePath) {
+                mailComposer.addAttachmentData(fileData, mimeType: ".realm", fileName: "Expenses.realm")
+            }
+            
+            self.presentViewController(mailComposer, animated: true, completion: nil)
+        }
+    }
+    
+    func mailComposeController(controller: MFMailComposeViewController!, didFinishWithResult result: MFMailComposeResult, error: NSError!) {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     @IBAction func promptToDeleteAllExpenses() {

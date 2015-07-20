@@ -583,9 +583,9 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fi3-Eg-9Zo" id="wVF-cN-Aom">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QWP-yg-Nzc">
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QWP-yg-Nzc">
                                                     <rect key="frame" x="238" y="7" width="125" height="30"/>
-                                                    <state key="normal" title="Link with Dropbox">
+                                                    <state key="normal" title="Link Dropbox">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
@@ -615,10 +615,10 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Settings" id="ogL-EN-FUF"/>
                     <connections>
-                        <outlet property="linkDropbox" destination="fi3-Eg-9Zo" id="nWq-UP-WIj"/>
+                        <outlet property="linkDropbox" destination="QWP-yg-Nzc" id="Kmb-UB-U2r"/>
                         <outlet property="person1" destination="6Rn-op-K3q" id="yw0-a8-nuA"/>
                         <outlet property="person2" destination="K0d-HC-VFB" id="WMy-UD-y2e"/>
-                        <outlet property="uploadDropbox" destination="3wz-9l-gz4" id="Dgj-vt-S3j"/>
+                        <outlet property="uploadDropbox" destination="ABm-aP-b9W" id="UnK-Tt-Xtg"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tbu-ot-c5X" userLabel="First Responder" sceneMemberID="firstResponder"/>
