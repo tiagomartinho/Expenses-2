@@ -32,6 +32,8 @@
 		EAC3547B1B4BA2060088ACF7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC3547A1B4BA2060088ACF7 /* SettingsViewController.swift */; };
 		EAC5E1AA1B5D569B00C81196 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC5E1A91B5D569B00C81196 /* Expense.swift */; };
 		EAC5E1AB1B5D569B00C81196 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC5E1A91B5D569B00C81196 /* Expense.swift */; };
+		EAC5E1AD1B5D62F300C81196 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAC5E1AC1B5D62F300C81196 /* QuartzCore.framework */; };
+		EAC5E1AF1B5D62F900C81196 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAC5E1AE1B5D62F900C81196 /* Security.framework */; };
 		EAF9B1C61B4F11AF0065905E /* RealmUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF9B1C51B4F11AF0065905E /* RealmUtilities.swift */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +76,8 @@
 		EA9F106B1B518B0C0065FA37 /* DoubleExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DoubleExtension.swift; path = Expenses/DoubleExtension.swift; sourceTree = SOURCE_ROOT; };
 		EAC3547A1B4BA2060088ACF7 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = SettingsViewController.swift; path = Expenses/SettingsViewController.swift; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		EAC5E1A91B5D569B00C81196 /* Expense.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Expense.swift; path = Expenses/Expense.swift; sourceTree = SOURCE_ROOT; };
+		EAC5E1AC1B5D62F300C81196 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		EAC5E1AE1B5D62F900C81196 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		EAEFF59F1B4750B900C70CB1 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Pods/Alamofire.framework"; sourceTree = "<group>"; };
 		EAEFF5A01B4750B900C70CB1 /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = "Pods/../build/Debug-iphoneos/Pods.framework"; sourceTree = "<group>"; };
 		EAEFF5A11B4750B900C70CB1 /* SwiftyDropbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyDropbox.framework; path = "Pods/../build/Debug-iphoneos/Pods/SwiftyDropbox.framework"; sourceTree = "<group>"; };
@@ -85,6 +89,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAC5E1AF1B5D62F900C81196 /* Security.framework in Frameworks */,
+				EAC5E1AD1B5D62F300C81196 /* QuartzCore.framework in Frameworks */,
 				EA96DD371B5ADE2E000A07AB /* DropboxSDK.framework in Frameworks */,
 				4B3ADD5DE8E5911DA477B05B /* Pods.framework in Frameworks */,
 			);
@@ -105,6 +111,8 @@
 		3A33C906E577FD2AF0800F6A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EAC5E1AE1B5D62F900C81196 /* Security.framework */,
+				EAC5E1AC1B5D62F300C81196 /* QuartzCore.framework */,
 				EA96DD361B5ADE2E000A07AB /* DropboxSDK.framework */,
 				EA01153E1B4752E700EA613C /* Alamofire.framework */,
 				EA01153F1B4752E700EA613C /* SwiftyDropbox.framework */,

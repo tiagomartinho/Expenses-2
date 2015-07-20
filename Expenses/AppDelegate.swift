@@ -11,11 +11,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
-        if k.sharedSession.handleOpenURL(url) {
-            if k.isLinked {
-            }
-            return true
-        }
-        return false
+        return k.sharedSession.handleOpenURL(url) && k.isLinked
     }
 }
