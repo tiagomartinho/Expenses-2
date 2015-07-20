@@ -61,10 +61,15 @@ class SettingsViewController: UITableViewController, DBRestClientDelegate {
         if k.isLinked {
             let restClient = DBRestClient(session: k.sharedSession)
             restClient.delegate = self
-            let realmPath = Realm.defaultPath.stringByDeletingLastPathComponent
+            
+            let realmPath = Realm.defaultPath
             let realmFilename = "Expenses.realm"
             restClient.uploadFile(realmFilename, toPath: "/", withParentRev: nil, fromPath: realmPath)
         }
+    }
+    
+    func restClient(client: DBRestClient!, uploadProgress progress: CGFloat, forFile destPath: String!, from srcPath: String!) {
+        println("\(progress)")
     }
     
     func restClient(client: DBRestClient!, uploadedFile destPath: String!, from srcPath: String!, metadata: DBMetadata!) {
