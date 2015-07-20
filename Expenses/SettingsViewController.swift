@@ -91,15 +91,15 @@ class SettingsViewController: UITableViewController, DBRestClientDelegate, MFMai
     @IBAction func downloadFromDropbox() {
     }
     
-    func restClient(client: DBRestClient!, uploadProgress progress: CGFloat, forFile destPath: String!, from srcPath: String!) {
-        println("\(progress)")
-    }
-    
-    func restClient(client: DBRestClient!, uploadedFile destPath: String!, from srcPath: String!, metadata: DBMetadata!) {
+    func restClient(client: DBRestClient, uploadedFile destPath: String, from srcPath: String, metadata: DBMetadata) {
         println("File uploaded successfully")
     }
     
-    func restClient(client: DBRestClient!, uploadFileFailedWithError error: NSError!) {
+    func restClient(client: DBRestClient, uploadProgress progress: CGFloat, forFile destPath: String, from srcPath: String) {
+        println("\(progress)")
+    }
+    
+    func restClient(client: DBRestClient, uploadFileFailedWithError error: NSError) {
         println("File failed with error")
     }
     
@@ -128,7 +128,7 @@ class SettingsViewController: UITableViewController, DBRestClientDelegate, MFMai
         }
     }
     
-    func mailComposeController(controller: MFMailComposeViewController!, didFinishWithResult result: MFMailComposeResult, error: NSError!) {
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
@@ -137,8 +137,9 @@ class SettingsViewController: UITableViewController, DBRestClientDelegate, MFMai
         let defaultPath = Realm().path
         let defaultParentPath = defaultPath.stringByDeletingLastPathComponent
         
-        let v0Path = NSBundle.mainBundle().resourcePath!.stringByAppendingPathComponent("preloaded.realm")
-        NSFileManager.defaultManager().removeItemAtPath(defaultPath, error: nil)
-        NSFileManager.defaultManager().copyItemAtPath(v0Path, toPath: defaultPath, error: nil)
+        if let v0Path = NSBundle.mainBundle().resourcePath?.stringByAppendingPathComponent("preloaded.realm") {
+            NSFileManager.defaultManager().removeItemAtPath(defaultPath, error: nil)
+            NSFileManager.defaultManager().copyItemAtPath(v0Path, toPath: defaultPath, error: nil)
+        }
     }
 }
