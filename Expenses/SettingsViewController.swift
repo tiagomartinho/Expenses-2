@@ -2,14 +2,10 @@ import UIKit
 import RealmSwift
 import MessageUI
 
-class SettingsViewController: UITableViewController, DBRestClientDelegate, MFMailComposeViewControllerDelegate {
+class SettingsViewController: UITableViewController, MFMailComposeViewControllerDelegate {
     
     @IBOutlet weak var person1: UITextField!
     @IBOutlet weak var person2: UITextField!
-
-    @IBOutlet weak var uploadDropbox: UIButton!
-    @IBOutlet weak var downloadDropbox: UIButton!
-    @IBOutlet weak var linkDropbox: UIButton!
     
     let textFieldShouldReturn = TextFieldShouldReturn()
     
@@ -24,25 +20,6 @@ class SettingsViewController: UITableViewController, DBRestClientDelegate, MFMai
         textFieldShouldReturn.addTextField(person2)
         person1.text = k.Person1Name
         person2.text = k.Person2Name
-    }
-    
-    // MARK : viewWillAppear
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        updateUI()
-    }
-
-    func updateUI(){
-        if k.isLinked {
-            linkDropbox.setTitle("Unlink Dropbox", forState: UIControlState.Normal)
-            uploadDropbox.enabled = true
-            downloadDropbox.enabled = true
-        }
-        else {
-            linkDropbox.setTitle("Link Dropbox", forState: UIControlState.Normal)
-            uploadDropbox.enabled = false
-            downloadDropbox.enabled = false
-        }
     }
     
     @IBAction func person(sender: UITextField) {
@@ -76,36 +53,6 @@ class SettingsViewController: UITableViewController, DBRestClientDelegate, MFMai
             RealmUtilities.deleteAllEntries()
         }))
         self.presentViewController(alert, animated: true, completion: nil)
-    }
-    
-    @IBAction func uploadToDropbox() {
-        if k.isLinked {
-            let restClient = DBRestClient(session: k.sharedSession)
-            restClient.delegate = self
-            let realmPath = Realm().path
-            let realmFilename = "default.realm"
-            restClient.uploadFile(realmFilename, toPath: "/", withParentRev: nil, fromPath: realmPath)
-        }
-    }
-    
-    @IBAction func downloadFromDropbox() {
-    }
-    
-    func restClient(client: DBRestClient, uploadedFile destPath: String, from srcPath: String, metadata: DBMetadata) {
-        println("File uploaded successfully")
-    }
-    
-    func restClient(client: DBRestClient, uploadProgress progress: CGFloat, forFile destPath: String, from srcPath: String) {
-        println("\(progress)")
-    }
-    
-    func restClient(client: DBRestClient, uploadFileFailedWithError error: NSError) {
-        println("File failed with error")
-    }
-    
-    @IBAction func linkWithDropbox() {
-        k.isLinked ? k.sharedSession.unlinkAll() : k.sharedSession.linkFromController(self)
-        updateUI()
     }
     
     // MARK : Send Email

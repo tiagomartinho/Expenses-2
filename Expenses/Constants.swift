@@ -11,9 +11,4 @@ struct k {
     
     // Cell Identifiers
     static let ExpenseCell = "ExpenseCell"
-    
-    //Dropbox
-    static var sharedSession:DBSession { return DBSession.sharedSession() }
-    static var isLinked:Bool { return sharedSession.isLinked() }
-    static let AppKey = "7khond99l6pg9jh"
 }
