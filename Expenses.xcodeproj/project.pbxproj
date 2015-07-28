@@ -29,7 +29,6 @@
 		EA9F106C1B518B0C0065FA37 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9F106B1B518B0C0065FA37 /* DoubleExtension.swift */; };
 		EAC3547B1B4BA2060088ACF7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC3547A1B4BA2060088ACF7 /* SettingsViewController.swift */; };
 		EAC5E1AA1B5D569B00C81196 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC5E1A91B5D569B00C81196 /* Expense.swift */; };
-		EAC5E1AB1B5D569B00C81196 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC5E1A91B5D569B00C81196 /* Expense.swift */; };
 		EAC5E1AD1B5D62F300C81196 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAC5E1AC1B5D62F300C81196 /* QuartzCore.framework */; };
 		EAC5E1AF1B5D62F900C81196 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAC5E1AE1B5D62F900C81196 /* Security.framework */; };
 		EAF9B1C61B4F11AF0065905E /* RealmUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF9B1C51B4F11AF0065905E /* RealmUtilities.swift */; };
@@ -448,7 +447,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EAC5E1AB1B5D569B00C81196 /* Expense.swift in Sources */,
 				EA210A1D1B55B1710060711F /* DoubleExtension.swift in Sources */,
 				EA877CE81B4B0BF800F4B4E8 /* ConvertAmountTests.swift in Sources */,
 				EA877CEB1B4B0C3D00F4B4E8 /* StringExtension.swift in Sources */,

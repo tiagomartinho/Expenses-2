@@ -80,14 +80,18 @@ class BalanceTests: XCTestCase {
         XCTAssertEqual("zero_balance".localized, Balance.summaries[0])
         XCTAssertEqual(person1Name + " paid 0.00€", Balance.summaries[1])
         XCTAssertEqual(person2Name + " paid 0.00€", Balance.summaries[2])
+        XCTAssertEqual(person1Name + " spent 0.00€", Balance.summaries[3])
+        XCTAssertEqual(person2Name + " spent 0.00€", Balance.summaries[4])
     }
     
     func testSummaryOneEntryForPerson1() {
         RealmUtilities.addEntryWithAmount(value)
         let summary = person2Name + " owes " + person1Name + " " + "\(value/2)" + "€"
         XCTAssertEqual(summary, Balance.summaries[0])
-        XCTAssertEqual(person1Name + " paid 12.34€", Balance.summaries[1])
+        XCTAssertEqual(person1Name + " paid \(value)€", Balance.summaries[1])
         XCTAssertEqual(person2Name + " paid 0.00€", Balance.summaries[2])
+        XCTAssertEqual(person1Name + " spent \(value/2)€", Balance.summaries[3])
+        XCTAssertEqual(person2Name + " spent \(value/2)€", Balance.summaries[4])
     }
     
     func testTwoEntriesGivesSummary() {
@@ -95,16 +99,20 @@ class BalanceTests: XCTestCase {
         RealmUtilities.addEntryWithAmount(value)
         let summary = person2Name + " owes " + person1Name + " " + "\((value+value)/2)" + "€"
         XCTAssertEqual(summary, Balance.summaries[0])
-        XCTAssertEqual(person1Name + " paid 24.68€", Balance.summaries[1])
+        XCTAssertEqual(person1Name + " paid \(value*2)€", Balance.summaries[1])
         XCTAssertEqual(person2Name + " paid 0.00€", Balance.summaries[2])
+        XCTAssertEqual(person1Name + " spent \(value)€", Balance.summaries[3])
+        XCTAssertEqual(person2Name + " spent \(value)€", Balance.summaries[4])
     }
     
     func testTwoEqualEntriesFromDifferentPersonsGivesSummary() {
         RealmUtilities.addEntryWithAmount(value)
         RealmUtilities.addEntryWithAmount(value,PaidBy:1)
         XCTAssertEqual("zero_balance".localized, Balance.summaries[0])
-        XCTAssertEqual(person1Name + " paid 12.34€", Balance.summaries[1])
-        XCTAssertEqual(person2Name + " paid 12.34€", Balance.summaries[2])
+        XCTAssertEqual(person1Name + " paid \(value)€", Balance.summaries[1])
+        XCTAssertEqual(person2Name + " paid \(value)€", Balance.summaries[2])
+        XCTAssertEqual(person1Name + " spent \(value)€", Balance.summaries[3])
+        XCTAssertEqual(person2Name + " spent \(value)€", Balance.summaries[4])
     }
     
     func testSomeEntriesFromDifferentPersonsGivesSummary() {
@@ -113,11 +121,28 @@ class BalanceTests: XCTestCase {
         RealmUtilities.addEntryWithAmount(value,PaidBy:1)
         var summary = person2Name + " owes " + person1Name + " " + "\(value/2)" + "€"
         XCTAssertEqual(summary, Balance.summaries[0])
+        
+        XCTAssertEqual(person1Name + " paid \(value*2)€", Balance.summaries[1])
+        XCTAssertEqual(person2Name + " paid \(value)€", Balance.summaries[2])
+        XCTAssertEqual(person1Name + " spent \(value*3/2)€", Balance.summaries[3])
+        XCTAssertEqual(person2Name + " spent \(value*3/2)€", Balance.summaries[4])
+        
         RealmUtilities.addEntryWithAmount(value,PaidBy:1)
         XCTAssertEqual("zero_balance".localized, Balance.summaries[0])
+        
+        XCTAssertEqual(person1Name + " paid \(value*2)€", Balance.summaries[1])
+        XCTAssertEqual(person2Name + " paid \(value*2)€", Balance.summaries[2])
+        XCTAssertEqual(person1Name + " spent \(value*2)€", Balance.summaries[3])
+        XCTAssertEqual(person2Name + " spent \(value*2)€", Balance.summaries[4])
+        
         RealmUtilities.addEntryWithAmount(value,PaidBy:1)
         summary = person1Name + " owes " + person2Name + " " + "\(value/2)" + "€"
         XCTAssertEqual(summary, Balance.summaries[0])
+        
+        XCTAssertEqual(person1Name + " paid \(value*2)€", Balance.summaries[1])
+        XCTAssertEqual(person2Name + " paid \(value*3)€", Balance.summaries[2])
+        XCTAssertEqual(person1Name + " spent \(value*5/2)€", Balance.summaries[3])
+        XCTAssertEqual(person2Name + " spent \(value*5/2)€", Balance.summaries[4])
     }
     
     // MARK: Totals Formatted Tests
@@ -130,11 +155,11 @@ class BalanceTests: XCTestCase {
     // MARK: Person Totals
     func testPersonTotalOneEntryForPerson1() {
         RealmUtilities.addEntryWithAmount(value)
-        XCTAssertEqual(value, Balance.personTotal(0))
+        XCTAssertEqual(value, Balance.totalPaidBy(0))
     }
     
     func testPersonTotalOneEntryForPerson2() {
         RealmUtilities.addEntryWithAmount(value,PaidBy:1)
-        XCTAssertEqual(value, Balance.personTotal(1))
+        XCTAssertEqual(value, Balance.totalPaidBy(1))
     }
 }
