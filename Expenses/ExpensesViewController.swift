@@ -52,11 +52,6 @@ class ExpensesViewController: UIViewController, UITableViewDataSource {
         initialView.hidden = thereAreNoExpenses ? false : true
     }
     
-    @IBAction func previousSummary() {
-        currentSummary = currentSummary == 0 ? Balance.summaries.count - 1 : currentSummary - 1
-        summary.text = Balance.summaries[currentSummary]
-    }
-    
     @IBAction func nextSummary() {
         currentSummary = (currentSummary + 1) % Balance.summaries.count
         summary.text = Balance.summaries[currentSummary]
