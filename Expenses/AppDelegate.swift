@@ -17,9 +17,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let defaultParentPath = defaultPath.stringByDeletingLastPathComponent
         
         if let path = url.path {
-            NSFileManager.defaultManager().removeItemAtPath(defaultPath, error: nil)
-            NSFileManager.defaultManager().copyItemAtPath(path, toPath: defaultPath, error: nil)
-        }        
+            deleteRealmFilesAtPath(defaultPath)
+            let fileManager = NSFileManager.defaultManager()
+            fileManager.copyItemAtPath(path, toPath: defaultPath, error: nil)
+        }
+        
+        Realm().refresh()
+    }
+    
+    private func deleteRealmFilesAtPath(path: String) {
+        let fileManager = NSFileManager.defaultManager()
+        fileManager.removeItemAtPath(path, error: nil)
+        let lockPath = path + ".lock"
+        fileManager.removeItemAtPath(lockPath, error: nil)
     }
     
     private func removeImportedFile(url: NSURL){
