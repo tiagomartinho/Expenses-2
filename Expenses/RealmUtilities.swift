@@ -1,4 +1,5 @@
 import RealmSwift
+import Foundation
 
 public class RealmUtilities {
     public static func deleteAllEntries(){
@@ -8,10 +9,10 @@ public class RealmUtilities {
         realm.commitWrite()
     }
     
-    public static func addEntryWithAmount(amount:Double,PaidBy by:Int=0,PaidTo to:Int=2,AtDate date:NSDate=NSDate(),WithCategory category:String=""){
+    public static func createEntryWithAmount(amount:Double,PaidBy by:Int=0,PaidTo to:Int=2,AtDate date:NSDate=NSDate(),WithCategory category:String=""){
         let realm = Realm()
         realm.beginWrite()
-        realm.create(Expense.self, value: [amount, by, to, category,date])
+        realm.create(Expense.self, value: [NSUUID().UUIDString, amount, by, to, category,date])
         realm.commitWrite()
     }
     

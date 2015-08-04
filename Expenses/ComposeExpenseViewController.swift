@@ -50,7 +50,7 @@ class ComposeExpenseViewController: UITableViewController {
         let categoryOrEmpty = category?.text ?? ""
         let by = paidBy.selectedSegmentIndex
         let to = paidToConversion[paidTo.selectedSegmentIndex]
-        RealmUtilities.addEntryWithAmount(amount, PaidBy: by, PaidTo: to, AtDate: NSDate(), WithCategory: categoryOrEmpty)
+        RealmUtilities.createEntryWithAmount(amount, PaidBy: by, PaidTo: to, AtDate: NSDate(), WithCategory: categoryOrEmpty)
     }
     
     func setAmountBackground(){
