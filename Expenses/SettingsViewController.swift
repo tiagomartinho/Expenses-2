@@ -63,8 +63,8 @@ class SettingsViewController: UITableViewController, MFMailComposeViewController
             let mailComposer = MFMailComposeViewController()
             mailComposer.mailComposeDelegate = self
             
-            mailComposer.setSubject("Expenses")
-            mailComposer.setMessageBody("Expenses Backup", isHTML: false)
+            mailComposer.setSubject("Expenses Backup")
+            mailComposer.setMessageBody("To open the backup file in your Mac download the realm browser at:\n https://itunes.apple.com/app/realm-browser/id1007457278", isHTML: false)
             
             let filePath = Realm().path
             if let fileData = NSData(contentsOfFile: filePath) {
@@ -77,16 +77,5 @@ class SettingsViewController: UITableViewController, MFMailComposeViewController
     
     func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError) {
         self.dismissViewControllerAnimated(true, completion: nil)
-    }
-    
-    func overwrite(){
-        // copy over old data files for migration
-        let defaultPath = Realm().path
-        let defaultParentPath = defaultPath.stringByDeletingLastPathComponent
-        
-        if let v0Path = NSBundle.mainBundle().resourcePath?.stringByAppendingPathComponent("preloaded.realm") {
-            NSFileManager.defaultManager().removeItemAtPath(defaultPath, error: nil)
-            NSFileManager.defaultManager().copyItemAtPath(v0Path, toPath: defaultPath, error: nil)
-        }
     }
 }
