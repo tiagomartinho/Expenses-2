@@ -4,37 +4,49 @@ import RealmSwift
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
+    var url:NSURL?
     
     func application(application: UIApplication, handleOpenURL url: NSURL) -> Bool
     {
-        overwrite(url)
-        removeImportedFile(url)
+        self.url = url
+        showAlertToRelaceExpenses()
         return true
     }
     
-    private func overwrite(url: NSURL){        
+    private func showAlertToRelaceExpenses(){
+        var alert = UIAlertController(title: "Attention", message: "This will replace all your expenses", preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: { (action:UIAlertAction!) -> Void in
+            self.removeImportedFile()
+        }))
+        alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action:UIAlertAction!) -> Void in
+            self.overwrite()
+            self.removeImportedFile()
+        }))
+        if let rootVC = self.window?.rootViewController {
+            rootVC.presentViewController(alert, animated: true, completion: nil)
+        }
+    }
+    
+    private func overwrite(){
         let defaultPath = Realm().path
-        let defaultParentPath = defaultPath.stringByDeletingLastPathComponent
+        let importedPath = defaultPath + ".imported"
         
-        if let path = url.path {
-            deleteRealmFilesAtPath(defaultPath)
+        if let path = url?.path {
             let fileManager = NSFileManager.defaultManager()
-            fileManager.copyItemAtPath(path, toPath: defaultPath, error: nil)
+            fileManager.removeItemAtPath(importedPath, error: nil)
+            fileManager.copyItemAtPath(path, toPath: importedPath, error: nil)
+            let importedRealm = Realm(path: importedPath)
+            let importedExpenses = importedRealm.objects(Expense)
+            RealmUtilities.deleteAllEntries()
+            RealmUtilities.createEntries(importedExpenses)
         }
         
-        Realm().refresh()
+        removeImportedFile()
     }
     
-    private func deleteRealmFilesAtPath(path: String) {
-        let fileManager = NSFileManager.defaultManager()
-        fileManager.removeItemAtPath(path, error: nil)
-        let lockPath = path + ".lock"
-        fileManager.removeItemAtPath(lockPath, error: nil)
-    }
-    
-    private func removeImportedFile(url: NSURL){
+    private func removeImportedFile(){
         let fileManager = NSFileManager()
-        if let path = url.path {
+        if let path = url?.path {
             fileManager.removeItemAtPath(path, error: nil)
         }
     }
