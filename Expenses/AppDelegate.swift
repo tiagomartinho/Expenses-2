@@ -45,9 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let importedRealm = Realm(path: importedPath)
             let importedExpenses = importedRealm.objects(Expense)
             RealmUtilities.updateEntries(importedExpenses)
-        }
-        
-        removeImportedFile()
+        }        
     }
     
     private func removeImportedFile(){
