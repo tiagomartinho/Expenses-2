@@ -28,6 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action:UIAlertAction!) -> Void in
             self.overwrite()
             self.removeImportedFile()
+            Answers.logCustomEventWithName("Expenses Imported", customAttributes:  nil)
         }))
         if let rootVC = self.window?.rootViewController {
             rootVC.presentViewController(alert, animated: true, completion: nil)
@@ -45,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let importedRealm = Realm(path: importedPath)
             let importedExpenses = importedRealm.objects(Expense)
             RealmUtilities.updateEntries(importedExpenses)
-        }        
+        }
     }
     
     private func removeImportedFile(){
