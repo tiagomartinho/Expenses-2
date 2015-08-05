@@ -1,5 +1,6 @@
 import UIKit
 import RealmSwift
+import Crashlytics
 
 class ExpensesViewController: UIViewController, UITableViewDataSource {
     
@@ -115,6 +116,13 @@ class ExpensesViewController: UIViewController, UITableViewDataSource {
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             let entry = array[indexPath.row]
+            
+            let inCommon = (entry.paidTo == 2) ? "Yes" : "No"
+            let categoryPresent = (entry.category != "") ? "Yes" : "No"
+            Answers.logCustomEventWithName("Expense Deleted", customAttributes:  [
+                "In Common": inCommon,
+                "Category Present": categoryPresent])
+            
             RealmUtilities.deleteEntry(entry)
         }
     }
