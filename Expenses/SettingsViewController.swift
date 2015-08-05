@@ -1,6 +1,7 @@
 import UIKit
 import RealmSwift
 import MessageUI
+import Crashlytics
 
 class SettingsViewController: UITableViewController, MFMailComposeViewControllerDelegate {
     
@@ -46,6 +47,8 @@ class SettingsViewController: UITableViewController, MFMailComposeViewController
         }
         
         k.Defaults.synchronize()
+        
+        Answers.logCustomEventWithName("Person Name Set", customAttributes:  nil)
     }
     
     @IBAction func promptToDeleteAllExpenses() {
