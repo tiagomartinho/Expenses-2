@@ -100,6 +100,9 @@ class SettingsViewController: UITableViewController, MFMailComposeViewController
     }
     
     func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError) {
+        if result.value == MFMailComposeResultSent.value {
+            Answers.logCustomEventWithName("Expenses Exported", customAttributes:  nil)
+        }
         self.dismissViewControllerAnimated(true, completion: nil)
     }
 }
