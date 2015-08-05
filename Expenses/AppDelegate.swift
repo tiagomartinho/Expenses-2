@@ -6,7 +6,7 @@ import Crashlytics
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
-    var url:NSURL?
+    private var url:NSURL?
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         Fabric.with([Crashlytics()])
@@ -21,11 +21,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func showAlertToRelaceExpenses(){
-        var alert = UIAlertController(title: "Attention", message: "This will merge the imported expenses with your expenses", preferredStyle: .Alert)
-        alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: { (action:UIAlertAction!) -> Void in
+        var alert = UIAlertController(title: "attention".localized, message: "merge_warning".localized, preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "cancel".localized, style: .Cancel, handler: { (action:UIAlertAction!) -> Void in
             self.removeImportedFile()
         }))
-        alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action:UIAlertAction!) -> Void in
+        alert.addAction(UIAlertAction(title: "ok".localized, style: .Default, handler: { (action:UIAlertAction!) -> Void in
             self.overwrite()
             self.removeImportedFile()
             Answers.logCustomEventWithName("Expenses Imported", customAttributes:  nil)

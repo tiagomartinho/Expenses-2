@@ -5,3 +5,7 @@
 "default_person_2_name" = "2";
 "spent" = "spent";
 "paid" = "paid";
+"attention" = "Attention";
+"merge_warning" = "This will merge the imported expenses with your expenses";
+"cancel" = "Cancel";
+"ok" = "Ok";
