@@ -16,11 +16,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, handleOpenURL url: NSURL) -> Bool
     {
         self.url = url
-        showAlertToRelaceExpenses()
+        showAlertToMergeExpenses()
         return true
     }
     
-    private func showAlertToRelaceExpenses(){
+    private func showAlertToMergeExpenses(){
         var alert = UIAlertController(title: "attention".localized, message: "merge_warning".localized, preferredStyle: .Alert)
         alert.addAction(UIAlertAction(title: "cancel".localized, style: .Cancel, handler: { (action:UIAlertAction!) -> Void in
             self.removeImportedFile()
