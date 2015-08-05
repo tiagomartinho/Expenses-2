@@ -78,13 +78,11 @@ class SettingsViewController: UITableViewController, MFMailComposeViewController
                 mailComposer.addAttachmentData(fileData, mimeType: ".realm", fileName: "Expenses.realm")
             }
             
-            self.presentViewController(mailComposer, animated: true, completion: { [weak self] in
+            self.presentViewController(mailComposer, animated: true) { [weak self] in
                 if let settingsVC = self {
                     settingsVC.stopLoadAnimation()
-
                 }
-                })
-            self.presentViewController(mailComposer, animated: true, completion: nil)
+            }
         }
         else {
             stopLoadAnimation()
