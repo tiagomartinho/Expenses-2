@@ -1,4 +1,5 @@
 import UIKit
+import Crashlytics
 
 class ComposeExpenseViewController: UITableViewController {
 
@@ -51,6 +52,12 @@ class ComposeExpenseViewController: UITableViewController {
         let by = paidBy.selectedSegmentIndex
         let to = paidToConversion[paidTo.selectedSegmentIndex]
         RealmUtilities.createEntryWithAmount(amount, PaidBy: by, PaidTo: to, AtDate: NSDate(), WithCategory: categoryOrEmpty)
+        
+        let inCommon = (to == 2) ? "Yes" : "No"
+        let categoryPresent = (categoryOrEmpty != "") ? "Yes" : "No"
+        Answers.logCustomEventWithName("Expense Added", customAttributes:  [
+            "In Common": inCommon,
+            "Category Present": categoryPresent])
     }
     
     func setAmountBackground(){
