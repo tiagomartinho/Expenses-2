@@ -9,9 +9,25 @@ class BalanceTests: XCTestCase {
     let person1Name = k.Person1Name
     let person2Name = k.Person2Name
     
-    // MARK: SetUp
+    // MARK: SetUp and TearDown
+    let realmPathForTesting = Realm().path + ".testing"
+
     override func setUp() {
-        RealmUtilities.deleteAllEntries()
+        super.setUp()
+        deleteRealmFilesAtPath(realmPathForTesting)
+        Realm.defaultPath = realmPathForTesting
+    }
+    
+    override func tearDown() {
+        super.tearDown()
+        deleteRealmFilesAtPath(realmPathForTesting)
+    }
+    
+    func deleteRealmFilesAtPath(path: String) {
+        let fileManager = NSFileManager.defaultManager()
+        fileManager.removeItemAtPath(path, error: nil)
+        let lockPath = path + ".lock"
+        fileManager.removeItemAtPath(lockPath, error: nil)
     }
     
     // MARK: Total Tests For In Common Expenses
