@@ -9,3 +9,4 @@
 "merge_warning" = "This will merge the imported expenses with your expenses";
 "cancel" = "Cancel";
 "ok" = "Ok";
+"erase_warning" = "This will delete all your expenses";

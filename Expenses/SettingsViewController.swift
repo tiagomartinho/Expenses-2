@@ -52,9 +52,9 @@ class SettingsViewController: UITableViewController, MFMailComposeViewController
     }
     
     @IBAction func promptToDeleteAllExpenses() {
-        var alert = UIAlertController(title: "Attention", message: "This will delete all your expenses", preferredStyle: .Alert)
-        alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
-        alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action:UIAlertAction!) -> Void in
+        var alert = UIAlertController(title: "attention".localized, message: "erase_warning".localized, preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "cancel".localized, style: .Cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "ok".localized, style: .Default, handler: { (action:UIAlertAction!) -> Void in
             RealmUtilities.deleteAllEntries()
         }))
         self.presentViewController(alert, animated: true, completion: nil)
