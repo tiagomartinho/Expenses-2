@@ -537,6 +537,9 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Nl6-z4-gHe" id="oCJ-u0-VCO">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="oLm-nN-Ui7">
+                                                    <rect key="frame" x="290" y="12" width="20" height="20"/>
+                                                </activityIndicatorView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4pb-ZQ-q3k">
                                                     <rect key="frame" x="251" y="7" width="99" height="30"/>
                                                     <state key="normal" title="Send by Email">
@@ -548,9 +551,11 @@
                                                 </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="centerX" secondItem="oLm-nN-Ui7" secondAttribute="centerX" id="2tK-wi-d39"/>
                                                 <constraint firstItem="4pb-ZQ-q3k" firstAttribute="centerX" secondItem="oCJ-u0-VCO" secondAttribute="centerX" id="Cbj-LK-wjr"/>
                                                 <constraint firstAttribute="centerY" secondItem="4pb-ZQ-q3k" secondAttribute="centerY" id="dtB-wX-cbC"/>
                                                 <constraint firstItem="4pb-ZQ-q3k" firstAttribute="top" secondItem="oCJ-u0-VCO" secondAttribute="topMargin" constant="-1" id="fOm-OC-3hl"/>
+                                                <constraint firstAttribute="centerY" secondItem="oLm-nN-Ui7" secondAttribute="centerY" id="lnO-a0-wvI"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
@@ -571,6 +576,8 @@
                     <connections>
                         <outlet property="person1" destination="6Rn-op-K3q" id="yw0-a8-nuA"/>
                         <outlet property="person2" destination="K0d-HC-VFB" id="WMy-UD-y2e"/>
+                        <outlet property="sendEmail" destination="4pb-ZQ-q3k" id="6cE-Z3-C6X"/>
+                        <outlet property="sendEmailActivityIndicator" destination="oLm-nN-Ui7" id="s6K-Hx-B0B"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tbu-ot-c5X" userLabel="First Responder" sceneMemberID="firstResponder"/>

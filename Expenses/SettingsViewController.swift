@@ -6,6 +6,8 @@ class SettingsViewController: UITableViewController, MFMailComposeViewController
     
     @IBOutlet weak var person1: UITextField!
     @IBOutlet weak var person2: UITextField!
+    @IBOutlet weak var sendEmailActivityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var sendEmail: UIButton!
     
     let textFieldShouldReturn = TextFieldShouldReturn()
     
@@ -56,9 +58,11 @@ class SettingsViewController: UITableViewController, MFMailComposeViewController
     }
     
     // MARK : Send Email
-
+    
     @IBAction func sendByEmail() {
-        if( MFMailComposeViewController.canSendMail() ) {
+        startLoadAnimation()
+        
+        if(MFMailComposeViewController.canSendMail() ) {
             
             let mailComposer = MFMailComposeViewController()
             mailComposer.mailComposeDelegate = self
@@ -71,8 +75,27 @@ class SettingsViewController: UITableViewController, MFMailComposeViewController
                 mailComposer.addAttachmentData(fileData, mimeType: ".realm", fileName: "Expenses.realm")
             }
             
+            self.presentViewController(mailComposer, animated: true, completion: { [weak self] in
+                if let settingsVC = self {
+                    settingsVC.stopLoadAnimation()
+
+                }
+                })
             self.presentViewController(mailComposer, animated: true, completion: nil)
         }
+        else {
+            stopLoadAnimation()
+        }
+    }
+    
+    func startLoadAnimation(){
+        sendEmailActivityIndicator.startAnimating()
+        sendEmail.hidden = true
+    }
+    
+    func stopLoadAnimation(){
+        sendEmailActivityIndicator.stopAnimating()
+        sendEmail.hidden = false
     }
     
     func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError) {
