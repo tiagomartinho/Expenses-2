@@ -14,20 +14,13 @@ class BalanceTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
-        deleteRealmFilesAtPath(realmPathForTesting)
+        RealmUtilities.deleteRealmFilesAtPath(realmPathForTesting)
         Realm.defaultPath = realmPathForTesting
     }
     
     override func tearDown() {
         super.tearDown()
-        deleteRealmFilesAtPath(realmPathForTesting)
-    }
-    
-    func deleteRealmFilesAtPath(path: String) {
-        let fileManager = NSFileManager.defaultManager()
-        fileManager.removeItemAtPath(path, error: nil)
-        let lockPath = path + ".lock"
-        fileManager.removeItemAtPath(lockPath, error: nil)
+        RealmUtilities.deleteRealmFilesAtPath(realmPathForTesting)
     }
     
     // MARK: Total Tests For In Common Expenses

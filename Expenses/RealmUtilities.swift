@@ -28,4 +28,11 @@ public class RealmUtilities {
         realm.delete(entry)
         realm.commitWrite()
     }
+    
+    public static func deleteRealmFilesAtPath(path: String) {
+        let fileManager = NSFileManager.defaultManager()
+        fileManager.removeItemAtPath(path, error: nil)
+        let lockPath = path + ".lock"
+        fileManager.removeItemAtPath(lockPath, error: nil)
+    }
 }
