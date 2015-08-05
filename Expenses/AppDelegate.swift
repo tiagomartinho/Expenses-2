@@ -1,10 +1,17 @@
 import UIKit
 import RealmSwift
+import Fabric
+import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var url:NSURL?
+    
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        Fabric.with([Crashlytics()])
+        return true
+    }
     
     func application(application: UIApplication, handleOpenURL url: NSURL) -> Bool
     {
