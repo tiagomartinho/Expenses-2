@@ -22,6 +22,19 @@ public class RealmUtilities {
         realm.commitWrite()
     }
     
+    public static func updateEntries(expenses:Results<Expense>){
+        for expense in expenses {
+            updateEntry(expense)
+        }
+    }
+    
+    public static func updateEntry(entry: Expense){
+        let realm = Realm()
+        realm.beginWrite()
+        realm.create(Expense.self, value: entry, update: true)
+        realm.commitWrite()
+    }
+    
     public static func deleteEntry(entry: Expense){
         let realm = Realm()
         realm.beginWrite()

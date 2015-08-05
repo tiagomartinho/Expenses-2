@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func showAlertToRelaceExpenses(){
-        var alert = UIAlertController(title: "Attention", message: "This will replace all your expenses", preferredStyle: .Alert)
+        var alert = UIAlertController(title: "Attention", message: "This will merge the imported expenses with your expenses", preferredStyle: .Alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: { (action:UIAlertAction!) -> Void in
             self.removeImportedFile()
         }))
@@ -37,8 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             fileManager.copyItemAtPath(path, toPath: importedPath, error: nil)
             let importedRealm = Realm(path: importedPath)
             let importedExpenses = importedRealm.objects(Expense)
-            RealmUtilities.deleteAllEntries()
-            RealmUtilities.createEntries(importedExpenses)
+            RealmUtilities.updateEntries(importedExpenses)
         }
         
         removeImportedFile()
