@@ -81,8 +81,25 @@ class ExpensesViewController: UIViewController, UITableViewDataSource {
     }
     
     func paidBy(paidBy:Int,To paidTo:Int)->String{
-        let person1FirstLetter = String(k.Person1Name[k.Person1Name.startIndex])
-        let person2FirstLetter = String(k.Person2Name[k.Person2Name.startIndex])
+        let person1Name = k.Person1Name
+        let person2Name = k.Person2Name
+        
+        let person1FirstLetter:String
+        let person2FirstLetter:String
+        
+        if person1Name == "default_person_1_name".localized {
+            person1FirstLetter = "P1"
+        }
+        else {
+            person1FirstLetter = String(person1Name[person1Name.startIndex])
+        }
+        
+        if person2Name == "default_person_2_name".localized {
+            person2FirstLetter = "P2"
+        }
+        else {
+            person2FirstLetter = String(person2Name[person2Name.startIndex])
+        }
         
         let FirstSeparator = ""
         let SecondSeparator = " -> "
