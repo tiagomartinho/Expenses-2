@@ -283,7 +283,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
-                            <tableViewSection headerTitle="Paid by" id="gHe-0m-tDc">
+                            <tableViewSection headerTitle="By" id="gHe-0m-tDc">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="aan-3O-Lie">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -314,30 +314,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Amount" id="tTQ-Im-lhr">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Ycq-Be-UKF">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ycq-Be-UKF" id="zbT-eQ-99y">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e7I-ch-cc9">
-                                                    <rect key="frame" x="8" y="8" width="584" height="27"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
-                                                </textField>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="e7I-ch-cc9" secondAttribute="bottom" id="cSF-c4-EJn"/>
-                                                <constraint firstItem="e7I-ch-cc9" firstAttribute="leading" secondItem="zbT-eQ-99y" secondAttribute="leadingMargin" id="hDn-QR-aEY"/>
-                                                <constraint firstItem="e7I-ch-cc9" firstAttribute="top" secondItem="zbT-eQ-99y" secondAttribute="topMargin" id="w5S-Es-7gF"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="e7I-ch-cc9" secondAttribute="trailing" id="zlV-NB-ye8"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection headerTitle="Paid to" id="s66-xh-Jua">
+                            <tableViewSection headerTitle="To" id="s66-xh-Jua">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Qsl-RN-7e6">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -357,6 +334,29 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="joL-SQ-rHO" secondAttribute="trailing" id="MJ7-vU-d7F"/>
                                                 <constraint firstItem="joL-SQ-rHO" firstAttribute="leading" secondItem="WhF-Gd-6ET" secondAttribute="leadingMargin" id="UTc-bG-Nv6"/>
                                                 <constraint firstAttribute="centerY" secondItem="joL-SQ-rHO" secondAttribute="centerY" id="vnY-Th-Hto"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Amount" id="tTQ-Im-lhr">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Ycq-Be-UKF">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ycq-Be-UKF" id="zbT-eQ-99y">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e7I-ch-cc9">
+                                                    <rect key="frame" x="8" y="8" width="584" height="27"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="e7I-ch-cc9" secondAttribute="bottom" id="cSF-c4-EJn"/>
+                                                <constraint firstItem="e7I-ch-cc9" firstAttribute="leading" secondItem="zbT-eQ-99y" secondAttribute="leadingMargin" id="hDn-QR-aEY"/>
+                                                <constraint firstItem="e7I-ch-cc9" firstAttribute="top" secondItem="zbT-eQ-99y" secondAttribute="topMargin" id="w5S-Es-7gF"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="e7I-ch-cc9" secondAttribute="trailing" id="zlV-NB-ye8"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -420,7 +420,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
-                            <tableViewSection headerTitle="Person Names" id="ddC-93-sEB">
+                            <tableViewSection headerTitle="Names" id="ddC-93-sEB">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ZoR-xz-2VG">
                                         <autoresizingMask key="autoresizingMask"/>
