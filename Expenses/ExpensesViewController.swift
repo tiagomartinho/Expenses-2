@@ -9,6 +9,7 @@ class ExpensesViewController: UIViewController, UITableViewDataSource {
     
     var currentSummary = 0
     var nextSummaryNSTimer:NSTimer?
+    var updateSummaryInProgress = false
     
     @IBOutlet weak var summary: UILabel!
     @IBOutlet weak var expensesTableView: UITableView!
@@ -51,9 +52,14 @@ class ExpensesViewController: UIViewController, UITableViewDataSource {
     }
     
     func updateSummary(){
+        updateSummaryInProgress = true
+        
         UIView.transitionWithView(self.summary, duration: 1.0, options: UIViewAnimationOptions.TransitionFlipFromRight, animations: { () -> Void in
             self.summary.text = Balance.summaries[self.currentSummary]
-            }, completion: nil)
+            }) { (completion) -> Void in
+                self.updateSummaryInProgress = false
+        }
+        
         startTimerToShowNextSummary()
     }
     
@@ -71,10 +77,12 @@ class ExpensesViewController: UIViewController, UITableViewDataSource {
     }
     
     @IBAction func nextSummary() {
-        nextSummaryNSTimer?.invalidate()
-        nextSummaryNSTimer = nil
-        currentSummary = (currentSummary + 1) % Balance.summaries.count
-        updateSummary()
+        if !updateSummaryInProgress {
+            nextSummaryNSTimer?.invalidate()
+            nextSummaryNSTimer = nil
+            currentSummary = (currentSummary + 1) % Balance.summaries.count
+            updateSummary()
+        }
     }
     
     // MARK: TableView Data Source
@@ -91,7 +99,7 @@ class ExpensesViewController: UIViewController, UITableViewDataSource {
             cell.category = expense.category
             cell.amount = expense.amount.currency
             cell.date = formatDate(expense.date)
-
+            
             return cell
         }
         else {
