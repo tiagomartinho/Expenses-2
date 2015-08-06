@@ -35,7 +35,12 @@ class ExpensesViewController: UIViewController, UITableViewDataSource {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        resetSummary()
         updateUI()
+    }
+    
+    func resetSummary(){
+        currentSummary = 0
     }
     
     func updateUI(){
