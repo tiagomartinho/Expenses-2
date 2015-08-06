@@ -28,7 +28,7 @@ class SettingsViewController: UITableViewController, MFMailComposeViewController
     @IBAction func person(sender: UITextField) {
         let name = sender.text.removeWhitespaces()
         
-        if sender.placeholder?.hasSuffix("1") ?? false {
+        if sender.placeholder?.hasSuffix("default_person_1_name".localized) ?? false {
             if name == "" {
                 k.Defaults.removeObjectForKey(k.UD_Person1)
             }
@@ -37,7 +37,7 @@ class SettingsViewController: UITableViewController, MFMailComposeViewController
             }
         }
         
-        if sender.placeholder?.hasSuffix("2") ?? false {
+        if sender.placeholder?.hasSuffix("default_person_2_name".localized) ?? false {
             if name == "" {
                 k.Defaults.removeObjectForKey(k.UD_Person2)
             }
