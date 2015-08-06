@@ -8,7 +8,8 @@ class ExpensesViewController: UIViewController, UITableViewDataSource {
     var notificationToken: NotificationToken?
     
     var currentSummary = 0
-    
+    var nextSummaryNSTimer:NSTimer?
+
     @IBOutlet weak var summary: UILabel!
     @IBOutlet weak var expensesTableView: UITableView!
     @IBOutlet weak var initialView: UIView!
@@ -37,6 +38,7 @@ class ExpensesViewController: UIViewController, UITableViewDataSource {
         super.viewDidAppear(animated)
         resetSummary()
         updateUI()
+        startTimer()
     }
     
     func resetSummary(){
@@ -56,6 +58,25 @@ class ExpensesViewController: UIViewController, UITableViewDataSource {
     func showInitialViewIfThereAreNoExpenses(){
         let thereAreNoExpenses = (array.count == 0)
         initialView.hidden = thereAreNoExpenses ? false : true
+    }
+    
+    // MARK: viewDidDisappear
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        stopTimer()
+    }
+    
+    func startTimer(){
+        nextSummaryNSTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "tick:", userInfo: nil, repeats: true)
+    }
+    
+    func tick(nsTimer: NSTimer) {
+        nextSummary()
+    }
+    
+    func stopTimer(){
+        nextSummaryNSTimer?.invalidate()
+        nextSummaryNSTimer = nil
     }
     
     @IBAction func nextSummary() {
