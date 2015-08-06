@@ -9,7 +9,7 @@ class ExpensesViewController: UIViewController, UITableViewDataSource {
     
     var currentSummary = 0
     var nextSummaryNSTimer:NSTimer?
-
+    
     @IBOutlet weak var summary: UILabel!
     @IBOutlet weak var expensesTableView: UITableView!
     @IBOutlet weak var initialView: UIView!
@@ -38,7 +38,6 @@ class ExpensesViewController: UIViewController, UITableViewDataSource {
         super.viewDidAppear(animated)
         resetSummary()
         updateUI()
-        startTimer()
     }
     
     func resetSummary(){
@@ -52,7 +51,10 @@ class ExpensesViewController: UIViewController, UITableViewDataSource {
     }
     
     func updateSummary(){
-        summary.text = Balance.summaries[currentSummary]
+        UIView.transitionWithView(self.summary, duration: 1.0, options: UIViewAnimationOptions.TransitionFlipFromRight, animations: { () -> Void in
+            self.summary.text = Balance.summaries[self.currentSummary]
+            }, completion: nil)
+        startTimerToShowNextSummary()
     }
     
     func showInitialViewIfThereAreNoExpenses(){
@@ -60,30 +62,19 @@ class ExpensesViewController: UIViewController, UITableViewDataSource {
         initialView.hidden = thereAreNoExpenses ? false : true
     }
     
-    // MARK: viewDidDisappear
-    override func viewDidDisappear(animated: Bool) {
-        super.viewDidDisappear(animated)
-        stopTimer()
-    }
-    
-    func startTimer(){
-        nextSummaryNSTimer = NSTimer.scheduledTimerWithTimeInterval(5.0, target: self, selector: "tick:", userInfo: nil, repeats: true)
+    func startTimerToShowNextSummary(){
+        nextSummaryNSTimer = NSTimer.scheduledTimerWithTimeInterval(2.0, target: self, selector: "tick:", userInfo: nil, repeats: false)
     }
     
     func tick(nsTimer: NSTimer) {
         nextSummary()
     }
     
-    func stopTimer(){
+    @IBAction func nextSummary() {
         nextSummaryNSTimer?.invalidate()
         nextSummaryNSTimer = nil
-    }
-    
-    @IBAction func nextSummary() {
         currentSummary = (currentSummary + 1) % Balance.summaries.count
-        UIView.transitionWithView(self.summary, duration: 1.0, options: UIViewAnimationOptions.TransitionFlipFromRight, animations: { () -> Void in
-            self.summary.text = Balance.summaries[self.currentSummary]
-            }, completion: nil)
+        updateSummary()
     }
     
     // MARK: TableView Data Source
