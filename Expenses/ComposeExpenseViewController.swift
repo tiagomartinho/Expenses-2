@@ -19,11 +19,6 @@ class ComposeExpenseViewController: UITableViewController {
         updateSegmentedControl()
     }
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        amount.becomeFirstResponder()
-    }
-    
     func updateSegmentedControl(){
             paidBy.setTitle(k.Person1Name, forSegmentAtIndex: 0)
             paidTo.setTitle(k.Person1Name, forSegmentAtIndex: 0)
