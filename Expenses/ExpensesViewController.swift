@@ -41,15 +41,17 @@ class ExpensesViewController: UIViewController, UITableViewDataSource {
     }
     
     func updateUI(){
-        updateSummary()
+        updateSummaryWithAnimation(false)
         showInitialViewIfThereAreNoExpenses()
         expensesTableView.reloadData()
     }
     
-    func updateSummary(){
+    func updateSummaryWithAnimation(animation:Bool){
         updateSummaryInProgress = true
         
-        UIView.transitionWithView(self.summary, duration: 1.0, options: UIViewAnimationOptions.TransitionFlipFromRight, animations: { () -> Void in
+        let animationDuration = animation ? 1.0 : 0.0
+        
+        UIView.transitionWithView(self.summary, duration: animationDuration, options: UIViewAnimationOptions.TransitionFlipFromRight, animations: { () -> Void in
             self.summary.text = Balance.summaries[self.currentSummary]
             }) { (completion) -> Void in
                 self.updateSummaryInProgress = false
@@ -76,7 +78,7 @@ class ExpensesViewController: UIViewController, UITableViewDataSource {
             nextSummaryNSTimer?.invalidate()
             nextSummaryNSTimer = nil
             currentSummary = (currentSummary + 1) % Balance.summaries.count
-            updateSummary()
+            updateSummaryWithAnimation(true)
         }
     }
     
