@@ -37,12 +37,7 @@ class ExpensesViewController: UIViewController, UITableViewDataSource {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        resetSummary()
         updateUI()
-    }
-    
-    func resetSummary(){
-        currentSummary = 0
     }
     
     func updateUI(){
@@ -69,7 +64,7 @@ class ExpensesViewController: UIViewController, UITableViewDataSource {
     }
     
     func startTimerToShowNextSummary(){
-        nextSummaryNSTimer = NSTimer.scheduledTimerWithTimeInterval(2.0, target: self, selector: "tick:", userInfo: nil, repeats: false)
+        nextSummaryNSTimer = NSTimer.scheduledTimerWithTimeInterval(6.0, target: self, selector: "tick:", userInfo: nil, repeats: false)
     }
     
     func tick(nsTimer: NSTimer) {
