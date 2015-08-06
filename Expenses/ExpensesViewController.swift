@@ -49,14 +49,19 @@ class ExpensesViewController: UIViewController, UITableViewDataSource {
     func updateSummaryWithAnimation(animation:Bool){
         updateSummaryInProgress = true
         
-        let animationDuration = animation ? 1.0 : 0.0
+        let animationDuration = animation ? 0.3 : 0.0
         
-        UIView.transitionWithView(self.summary, duration: animationDuration, options: UIViewAnimationOptions.TransitionFlipFromRight, animations: { () -> Void in
-            self.summary.text = Balance.summaries[self.currentSummary]
-            }) { (completion) -> Void in
-                self.updateSummaryInProgress = false
+        UIView.animateWithDuration(animationDuration, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
+            self.summary.alpha = 0.0
+            }) { finished -> Void in
+                self.summary.text = Balance.summaries[self.currentSummary]
+                UIView.animateWithDuration(animationDuration, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+                    self.summary.alpha = 1.0
+                    }) { (completion) -> Void in
+                        self.updateSummaryInProgress = false
+                }
         }
-        
+    
         startTimerToShowNextSummary()
     }
     
