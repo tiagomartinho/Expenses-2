@@ -67,7 +67,7 @@ class ExpensesViewController: UIViewController, UITableViewDataSource {
     }
     
     func startTimer(){
-        nextSummaryNSTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "tick:", userInfo: nil, repeats: true)
+        nextSummaryNSTimer = NSTimer.scheduledTimerWithTimeInterval(5.0, target: self, selector: "tick:", userInfo: nil, repeats: true)
     }
     
     func tick(nsTimer: NSTimer) {
@@ -81,7 +81,9 @@ class ExpensesViewController: UIViewController, UITableViewDataSource {
     
     @IBAction func nextSummary() {
         currentSummary = (currentSummary + 1) % Balance.summaries.count
-        summary.text = Balance.summaries[currentSummary]
+        UIView.transitionWithView(self.summary, duration: 1.0, options: UIViewAnimationOptions.TransitionFlipFromRight, animations: { () -> Void in
+            self.summary.text = Balance.summaries[self.currentSummary]
+            }, completion: nil)
     }
     
     // MARK: TableView Data Source
