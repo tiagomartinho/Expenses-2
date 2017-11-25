@@ -2,11 +2,11 @@ import UIKit
 
 class TextFieldShouldReturn: NSObject, UITextFieldDelegate {
     
-    func addTextField(textField:UITextField){
+    func addTextField(_ textField:UITextField){
         textField.delegate=self
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool{
         textField.resignFirstResponder()
         return true
     }

@@ -1,49 +1,49 @@
 import RealmSwift
 import Foundation
 
-public class RealmUtilities {
-    public static func deleteAllEntries(){
+open class RealmUtilities {
+    open static func deleteAllEntries(){
         let realm = Realm()
         realm.beginWrite()
         realm.deleteAll()
         realm.commitWrite()
     }
     
-    public static func createEntries(expenses:Results<Expense>){
+    open static func createEntries(_ expenses:Results<Expense>){
         for expense in expenses {
             RealmUtilities.createEntryWithAmount(expense.amount, PaidBy: expense.paidBy, PaidTo: expense.paidTo, AtDate: expense.date, WithCategory: expense.category)
         }
     }
     
-    public static func createEntryWithAmount(amount:Double,PaidBy by:Int=0,PaidTo to:Int=2,AtDate date:NSDate=NSDate(),WithCategory category:String=""){
+    open static func createEntryWithAmount(_ amount:Double,PaidBy by:Int=0,PaidTo to:Int=2,AtDate date:Date=Date(),WithCategory category:String=""){
         let realm = Realm()
         realm.beginWrite()
-        realm.create(Expense.self, value: [NSUUID().UUIDString, amount, by, to, category,date])
+        realm.create(Expense.self, value: [UUID().UUIDString, amount, by, to, category,date])
         realm.commitWrite()
     }
     
-    public static func updateEntries(expenses:Results<Expense>){
+    open static func updateEntries(_ expenses:Results<Expense>){
         for expense in expenses {
             updateEntry(expense)
         }
     }
     
-    public static func updateEntry(entry: Expense){
+    open static func updateEntry(_ entry: Expense){
         let realm = Realm()
         realm.beginWrite()
         realm.create(Expense.self, value: entry, update: true)
         realm.commitWrite()
     }
     
-    public static func deleteEntry(entry: Expense){
+    open static func deleteEntry(_ entry: Expense){
         let realm = Realm()
         realm.beginWrite()
         realm.delete(entry)
         realm.commitWrite()
     }
     
-    public static func deleteRealmFilesAtPath(path: String) {
-        let fileManager = NSFileManager.defaultManager()
+    open static func deleteRealmFilesAtPath(_ path: String) {
+        let fileManager = FileManager.default
         fileManager.removeItemAtPath(path, error: nil)
         let lockPath = path + ".lock"
         fileManager.removeItemAtPath(lockPath, error: nil)

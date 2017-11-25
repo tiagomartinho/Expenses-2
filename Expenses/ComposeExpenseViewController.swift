@@ -20,48 +20,48 @@ class ComposeExpenseViewController: UITableViewController {
     }
     
     func updateSegmentedControl(){
-            paidBy.setTitle(k.Person1Name, forSegmentAtIndex: 0)
-            paidTo.setTitle(k.Person1Name, forSegmentAtIndex: 0)
-            paidBy.setTitle(k.Person2Name, forSegmentAtIndex: 1)
-            paidTo.setTitle(k.Person2Name, forSegmentAtIndex: 2)
+            paidBy.setTitle(k.Person1Name, forSegmentAt: 0)
+            paidTo.setTitle(k.Person1Name, forSegmentAt: 0)
+            paidBy.setTitle(k.Person2Name, forSegmentAt: 1)
+            paidTo.setTitle(k.Person2Name, forSegmentAt: 2)
     }
     
     func popToExpensesViewController(){
-        self.navigationController?.popToRootViewControllerAnimated(true)
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
-    @IBAction func save(sender: UIBarButtonItem) {
-        if let amount = amount?.text.amount {
+    @IBAction func save(_ sender: UIBarButtonItem) {
+        if let amount = amount?.text?.amount {
             addExpense(amount)
             popToExpensesViewController()
         }
         else {
             setAmountBackground()
-            tableView.scrollToRowAtIndexPath(NSIndexPath(forItem: 0, inSection: 0), atScrollPosition: .Top, animated: true)
+            tableView.scrollToRow(at: IndexPath(item: 0, section: 0), at: .top, animated: true)
         }
     }
     
     let paidToConversion = [0,2,1]
-    func addExpense(amount:Double) {
+    func addExpense(_ amount:Double) {
         let categoryOrEmpty = category?.text ?? ""
         let by = paidBy.selectedSegmentIndex
         let to = paidToConversion[paidTo.selectedSegmentIndex]
-        RealmUtilities.createEntryWithAmount(amount, PaidBy: by, PaidTo: to, AtDate: NSDate(), WithCategory: categoryOrEmpty)
+        RealmUtilities.createEntryWithAmount(amount, PaidBy: by, PaidTo: to, AtDate: Date(), WithCategory: categoryOrEmpty)
         
         let inCommon = (to == 2) ? "Yes" : "No"
         let categoryPresent = (categoryOrEmpty != "") ? "Yes" : "No"
-        Answers.logCustomEventWithName("Expense Added", customAttributes:  [
+        Answers.logCustomEvent(withName: "Expense Added", customAttributes:  [
             "In Common": inCommon,
             "Category Present": categoryPresent])
     }
     
     func setAmountBackground(){
-        UIView.animateWithDuration(0.5, animations: { [unowned self] in
-            self.amount.backgroundColor = UIColor.redColor()
-            }) { (_) -> Void in
-                UIView.animateWithDuration(0.5, animations: { [unowned self] in
+        UIView.animate(withDuration: 0.5, animations: { [unowned self] in
+            self.amount.backgroundColor = UIColor.red
+            }, completion: { (_) -> Void in
+                UIView.animate(withDuration: 0.5, animations: { [unowned self] in
                     self.amount.backgroundColor = self.amountDefaultBackgroundColor
                     })
-        }
+        }) 
     }
 }

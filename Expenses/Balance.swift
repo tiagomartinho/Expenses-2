@@ -1,14 +1,14 @@
 import RealmSwift
 
-public class Balance {
+open class Balance {
     
     static let IN_COMMON_INDEX = 2
     
-    public static var summaries:[String] {
+    open static var summaries:[String] {
         return [summary(),summaryPaidBy(0),summaryPaidBy(1),summarySpentBy(0),summarySpentBy(1)]
     }
     
-    private static func summarySpentBy(personIndex:Int)->String{
+    fileprivate static func summarySpentBy(_ personIndex:Int)->String{
         let total = self.totalSpentBy(personIndex)
         
         let personName = personIndex == 0 ? k.Person1Name : k.Person2Name
@@ -16,7 +16,7 @@ public class Balance {
         return personName + " " + "spent".localized + " " + total.currency
     }
     
-    private static func summaryPaidBy(personIndex:Int)->String{
+    fileprivate static func summaryPaidBy(_ personIndex:Int)->String{
         let total = self.totalPaidBy(personIndex)
         
         let personName = personIndex == 0 ? k.Person1Name : k.Person2Name
@@ -24,7 +24,7 @@ public class Balance {
         return personName + " " + "paid".localized + " " + total.currency
     }
     
-    private static func summary()->String{
+    fileprivate static func summary()->String{
         let total = self.total()
         
         if total == 0 {
@@ -37,7 +37,7 @@ public class Balance {
         return personInDebt + " " + "owes".localized + " " + personInCredit + " " + total.currency
     }
     
-    public static func totalSpentBy(personIndex:Int)->Double{
+    open static func totalSpentBy(_ personIndex:Int)->Double{
         var total = 0.0
         for expense in Realm().objects(Expense) {
             if expense.paidTo == personIndex {
@@ -50,7 +50,7 @@ public class Balance {
         return total
     }
     
-    public static func totalPaidBy(personIndex:Int)->Double{
+    open static func totalPaidBy(_ personIndex:Int)->Double{
         var total = 0.0
         for expense in Realm().objects(Expense) {
             if expense.paidBy == personIndex {
@@ -60,7 +60,7 @@ public class Balance {
         return total
     }
     
-    public static func total()->Double{
+    open static func total()->Double{
         var total = 0.0
         for expense in Realm().objects(Expense) {
             total += expense.amount * multiplier(expense.paidBy,To:expense.paidTo)
@@ -68,15 +68,15 @@ public class Balance {
         return total
     }
     
-    private static func multiplier(paidBy:Int,To paidTo:Int)->Double{
+    fileprivate static func multiplier(_ paidBy:Int,To paidTo:Int)->Double{
         return paidBy == paidTo ? 0.0 : sign(paidBy) / divider(paidTo)
     }
     
-    private static func sign(paidBy:Int)->Double{
+    fileprivate static func sign(_ paidBy:Int)->Double{
         return paidBy == 0 ? 1.0 : -1.0
     }
     
-    private static func divider(paidTo:Int)->Double{
+    fileprivate static func divider(_ paidTo:Int)->Double{
         return paidTo == IN_COMMON_INDEX ? 2.0 : 1.0
     }
 }

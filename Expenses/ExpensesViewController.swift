@@ -8,7 +8,7 @@ class ExpensesViewController: UIViewController, UITableViewDataSource {
     var notificationToken: NotificationToken?
     
     var currentSummary = 0
-    var nextSummaryNSTimer:NSTimer?
+    var nextSummaryNSTimer:Timer?
     var updateSummaryInProgress = false
     
     @IBOutlet weak var summary: UILabel!
@@ -35,7 +35,7 @@ class ExpensesViewController: UIViewController, UITableViewDataSource {
     
     // MARK: viewDidAppear
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         updateUI()
     }
@@ -46,16 +46,16 @@ class ExpensesViewController: UIViewController, UITableViewDataSource {
         expensesTableView.reloadData()
     }
     
-    func updateSummaryWithAnimation(animation:Bool){
+    func updateSummaryWithAnimation(_ animation:Bool){
         updateSummaryInProgress = true
         
         let animationDuration = animation ? 0.3 : 0.0
         
-        UIView.animateWithDuration(animationDuration, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
+        UIView.animate(withDuration: animationDuration, delay: 0.0, options: UIViewAnimationOptions.curveEaseOut, animations: {
             self.summary.alpha = 0.0
             }) { finished -> Void in
                 self.summary.text = Balance.summaries[self.currentSummary]
-                UIView.animateWithDuration(animationDuration, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+                UIView.animate(withDuration: animationDuration, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: {
                     self.summary.alpha = 1.0
                     }) { (completion) -> Void in
                         self.updateSummaryInProgress = false
@@ -71,10 +71,10 @@ class ExpensesViewController: UIViewController, UITableViewDataSource {
     }
     
     func startTimerToShowNextSummary(){
-        nextSummaryNSTimer = NSTimer.scheduledTimerWithTimeInterval(6.0, target: self, selector: "tick:", userInfo: nil, repeats: false)
+        nextSummaryNSTimer = Timer.scheduledTimer(timeInterval: 6.0, target: self, selector: #selector(ExpensesViewController.tick(_:)), userInfo: nil, repeats: false)
     }
     
-    func tick(nsTimer: NSTimer) {
+    func tick(_ nsTimer: Timer) {
         nextSummary()
     }
     
@@ -89,12 +89,12 @@ class ExpensesViewController: UIViewController, UITableViewDataSource {
     
     // MARK: TableView Data Source
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return array.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCellWithIdentifier(k.ExpenseCell) as? ExpensesTableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: k.ExpenseCell) as? ExpensesTableViewCell {
             
             let expense = array[indexPath.row]
             cell.person = paidBy(expense.paidBy,To:expense.paidTo)
@@ -109,7 +109,7 @@ class ExpensesViewController: UIViewController, UITableViewDataSource {
         }
     }
     
-    func paidBy(paidBy:Int,To paidTo:Int)->String{
+    func paidBy(_ paidBy:Int,To paidTo:Int)->String{
         let person1Name = k.Person1Name
         let person2Name = k.Person2Name
         
@@ -153,14 +153,14 @@ class ExpensesViewController: UIViewController, UITableViewDataSource {
         return result
     }
     
-    func formatDate(date: NSDate)->String{
-        let dateFormatter = NSDateFormatter()
+    func formatDate(_ date: Date)->String{
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/YY"
-        return dateFormatter.stringFromDate(date).uppercaseString
+        return dateFormatter.string(from: date).uppercased()
     }
     
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
             let entry = array[indexPath.row]
             
             let inCommon = (entry.paidTo == 2) ? "Yes" : "No"

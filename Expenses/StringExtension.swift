@@ -2,7 +2,7 @@ import Foundation
 
 extension String {
     var localized: String {
-        return NSLocalizedString(self, tableName: nil, bundle: NSBundle.mainBundle(), value: "", comment: "")
+        return NSLocalizedString(self, tableName: nil, bundle: Bundle.main, value: "", comment: "")
     }
     
     var amount: Double? {
@@ -21,9 +21,9 @@ extension String {
     }
     
     var doubleValueComma:Double?{
-        var formatter = NSNumberFormatter()
+        let formatter = NumberFormatter()
         formatter.decimalSeparator = ","
-        if let doubleValue = formatter.numberFromString(self)?.doubleValue {
+        if let doubleValue = formatter.number(from: self)?.doubleValue {
             return Double(round(doubleValue*100)/100)
         }
         else {
@@ -32,9 +32,9 @@ extension String {
     }
     
     var doubleValueDot:Double?{
-        var formatter = NSNumberFormatter()
+        let formatter = NumberFormatter()
         formatter.decimalSeparator = "."
-        if let doubleValue = formatter.numberFromString(self)?.doubleValue {
+        if let doubleValue = formatter.number(from: self)?.doubleValue {
             return Double(round(doubleValue*100)/100)
         }
         else {
@@ -46,7 +46,7 @@ extension String {
         return self.replace(" ",replacement:"")
     }
     
-    func replace(replaced:String,replacement:String)->String{
-        return self.stringByReplacingOccurrencesOfString(replaced, withString: replacement, options: NSStringCompareOptions.LiteralSearch, range: nil)
+    func replace(_ replaced:String,replacement:String)->String{
+        return self.replacingOccurrences(of: replaced, with: replacement, options: NSString.CompareOptions.literal, range: nil)
     }
 }

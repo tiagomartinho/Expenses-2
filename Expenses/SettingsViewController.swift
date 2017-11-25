@@ -25,12 +25,12 @@ class SettingsViewController: UITableViewController, MFMailComposeViewController
         person2.text = k.Person2Name
     }
     
-    @IBAction func person(sender: UITextField) {
-        let name = sender.text.removeWhitespaces()
+    @IBAction func person(_ sender: UITextField) {
+        let name = sender.text?.removeWhitespaces()
         
         if sender.placeholder?.hasSuffix("default_person_1_name".localized) ?? false {
             if name == "" {
-                k.Defaults.removeObjectForKey(k.UD_Person1)
+                k.Defaults.removeObject(forKey: k.UD_Person1)
             }
             else {
                 k.Defaults.setObject(name, forKey: k.UD_Person1)
@@ -39,7 +39,7 @@ class SettingsViewController: UITableViewController, MFMailComposeViewController
         
         if sender.placeholder?.hasSuffix("default_person_2_name".localized) ?? false {
             if name == "" {
-                k.Defaults.removeObjectForKey(k.UD_Person2)
+                k.Defaults.removeObject(forKey: k.UD_Person2)
             }
             else {
                 k.Defaults.setObject(name, forKey: k.UD_Person2)
@@ -48,16 +48,16 @@ class SettingsViewController: UITableViewController, MFMailComposeViewController
         
         k.Defaults.synchronize()
         
-        Answers.logCustomEventWithName("Person Name Set", customAttributes:  nil)
+        Answers.logCustomEvent(withName: "Person Name Set", customAttributes:  nil)
     }
     
     @IBAction func promptToDeleteAllExpenses() {
-        var alert = UIAlertController(title: "attention".localized, message: "erase_warning".localized, preferredStyle: .Alert)
-        alert.addAction(UIAlertAction(title: "cancel".localized, style: .Cancel, handler: nil))
-        alert.addAction(UIAlertAction(title: "ok".localized, style: .Default, handler: { (action:UIAlertAction!) -> Void in
+        let alert = UIAlertController(title: "attention".localized, message: "erase_warning".localized, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "cancel".localized, style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "ok".localized, style: .default, handler: { (action:UIAlertAction!) -> Void in
             RealmUtilities.deleteAllEntries()
         }))
-        self.presentViewController(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)
     }
     
     // MARK : Send Email
@@ -74,11 +74,11 @@ class SettingsViewController: UITableViewController, MFMailComposeViewController
             mailComposer.setMessageBody("To open the backup file in your Mac download the realm browser at:\n https://itunes.apple.com/app/realm-browser/id1007457278", isHTML: false)
             
             let filePath = Realm().path
-            if let fileData = NSData(contentsOfFile: filePath) {
+            if let fileData = Data(contentsOfFile: filePath) {
                 mailComposer.addAttachmentData(fileData, mimeType: ".realm", fileName: "Expenses.realm")
             }
             
-            self.presentViewController(mailComposer, animated: true) { [weak self] in
+            self.present(mailComposer, animated: true) { [weak self] in
                 if let settingsVC = self {
                     settingsVC.stopLoadAnimation()
                 }
@@ -91,18 +91,18 @@ class SettingsViewController: UITableViewController, MFMailComposeViewController
     
     func startLoadAnimation(){
         sendEmailActivityIndicator.startAnimating()
-        sendEmail.hidden = true
+        sendEmail.isHidden = true
     }
     
     func stopLoadAnimation(){
         sendEmailActivityIndicator.stopAnimating()
-        sendEmail.hidden = false
+        sendEmail.isHidden = false
     }
     
-    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError) {
-        if result.value == MFMailComposeResultSent.value {
-            Answers.logCustomEventWithName("Expenses Exported", customAttributes:  nil)
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: NSError) {
+        if result.value == MFMailComposeResult.sent.value {
+            Answers.logCustomEvent(withName: "Expenses Exported", customAttributes:  nil)
         }
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
 }
