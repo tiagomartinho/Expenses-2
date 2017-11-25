@@ -37,13 +37,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     fileprivate func overwrite(){
         let realm = try! Realm()
-        let defaultPath = realm.configuration.fileURL!.deletingLastPathComponent().path
+        let defaultPath = realm.configuration.fileURL!.path
         let importedPath = defaultPath + ".imported"
         
         if let path = url?.path {
             let fileManager = FileManager.default
-            try! fileManager.removeItem(atPath: importedPath)
-            try! fileManager.copyItem(atPath: path, toPath: importedPath)
+            try? fileManager.removeItem(atPath: importedPath)
+            try? fileManager.copyItem(atPath: path, toPath: importedPath)
             let importedRealm = try! Realm(fileURL: URL(string: importedPath)!)
             let importedExpenses = importedRealm.objects(Expense.self)
             RealmUtilities.updateEntries(importedExpenses)
@@ -53,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     fileprivate func removeImportedFile(){
         let fileManager = FileManager()
         if let path = url?.path {
-            try! fileManager.removeItem(atPath: path)
+            try? fileManager.removeItem(atPath: path)
         }
     }
 }

@@ -10,12 +10,18 @@ class BalanceTests: XCTestCase {
     let person2Name = k.Person2Name
     
     // MARK: SetUp and TearDown
-    let realmPathForTesting = (try! Realm()).configuration.fileURL!.deletingLastPathComponent().path + ".testing"
+    let realmPathForTesting = (try! Realm()).configuration.fileURL!.path + ".testing"
 
     override func setUp() {
         super.setUp()
         RealmUtilities.deleteRealmFilesAtPath(realmPathForTesting)
-        Realm.defaultPath = realmPathForTesting
+        setDefaultRealmForTesting()
+    }
+    
+    func setDefaultRealmForTesting() {
+        var config = Realm.Configuration()
+        config.fileURL = URL(string: realmPathForTesting)!
+        Realm.Configuration.defaultConfiguration = config
     }
     
     override func tearDown() {

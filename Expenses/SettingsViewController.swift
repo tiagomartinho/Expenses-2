@@ -74,8 +74,8 @@ class SettingsViewController: UITableViewController, MFMailComposeViewController
             mailComposer.setMessageBody("To open the backup file in your Mac download the realm browser at:\n https://itunes.apple.com/app/realm-browser/id1007457278", isHTML: false)
             
             let realm = try! Realm()
-            let filePath = realm.configuration.fileURL!.deletingLastPathComponent().path
-            if let fileData = try? Data(contentsOf: URL(string: filePath)!) {
+            let filePath = realm.configuration.fileURL!
+            if let fileData = try? Data(contentsOf: filePath) {
                 mailComposer.addAttachmentData(fileData, mimeType: ".realm", fileName: "Expenses.realm")
             }
             

@@ -44,8 +44,8 @@ open class RealmUtilities {
     
     open static func deleteRealmFilesAtPath(_ path: String) {
         let fileManager = FileManager.default
-        try! fileManager.removeItem(atPath: path)
+        try? fileManager.removeItem(atPath: path)
         let lockPath = path + ".lock"
-        try! fileManager.removeItem(atPath: lockPath)
+        try? fileManager.removeItem(atPath: lockPath)
     }
 }
