@@ -33,7 +33,7 @@ class SettingsViewController: UITableViewController, MFMailComposeViewController
                 k.Defaults.removeObject(forKey: k.UD_Person1)
             }
             else {
-                k.Defaults.setObject(name, forKey: k.UD_Person1)
+                k.Defaults.set(name, forKey: k.UD_Person1)
             }
         }
         
@@ -42,7 +42,7 @@ class SettingsViewController: UITableViewController, MFMailComposeViewController
                 k.Defaults.removeObject(forKey: k.UD_Person2)
             }
             else {
-                k.Defaults.setObject(name, forKey: k.UD_Person2)
+                k.Defaults.set(name, forKey: k.UD_Person2)
             }
         }
         
@@ -73,8 +73,9 @@ class SettingsViewController: UITableViewController, MFMailComposeViewController
             mailComposer.setSubject("Expenses Backup")
             mailComposer.setMessageBody("To open the backup file in your Mac download the realm browser at:\n https://itunes.apple.com/app/realm-browser/id1007457278", isHTML: false)
             
-            let filePath = Realm().path
-            if let fileData = Data(contentsOfFile: filePath) {
+            let realm = try! Realm()
+            let filePath = realm.configuration.fileURL!.deletingLastPathComponent().path
+            if let fileData = try? Data(contentsOf: URL(string: filePath)!) {
                 mailComposer.addAttachmentData(fileData, mimeType: ".realm", fileName: "Expenses.realm")
             }
             
@@ -99,8 +100,8 @@ class SettingsViewController: UITableViewController, MFMailComposeViewController
         sendEmail.isHidden = false
     }
     
-    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: NSError) {
-        if result.value == MFMailComposeResult.sent.value {
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        if result == MFMailComposeResult.sent {
             Answers.logCustomEvent(withName: "Expenses Exported", customAttributes:  nil)
         }
         self.dismiss(animated: true, completion: nil)

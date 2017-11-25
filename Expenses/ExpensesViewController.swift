@@ -4,7 +4,7 @@ import Crashlytics
 
 class ExpensesViewController: UIViewController, UITableViewDataSource {
     
-    var array = try! Realm().objects(Expense.self).sorted("date",ascending:false)
+    var array = try! Realm().objects(Expense.self).sorted(byKeyPath: "date",ascending:false)
     var notificationToken: NotificationToken?
     
     var currentSummary = 0
@@ -28,7 +28,7 @@ class ExpensesViewController: UIViewController, UITableViewDataSource {
     }
     
     func setNotificationsForRealmUpdates(){
-        notificationToken = Realm().addNotificationBlock { [unowned self] note, realm in
+        notificationToken = (try! Realm()).observe { (_, _) in
             self.updateUI()
         }
     }
@@ -67,14 +67,14 @@ class ExpensesViewController: UIViewController, UITableViewDataSource {
     
     func showInitialViewIfThereAreNoExpenses(){
         let thereAreNoExpenses = (array.count == 0)
-        initialView.hidden = thereAreNoExpenses ? false : true
+        initialView.isHidden = thereAreNoExpenses ? false : true
     }
     
     func startTimerToShowNextSummary(){
         nextSummaryNSTimer = Timer.scheduledTimer(timeInterval: 6.0, target: self, selector: #selector(ExpensesViewController.tick(_:)), userInfo: nil, repeats: false)
     }
     
-    func tick(_ nsTimer: Timer) {
+    @objc func tick(_ nsTimer: Timer) {
         nextSummary()
     }
     
@@ -100,7 +100,7 @@ class ExpensesViewController: UIViewController, UITableViewDataSource {
             cell.person = paidBy(expense.paidBy,To:expense.paidTo)
             cell.category = expense.category
             cell.amount = expense.amount.currency
-            cell.date = formatDate(expense.date)
+            cell.date = formatDate(expense.date as Date)
             
             return cell
         }
@@ -165,7 +165,7 @@ class ExpensesViewController: UIViewController, UITableViewDataSource {
             
             let inCommon = (entry.paidTo == 2) ? "Yes" : "No"
             let categoryPresent = (entry.category != "") ? "Yes" : "No"
-            Answers.logCustomEventWithName("Expense Deleted", customAttributes:  [
+            Answers.logCustomEvent(withName: "Expense Deleted", customAttributes:  [
                 "In Common": inCommon,
                 "Category Present": categoryPresent])
             
