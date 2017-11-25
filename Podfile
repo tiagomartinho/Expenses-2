@@ -1,7 +1,8 @@
 platform :ios, '8.0'
 use_frameworks!
 
-link_with 'Expenses','ExpensesTests'
+target 'ExpensesBy2'
+target 'ExpensesTests'
 
 pod 'RealmSwift'
 pod 'Fabric'
