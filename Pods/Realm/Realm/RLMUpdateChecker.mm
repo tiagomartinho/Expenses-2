@@ -19,6 +19,7 @@
 #import "RLMUpdateChecker.hpp"
 
 #import "RLMRealm.h"
+#import "RLMUtil.hpp"
 
 #if TARGET_IPHONE_SIMULATOR && !defined(REALM_COCOA_VERSION)
 #import "RLMVersion.h"
@@ -26,12 +27,24 @@
 
 void RLMCheckForUpdates() {
 #if TARGET_IPHONE_SIMULATOR
-    if (getenv("REALM_DISABLE_UPDATE_CHECKER") || ![NSUserDefaults instancesRespondToSelector:@selector(initWithSuiteName:)]) {
+    if (getenv("REALM_DISABLE_UPDATE_CHECKER") || RLMIsRunningInPlayground()) {
         return;
     }
 
-    auto handler = ^(NSData *data, __unused NSURLResponse *response, NSError *error) {
-        if (error) {
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"alpha|beta|rc"
+                                                                           options:(NSRegularExpressionOptions)0
+                                                                             error:nil];
+    NSUInteger numberOfMatches = [regex numberOfMatchesInString:REALM_COCOA_VERSION
+                                                        options:(NSMatchingOptions)0
+                                                          range:NSMakeRange(0, REALM_COCOA_VERSION.length)];
+
+    if (numberOfMatches > 0) {
+        // pre-release version, skip update checking
+        return;
+    }
+
+    auto handler = ^(NSData *data, NSURLResponse *response, NSError *error) {
+        if (error || ((NSHTTPURLResponse *)response).statusCode != 200) {
             return;
         }
 
@@ -41,7 +54,7 @@ void RLMCheckForUpdates() {
         }
     };
 
-    NSString *url = [NSString stringWithFormat:@"http://static.realm.io/update/cocoa?%@", REALM_COCOA_VERSION];
+    NSString *url = [NSString stringWithFormat:@"https://static.realm.io/update/cocoa?%@", REALM_COCOA_VERSION];
     [[NSURLSession.sharedSession dataTaskWithURL:[NSURL URLWithString:url] completionHandler:handler] resume];
 #endif
 }
