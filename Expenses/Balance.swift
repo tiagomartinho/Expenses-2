@@ -39,7 +39,7 @@ open class Balance {
     
     open static func totalSpentBy(_ personIndex:Int)->Double{
         var total = 0.0
-        for expense in Realm().objects(Expense) {
+        for expense in try! Realm().objects(Expense.self) {
             if expense.paidTo == personIndex {
                 total += expense.amount
             }
@@ -52,7 +52,7 @@ open class Balance {
     
     open static func totalPaidBy(_ personIndex:Int)->Double{
         var total = 0.0
-        for expense in Realm().objects(Expense) {
+        for expense in try! Realm().objects(Expense.self) {
             if expense.paidBy == personIndex {
                 total += expense.amount
             }
@@ -62,7 +62,7 @@ open class Balance {
     
     open static func total()->Double{
         var total = 0.0
-        for expense in Realm().objects(Expense) {
+        for expense in try! Realm().objects(Expense.self) {
             total += expense.amount * multiplier(expense.paidBy,To:expense.paidTo)
         }
         return total

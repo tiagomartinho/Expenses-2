@@ -4,7 +4,7 @@ import Crashlytics
 
 class ExpensesViewController: UIViewController, UITableViewDataSource {
     
-    var array = Realm().objects(Expense).sorted("date",ascending:false)
+    var array = try! Realm().objects(Expense.self).sorted("date",ascending:false)
     var notificationToken: NotificationToken?
     
     var currentSummary = 0

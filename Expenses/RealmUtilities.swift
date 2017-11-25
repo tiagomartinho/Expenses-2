@@ -3,10 +3,10 @@ import Foundation
 
 open class RealmUtilities {
     open static func deleteAllEntries(){
-        let realm = Realm()
+        let realm = try! Realm()
         realm.beginWrite()
         realm.deleteAll()
-        realm.commitWrite()
+        try! realm.commitWrite()
     }
     
     open static func createEntries(_ expenses:Results<Expense>){
@@ -16,10 +16,10 @@ open class RealmUtilities {
     }
     
     open static func createEntryWithAmount(_ amount:Double,PaidBy by:Int=0,PaidTo to:Int=2,AtDate date:Date=Date(),WithCategory category:String=""){
-        let realm = Realm()
+        let realm = try! Realm()
         realm.beginWrite()
         realm.create(Expense.self, value: [UUID().UUIDString, amount, by, to, category,date])
-        realm.commitWrite()
+        try! realm.commitWrite()
     }
     
     open static func updateEntries(_ expenses:Results<Expense>){
@@ -29,17 +29,17 @@ open class RealmUtilities {
     }
     
     open static func updateEntry(_ entry: Expense){
-        let realm = Realm()
+        let realm = try! Realm()
         realm.beginWrite()
         realm.create(Expense.self, value: entry, update: true)
-        realm.commitWrite()
+        try! realm.commitWrite()
     }
     
     open static func deleteEntry(_ entry: Expense){
-        let realm = Realm()
+        let realm = try! Realm()
         realm.beginWrite()
         realm.delete(entry)
-        realm.commitWrite()
+        try! realm.commitWrite()
     }
     
     open static func deleteRealmFilesAtPath(_ path: String) {
